@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.main-full {
+  display: flex;
+  flex-direction: column;
+}
+.main-full .certification-container {
+  display: flex;
+}
+.main-full .certification-container h3 {
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 10px;
+  box-sizing: border-box;
+  min-width: 200px;
+}
+.main-full .certification-container .details-container {
+  padding: 10px;
+}
+.main-full .certification-container .details-container li {
+  padding: 5px;
+  margin-left: 30px;
+}
+.main-full .certification-container .details-container li::marker {
+  content: "◾";
+}/*# sourceMappingURL=main-full-component.css.map */

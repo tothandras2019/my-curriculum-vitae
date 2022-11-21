@@ -15,12 +15,16 @@ export const Naviation = (): ReactElement => {
         <img src={logo} alt='not yet implemented' height='100' />
         <div className='navigation-container'>
           <Separator />
-          {navItems?.map((item) => (
-            <Fragment>
-              <LinkButton item={item} />
-              <Separator />
-            </Fragment>
-          ))}
+          {navItems?.map((obj) => {
+            const [item] = Object.entries(obj)
+            const [key, value] = item
+            return (
+              <Fragment key={`button-${key}`}>
+                <LinkButton link={key} item={value} />
+                <Separator />
+              </Fragment>
+            )
+          })}
         </div>
         <div className='social-container'>
           <a href=''>LinkedIn</a>

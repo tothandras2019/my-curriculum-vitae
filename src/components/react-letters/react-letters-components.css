@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 .title {
   font-family: "Russo One", sans-serif;
-  font-size: 50px;
+  font-size: 100px;
+  display: flex;
 }
 .title .type-false {
   font-size: 50px;
@@ -9,12 +10,33 @@
 .title .type-true {
   color: red;
 }
-.title span {
-  transform: rotateX(60deg);
-  transform-style: preserve-3d;
+.title .parent-span {
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.5s;
 }
-.title span:hover {
-  color: red;
-  height: 10px;
+.title .parent-span p {
+  transition: 0.5s;
+}
+.title .parent-span:hover p {
+  color: rgb(35, 102, 157);
   text-shadow: 5px 5px 5px black;
+  animation-name: pinting;
+  animation-duration: 0.7s;
+}
+@keyframes pinting {
+  50% {
+    transform: rotateX(60deg);
+  }
+  70% {
+    transform: rotateX(10deg);
+  }
+  80% {
+    transform: rotateX(40deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
 }/*# sourceMappingURL=react-letters-components.css.map */

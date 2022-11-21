@@ -1,6 +1,17 @@
 import { createContext, useState, Dispatch, SetStateAction } from 'react'
 
-export const NavigationItems: string[] = ['About me', 'Certifications', 'Works', 'My skills', 'Good to know', 'Contact me']
+type NavitemsType = {
+  [key: string]: string
+}
+
+export const NavigationItems: NavitemsType[] = [
+  { about: 'About me' },
+  { certification: 'Certifications' },
+  { works: 'Works' },
+  { skills: 'My skills' },
+  { knowme: 'Good to know' },
+  { contact: 'Contact me' },
+]
 
 type updateType = Dispatch<SetStateAction<typeof NavigationItems>>
 const defaultUpdate: updateType = () => NavigationItems

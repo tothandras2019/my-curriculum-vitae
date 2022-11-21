@@ -9,14 +9,14 @@ export type cvPersonal = {
     descreption: string
   }
 }
-export type cvCertificationDetailsType = {
+export type CvCertificationDetailsType = {
   date: string
   certification_title: string
   place: string
   document: string
-  details: [string]
+  details: string
 }
-export type cerfiticationsArrType = cvCertificationDetailsType[]
+export type CerfiticationsArrType = CvCertificationDetailsType[]
 
 export type cvWorkingHistory = {
   date: string
