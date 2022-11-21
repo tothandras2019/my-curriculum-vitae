@@ -1,0 +1,31 @@
+aside {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 13vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 0;
+  img {
+    align-self: center;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navigation-container {
+    height: 50%;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .social-container {
+    justify-content: center;
+    align-self: center;
+  }
+}

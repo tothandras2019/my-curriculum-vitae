@@ -1,0 +1,29 @@
+aside {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 13vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+aside img {
+  align-self: center;
+}
+aside div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+aside .navigation-container {
+  height: 50%;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+aside .social-container {
+  justify-content: center;
+  align-self: center;
+}/*# sourceMappingURL=navigation-component.css.map */

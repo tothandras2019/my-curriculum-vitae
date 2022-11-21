@@ -1,0 +1,9 @@
+main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  margin-left: 13vw;
+  box-sizing: border-box;
+  padding: 15px 100px;
+  gap: 20px;
+}/*# sourceMappingURL=main-splited-component.css.map */

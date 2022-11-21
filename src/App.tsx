@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import logo from './logo.svg'
+import './App.css'
+import './Reset.css'
+import { Naviation } from './components/navigation/navigation-component'
+import { MainSplited } from './components/main-splited/main-splited-component'
+import CV_DATA from './DATA/cv-data.json'
 
-function App() {
+/*components: 
+About me {Personal, Carrier-objectives}, 
+Certified {cerfitications}, 
+Previous woerking life { working-history},
+My Skills {skills} 
+Good to know{studies,other}
+Contact me*/
+
+function App(): JSX.Element {
+  const cv_descreption: string = CV_DATA.carrier_bjectives.descreption
+  const [descreption, setDescreption] = useState('')
+  useEffect(() => {
+    setDescreption(cv_descreption)
+    return () => {}
+  }, [descreption])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Naviation />
+      <MainSplited descreption={descreption} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

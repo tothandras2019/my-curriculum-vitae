@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 50px;
+
+  .type-false {
+    font-size: 50px;
+  }
+
+  .type-true {
+    color: red;
+  }
+
+  span {
+    height: 30px;
+    transition: 0.5s;
+    &:hover {
+      transform: scaleY(3);
+      color: red;
+      height: 10px;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "personal": {
+    "name": "András Tóth",
+    "location": "Budapest",
+    "role": "jonior frontend developer",
+    "worldview": "lorem ipsum something special"
+  },
+  "carrier_bjectives": {
+    "descreption": "After I successfully finished college, I carried on learning a programming language that was Java SE. I learned it in my spare time after I went home from my sales representative job. I was dealing with Unity development in C_Sharp language as a hobby. In the beginning of this year I decided that I would learn a programming language that is useful for spectacular results, innovative and new. So I started to learn javascript and I found a school that can support practical deep knowledge and professional mentors. This school was the Coodecool.By now, I successfully finished the Codecool Intensive Junior Frontend developer course, where I had to implement 20 individual and team projects using the javascript language and frameworks.  I implemented these projects with the VS_Code editor using Vanilla.Js, React.Js, Node_Express.Js language tools. We regularly use our own backend REST_Api and call public APIs, from which we process data for the representation style, we use CSS and its framework SASS. During the training, I used Swiper, Firebase and Docker tools in terms of external libraries. In addition to the training, I conducted/completed additional training related to the topic in the Udemy system, which relates to React.js, Firebase/Google authentication, and Netlify storage. I finished the course in October 2022 with a successful final exam and certification. As a front_end developer, my goal is to participate in the development of spectacular and useful applications as a member of a team. My plan is to become a full stack developer and deeply know the backend part of web development."
+  },
+  "cerfitications": [
+    {
+      "date": "2022.05_10",
+      "certification_title": "Junior Frontend Developer",
+      "place": "Codecool Hungary",
+      "document": "Certification",
+      "details": [
+        "The fundamental scope of learning were HTML, CSS and Javascript in the first half of the education. In the second half on the learning path I learnt and mastered the usage of React.js, Node_Express.js, SASS, Firebase authentication and Cloud Storage.During this period there were individual and team projects that had to be managed as live projects. I acquire deep knowledge of Git and Github tools that were used in daily Meanwhile, I had to keep a clean coding policy. I received continuous mentoring support from professionals.The editor was VS_Code and many other extensions and libraries"
+      ]
+    },
+    {
+      "date": "2022.01_07",
+      "certification_title": "JavaScript Course 2022",
+      "place": "Udemy Learning Platform",
+      "document": "Certification",
+      "details": [
+        "The motivation to take this online course was to gain deep knowledge of Javascript programming language, working of web browsers, HTML and CSS.During the training I managed to understand and use Vanilla Javascript for building dynamic ebsites. I used VS_Code as editor for developing."
+      ]
+    },
+    {
+      "date": "2020.11_2021.04",
+      "certification_title": "Junior Programer",
+      "place": "Unity Game Developer Pathway",
+      "document": "Certification",
+      "details": [
+        "In the pathway I managed to learn the key concepts and techniques of game development that are applied in large projects.I learned how to do profile optimization for managing performance issues.I used  Unity_Visual Studio and C_Sharp language for developing."
+      ]
+    },
+    {
+      "date": "2020.01_04",
+      "certification_title": "Mathematics For Computer Games",
+      "place": "Holistic3D Learning Platform",
+      "document": "Certification",
+      "details": [
+        "The scope was to understand and apply the mathematical calculations and techniques in game development.The main topics were transformation, translations, 3d vector calculations, matrix calculations  and quaternions.I used  Unity_Visual Studio and C_Sharp language for developing."
+      ]
+    },
+    {
+      "date": "2011.06",
+      "certification_title": "JAVA Standard Edition training",
+      "place": "SZAMALK Edducation Zrt",
+      "document": "Certification",
+      "details": ["The training topic was fundamentals of Java development language.I used Netbeans for implementing our codes."]
+    }
+  ],
+  "working_history": [
+    {
+      "date": "2020.10_2022.03",
+      "position": "Company manager",
+      "enterprice": "Tracknamic Kft",
+      "role_descreption": "I had to develop and maintain relationships with customers and suppliers."
+    },
+    {
+      "date": "2016_2020.07",
+      "position": "Project team leader",
+      "enterprice": "Waberer's International Nyrt _ Digitalisation Office (It) Department",
+      "role_descreption": "I had to coordinate team members, consultants and other resources across multiple projects and departments. Telematics tender and agreement: Implementation of tender_related agreements. SAP TMS implementation: Customer_side “Solution Architect” "
+    },
+    {
+      "date": "2015_2016",
+      "position": "Project manager",
+      "enterprice": "Waberer's International Nyrt _ Digitalisation Office (It) Department",
+      "role_descreption": "Management and implementation of projects entrusted to me. Keeping regular status reports."
+    },
+    {
+      "date": "2002_2013",
+      "position": "Sales representative",
+      "enterprice": "Waberer's International Nyrt _ Division of United Kingdom and Ireland",
+      "role_descreption": "Achieved monthly sales goals by promoting product benefits and enrolling new clients.Economical distribution of freight capacities between different loading bays.Supplying commercial areas with necessary information about loading capacities"
+    },
+    {
+      "date": "2001_2002",
+      "position": "Freight forwarder, customs officer",
+      "enterprice": "Uni_Data Hungary Kft",
+      "role_descreption": "Coordination and organization of the delivery of freight shipments.Implementation of customs administration."
+    }
+  ],
+  "studies": [
+    {
+      "date": "2005_2011",
+      "field": "Computer Scientist Economist",
+      "school": "Dénes Gábor College",
+      "other": "Thesis topic: Vehicle tracking in everyday life and in the field of freight transport."
+    },
+    {
+      "date": "1999_2000",
+      "field": "Customs officer",
+      "school": "Hungarian Vocational School",
+      "other": ""
+    },
+    {
+      "date": "1998_1999",
+      "field": "International freight forwarder and domestic",
+      "school": "Gábor Bethlen Vocational School of Transport and Economics",
+      "other": ""
+    },
+    {
+      "date": "1994_1998",
+      "field": "Baccalaureate",
+      "school": "Gábor Bethlen Vocational School of Transport and Economics",
+      "other": ""
+    }
+  ],
+  "skills": [
+    {
+      "type": "Hard skills",
+      "level": {
+        "high_level": "Javascript,HTML,CSS,SCSS,React.js,Typescript, Git,VS_Code",
+        "mid_level": "Material UI,Tailwind,Express.js",
+        "early_learnt": "Java SE6/EE,Unity C_Sharp"
+      },
+
+      "other": []
+    },
+    {
+      "type": "Soft skills",
+      "level": [{ "high_level": [], "mid_level": [], "early_learnt": [] }],
+      "other": ["Leadership, Team player, Problem solving, Must_do attitude"]
+    }
+  ],
+  "other": {
+    "language": "Hungarian(native), English (fluent), German(basic)",
+    "Interests": "Implementation of spectacular developments, Unity game development",
+    "driver license": "Category 'B' driver's license"
+  }
+}
