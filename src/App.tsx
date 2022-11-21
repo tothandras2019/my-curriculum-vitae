@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import logo from './logo.svg'
 import './App.css'
 import './Reset.css'
@@ -24,8 +25,11 @@ function App(): JSX.Element {
 
   return (
     <div className='App'>
-      <Naviation />
-      <MainSplited descreption={descreption} />
+      <Routes>
+        <Route path='/' element={<Naviation />}>
+          <Route path='about' element={<MainSplited descreption={descreption} />} />
+        </Route>
+      </Routes>
     </div>
   )
 }

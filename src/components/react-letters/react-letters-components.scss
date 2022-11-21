@@ -13,12 +13,13 @@
   }
 
   span {
-    height: 30px;
-    transition: 0.5s;
+    transform: rotateX(60deg);
+    transform-style: preserve-3d;
+
     &:hover {
-      transform: scaleY(3);
       color: red;
       height: 10px;
+      text-shadow: 5px 5px 5px black;
     }
   }
 }
