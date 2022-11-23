@@ -5,7 +5,7 @@ export const Descreption = ({ welcome = 'Welcome', descreption }: { welcome?: st
   return (
     <div className='descreption-container'>
       <Letters splitedWord={titleElement} />
-      <p>{descreption}</p>
+      <p className='descreption'>{descreption}</p>
       <a href=''>lets talk!</a>
     </div>
   )

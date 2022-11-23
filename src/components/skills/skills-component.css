@@ -1,0 +1,40 @@
+.main-skills-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-skills-container .skill-types-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.main-skills-container .skill-types-container .skills-container .skill-type {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 30px;
+  gap: 10px;
+}
+.main-skills-container .skill-types-container .skills-container .skill-type .skill {
+  position: relative;
+  padding-left: 20px;
+}
+.main-skills-container .skill-types-container .skills-container .skill-type .skill span {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 200px;
+  height: 8px;
+  border-radius: 30px;
+}
+.main-skills-container .skill-types-container .skills-container .skill-type .skill .level-indicator {
+  background-color: rgb(18, 58, 168);
+  z-index: 1;
+}
+.main-skills-container .skill-types-container .skills-container .skill-type .skill .level-indicator-background {
+  background-color: grey;
+  width: 400px;
+}/*# sourceMappingURL=skills-component.css.map */

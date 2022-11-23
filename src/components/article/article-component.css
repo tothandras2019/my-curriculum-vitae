@@ -1,0 +1,16 @@
+.article-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.article-container .roation-container {
+  height: 300px;
+  width: 300px;
+  background-color: grey;
+}
+@keyframes rotateObject {
+  to {
+    transform: rotateY(360deg);
+  }
+}/*# sourceMappingURL=article-component.css.map */

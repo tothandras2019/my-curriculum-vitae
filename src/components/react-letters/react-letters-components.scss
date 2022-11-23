@@ -22,14 +22,12 @@
 
     p {
       transition: 0.5s;
-    }
 
-    &:hover p {
-      color: rgb(35, 102, 157);
-      text-shadow: 5px 5px 5px black;
-      //transform: rotateX(50deg);
-      animation-name: pinting;
-      animation-duration: 0.7s;
+      &.letter-bounces {
+        text-shadow: 5px 5px 5px black;
+        animation-name: pinting;
+        animation-duration: 0.7s;
+      }
     }
 
     @keyframes pinting {

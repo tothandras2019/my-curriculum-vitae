@@ -41,7 +41,7 @@ export type cvSkillsType = {
     mid_level?: string
     early_learnt?: string
   }
-  other?: string[]
+  other?: string
 }
 export type cvSkillsArrType = cvSkillsType[]
 
@@ -52,3 +52,5 @@ export type cvOther = {
     driver_license: string
   }
 }
+
+export type ColorObjectType = { primary: string; secondary: string }

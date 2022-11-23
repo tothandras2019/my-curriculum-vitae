@@ -1,0 +1,21 @@
+.article-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  .roation-container {
+    height: 300px;
+    width: 300px;
+    background-color: grey;
+    // animation-name: rotateObject;
+    // animation-duration: 3s;
+    // animation-iteration-count: infinite;
+  }
+
+  @keyframes rotateObject {
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+}

@@ -4,15 +4,18 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { NavigationContextProvider } from './components/contexts/navigation-context'
+import { BackgroundContextProvider } from './components/contexts/theme-context'
 import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <NavigationContextProvider>
-      <App />
-    </NavigationContextProvider>
+    <BackgroundContextProvider>
+      <NavigationContextProvider>
+        <App />
+      </NavigationContextProvider>
+    </BackgroundContextProvider>
   </BrowserRouter>,
   // </React.StrictMode>,
 )

@@ -1,0 +1,36 @@
+$primary-color: #e5d8b3;
+$secondary-color: rgb(107, 107, 72);
+$additional-color: rgb(4, 63, 119);
+
+body {
+  background-color: $primary-color;
+  color: $secondary-color;
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 0 0 0 100px;
+    margin-left: 15vw;
+    // gap: 20px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 25px;
+    min-width: 210px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+}

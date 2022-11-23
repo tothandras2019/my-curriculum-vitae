@@ -1,9 +1,42 @@
-main {
+body {
+  background-color: #e5d8b3;
+  color: rgb(107, 107, 72);
+}
+body main {
   display: flex;
-  width: 100%;
-  height: fit-content;
-  margin-left: 13vw;
+  flex-direction: column;
+  width: 85vw;
+  min-height: 100vh;
   box-sizing: border-box;
-  padding: 15px 100px;
-  gap: 20px;
+  padding: 0 0 0 100px;
+  margin-left: 15vw;
+}
+body h1 {
+  font-size: 50px;
+}
+body h2 {
+  font-size: 40px;
+}
+body h3 {
+  font-size: 30px;
+}
+body h4 {
+  font-size: 25px;
+  min-width: 210px;
+}
+body h5 {
+  font-size: 20px;
+}
+
+.main-splited {
+  display: flex;
+  flex-direction: row;
+}
+.main-splited.primary {
+  background-color: #e5d8b3;
+  color: rgb(107, 107, 72);
+}
+.main-splited.secondary {
+  background-color: rgb(107, 107, 72);
+  color: #e5d8b3;
 }/*# sourceMappingURL=main-splited-component.css.map */

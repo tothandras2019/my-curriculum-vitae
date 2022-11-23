@@ -107,17 +107,17 @@
     {
       "type": "Hard skills",
       "level": {
-        "high_level": "Javascript,HTML,CSS,SCSS,React.js,Typescript, Git,VS_Code",
-        "mid_level": "Material UI,Tailwind,Express.js",
-        "early_learnt": "Java SE6/EE,Unity C_Sharp"
+        "higher level": "Javascript-80,HTML-85,CSS-80,SCSS-75,React.js-65,Typescript-40, Git-70,VS Code-100",
+        "middle level": "Material UI-30,Tailwind-20,Express.js-40",
+        "earlier learnt": "Java SE6/EE-10,Unity C Sharp-50"
       },
 
-      "other": []
+      "other": ""
     },
     {
       "type": "Soft skills",
-      "level": [{ "high_level": [], "mid_level": [], "early_learnt": [] }],
-      "other": ["Leadership, Team player, Problem solving, Must_do attitude"]
+      "level": { "high_level": "", "mid_level": "", "early_learnt": "" },
+      "other": "Leadership, Team player, Problem solving, Must_do attitude"
     }
   ],
   "other": {

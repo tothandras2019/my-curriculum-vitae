@@ -20,8 +20,7 @@
 .title .parent-span p {
   transition: 0.5s;
 }
-.title .parent-span:hover p {
-  color: rgb(35, 102, 157);
+.title .parent-span p.letter-bounces {
   text-shadow: 5px 5px 5px black;
   animation-name: pinting;
   animation-duration: 0.7s;
