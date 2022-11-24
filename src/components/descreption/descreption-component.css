@@ -1,7 +1,40 @@
+body {
+  background-color: #e5d8b3;
+  color: rgb(107, 107, 72);
+}
+body .App {
+  height: 100vh;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 30px 0 30px 100px;
+  margin-left: 15vw;
+}
+body h1 {
+  font-size: 50px;
+}
+body h2 {
+  font-size: 40px;
+}
+body h3 {
+  font-size: 30px;
+}
+body h4 {
+  font-size: 25px;
+  min-width: 210px;
+}
+body h5 {
+  font-size: 20px;
+}
+
 .descreption-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   width: 50%;
   gap: 20px;
 }
@@ -11,4 +44,9 @@
   word-break: keep-all;
   word-spacing: 5px;
   line-height: 150%;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+.descreption-container .descreption.show {
+  transform: scale(1);
 }/*# sourceMappingURL=descreption-component.css.map */

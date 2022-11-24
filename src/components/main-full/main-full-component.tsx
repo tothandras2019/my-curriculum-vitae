@@ -9,6 +9,7 @@ import {
 } from './../../DATA/data-types'
 import { BackgroundContext } from './../contexts/theme-context'
 import { Skills } from '../skills/skills-component'
+import { SectionButton } from '../buttons/section-button/section-button-component'
 
 type MainPropsType = {
   workingdetail?: cvWorkingHistoryArrType | null
@@ -49,13 +50,21 @@ export const MainFullPage = ({ workingdetail, certifications, skills, background
 }
 
 const WorkingDetails = ({ date, position, enterprice, role_descreption, index }: cvWorkingHistory & { index: number }) => {
+  const [showDetails, setShowDetails] = useState(false)
+
+  const onHandleShowDescription = () => {
+    setShowDetails(!showDetails)
+  }
+
   return (
     <div key={`cert-${index}`} className={`certification-container`}>
       <h4>{date}</h4>
       <div className='details-container'>
         <h2>{position}</h2>
         <h3>{enterprice}</h3>
-        <ul>
+        <SectionButton onHandleShowDescription={onHandleShowDescription} />
+
+        <ul className={showDetails ? 'show' : ''}>
           {role_descreption?.split('.').map((sentence, i) => (
             <li key={`details-${i}`}>{sentence}</li>
           ))}
@@ -66,13 +75,21 @@ const WorkingDetails = ({ date, position, enterprice, role_descreption, index }:
 }
 
 const CertificationDetails = ({ date, certification_title, place, document, details, index }: CvCertificationDetailsType & { index: number }) => {
+  const [showDetails, setShowDetails] = useState(false)
+
+  const onHandleShowDescription = () => {
+    setShowDetails(!showDetails)
+  }
+
   return (
     <div key={`cert-${index}`} className={`certification-container`}>
       <h4>{date}</h4>
       <div className='details-container'>
         <h2>{certification_title}</h2>
         <h3>{place}</h3>
-        <ul>
+        <SectionButton onHandleShowDescription={onHandleShowDescription} />
+
+        <ul className={showDetails ? 'show' : ''}>
           {details?.split('.').map((sentence, i) => (
             <li key={`details-${i}`}>{sentence}</li>
           ))}

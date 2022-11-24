@@ -20,7 +20,7 @@ export const Naviation = (): ReactElement => {
             const [key, value] = item
             return (
               <Fragment key={`button-${key}`}>
-                <LinkButton link={key} item={value} />
+                <LinkButton link={key === 'about' ? '/' : key} item={value} />
                 <Separator />
               </Fragment>
             )

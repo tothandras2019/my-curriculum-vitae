@@ -7,7 +7,7 @@ export const LinkButton = ({ link, item }: { link: string; item: string }): JSX.
   return (
     <button
       onClick={() => {
-        navigationTo(`/${link}`)
+        navigationTo(`${link}`)
       }}
     >
       {item}

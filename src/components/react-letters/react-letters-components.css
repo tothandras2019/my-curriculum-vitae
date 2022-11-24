@@ -1,14 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
-.title {
-  font-family: "Russo One", sans-serif;
-  font-size: 100px;
-  display: flex;
+body {
+  background-color: #e5d8b3;
+  color: rgb(107, 107, 72);
 }
-.title .type-false {
+body .App {
+  height: 100vh;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 30px 0 30px 100px;
+  margin-left: 15vw;
+}
+body h1 {
   font-size: 50px;
 }
-.title .type-true {
-  color: red;
+body h2 {
+  font-size: 40px;
+}
+body h3 {
+  font-size: 30px;
+}
+body h4 {
+  font-size: 25px;
+  min-width: 210px;
+}
+body h5 {
+  font-size: 20px;
+}
+
+.title {
+  font-family: "Russo One", sans-serif;
+  font-size: 70px;
+  min-width: 600px;
+  display: flex;
 }
 .title .parent-span {
   transition: 0.5s;
@@ -19,9 +46,10 @@
 }
 .title .parent-span p {
   transition: 0.5s;
+  min-width: 20px;
 }
 .title .parent-span p.letter-bounces {
-  text-shadow: 5px 5px 5px black;
+  text-shadow: 10px 10px 7px rgb(4, 63, 119);
   animation-name: pinting;
   animation-duration: 0.7s;
 }

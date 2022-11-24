@@ -1,19 +1,23 @@
 $primary-color: #e5d8b3;
 $secondary-color: rgb(107, 107, 72);
+$third-color: #eea243;
 $additional-color: rgb(4, 63, 119);
 
 body {
   background-color: $primary-color;
   color: $secondary-color;
+
+  .App {
+    height: 100vh;
+  }
+
   main {
     display: flex;
     flex-direction: column;
-    width: 85vw;
-    min-height: 100vh;
+    justify-content: center;
     box-sizing: border-box;
-    padding: 0 0 0 100px;
+    padding: 30px 0 30px 100px;
     margin-left: 15vw;
-    // gap: 20px;
   }
 
   h1 {

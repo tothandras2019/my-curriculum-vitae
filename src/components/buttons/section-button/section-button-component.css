@@ -1,0 +1,54 @@
+body {
+  background-color: #e5d8b3;
+  color: rgb(107, 107, 72);
+}
+body .App {
+  height: 100vh;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 30px 0 30px 100px;
+  margin-left: 15vw;
+}
+body h1 {
+  font-size: 50px;
+}
+body h2 {
+  font-size: 40px;
+}
+body h3 {
+  font-size: 30px;
+}
+body h4 {
+  font-size: 25px;
+  min-width: 210px;
+}
+body h5 {
+  font-size: 20px;
+}
+
+input[type=button] {
+  background-color: transparent;
+  width: fit-content;
+  border-radius: 50px;
+  border: 2px solid #eea243;
+  color: rgb(4, 63, 119);
+  padding: 0px 10px;
+  margin-top: 10px;
+  transition: 0.5s;
+  z-index: 2000;
+}
+input[type=button]:hover {
+  color: #e5d8b3;
+  background-color: rgb(4, 63, 119);
+  border: 2px solid transparent;
+  letter-spacing: 1.1px;
+  transition: 0.5s;
+}
+input[type=button]:active {
+  color: rgb(4, 63, 119);
+  background-color: #e5d8b3;
+}/*# sourceMappingURL=section-button-component.css.map */
