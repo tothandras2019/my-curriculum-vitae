@@ -18,7 +18,6 @@ export const MainSplited = ({ descreption, backgroundColor }: { descreption: str
     <main className={`main-splited ${backgroundColor}`} onMouseMove={handleMouseHover}>
       <Descreption descreption={descreption} />
       <Article moveAxisValue={mouseMoveEventValues} />
-      {/* <ScrollButton /> */}
     </main>
   )
 }

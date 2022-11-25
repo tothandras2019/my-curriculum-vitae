@@ -10,15 +10,19 @@ import {
 import { BackgroundContext } from './../contexts/theme-context'
 import { Skills } from '../skills/skills-component'
 import { SectionButton } from '../buttons/section-button/section-button-component'
+import { ScrollButton } from '../buttons/scroll-button/scroll-button-component'
 
 type MainPropsType = {
   workingdetail?: cvWorkingHistoryArrType | null
   certifications?: CerfiticationsArrType | null
   skills?: cvSkillsArrType | null
+  elementObject?: any
   backgroundColor: string | null
 }
 
-export const MainFullPage = ({ workingdetail, certifications, skills, backgroundColor = 'primary' }: MainPropsType): JSX.Element => {
+export const MainFullPage = ({ elementObject, workingdetail, certifications, skills, backgroundColor = 'primary' }: MainPropsType): JSX.Element => {
+  // console.log(elementObject)
+
   const { backgroundItem } = useContext(BackgroundContext)
 
   return (

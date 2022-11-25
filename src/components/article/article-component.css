@@ -3,15 +3,15 @@ body {
   color: rgb(107, 107, 72);
 }
 body .App {
-  height: 100vh;
+  position: relative;
 }
 body main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
-  padding: 30px 0 30px 100px;
+  padding-left: 90px;
   margin-left: 15vw;
+  box-sizing: border-box;
 }
 body h1 {
   font-size: 50px;
@@ -107,11 +107,11 @@ body h5 {
 }
 @keyframes rotate-child {
   to {
-    transform: rotate3d(1, 2, 2, -360deg);
+    transform: rotate3d(0, 0, 2, -360deg);
   }
 }
 @keyframes rotateObject {
   to {
-    transform: rotate3d(1, 2, 2, 360deg);
+    transform: rotate3d(0, 0, 2, 360deg);
   }
 }/*# sourceMappingURL=article-component.css.map */

@@ -1,0 +1,15 @@
+$button-height: 75px;
+.scroll {
+  position: fixed;
+  top: 90vh;
+  right: -25px;
+  transform: translateX(-50%);
+  max-width: $button-height;
+  max-height: $button-height;
+  min-width: $button-height;
+  min-height: $button-height;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

@@ -1,18 +1,48 @@
 import './skills-component.css'
 import { cvSkillsArrType, cvSkillsType } from '../../DATA/data-types'
-import { CSSProperties, useEffect, useRef, useState } from 'react'
+import { CSSProperties, MutableRefObject, RefObject, useCallback, useEffect, useRef, useState } from 'react'
 
 export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
+  const skillComponentRef = useRef<HTMLDivElement>(null!)
+
+  const [startIndicator, setStartIndicator] = useState(false)
+  const indicatorMaxLevel = useRef<HTMLSpanElement>(null)
+
+  const tresholds = {
+    observeEntryTreshold: 0.4,
+    observeLeaveTreshold: 0.2,
+  }
+
+  const intersectionCallback = useCallback((val: boolean) => {
+    setStartIndicator(val)
+  }, [])
+
+  useEffect(() => {
+    if (!skillComponentRef.current) return
+    const observer = new IntersectionObserver(observerCallBack, { threshold: tresholds.observeEntryTreshold, root: null, rootMargin: '0%' })
+    observer.observe(skillComponentRef.current)
+    return () => {
+      if (!skillComponentRef.current) return
+      observer.unobserve(skillComponentRef.current)
+    }
+  }, [])
+
+  const observerCallBack = (entries: any, observer: any) => {
+    const [entriesPoperties] = entries
+    if (entriesPoperties.intersectionRatio >= tresholds.observeEntryTreshold) return intersectionCallback(true)
+    intersectionCallback(false)
+  }
+
   return (
-    <div className='main-skills-container'>
+    <div ref={skillComponentRef} className='main-skills-container'>
       {skills?.map((skill, i) => (
-        <SkillTypesContainer key={`skill-${i}`} skill={skill} />
+        <SkillTypesContainer key={`skill-${i}`} startIndicator={startIndicator} skill={skill} />
       ))}
     </div>
   )
 }
 
-const SkillTypesContainer = ({ skill }: { skill: cvSkillsType }) => {
+const SkillTypesContainer = ({ skill, startIndicator }: { skill: cvSkillsType; startIndicator: boolean }) => {
   const { type, level, other } = skill
   const otherArray = other?.split(',')
 
@@ -27,7 +57,7 @@ const SkillTypesContainer = ({ skill }: { skill: cvSkillsType }) => {
               <div key={`items-${i}`} className='skill-type'>
                 <h3>{key}</h3>
                 {itemsArray.map((skillDetail, i) => (
-                  <Skill key={`items-${i}`} skillDetail={skillDetail} />
+                  <Skill key={`items-${i}`} startIndicator={startIndicator} skillDetail={skillDetail} />
                 ))}
               </div>
             )
@@ -46,29 +76,36 @@ const SkillTypesContainer = ({ skill }: { skill: cvSkillsType }) => {
   )
 }
 
-const Skill = ({ skillDetail }: { skillDetail: string }) => {
+const Skill = ({ skillDetail, startIndicator }: { skillDetail: string; startIndicator: boolean }) => {
   const [indicatorPercentsMax, setIndicatorPercentsMax] = useState<number>(0)
   const [indicatorLevel, setIndicatorLevel] = useState<number>(0)
   const [skillName, setSkillName] = useState<string>('')
-  const indicatorMaxLevel = useRef<HTMLSpanElement>(null)
+  const indicatorMaxLevel = useRef<HTMLSpanElement>(null!)
+  const timer: number = 6
 
   useEffect(() => {
-    let counter = 0
-    const intervalId = setInterval(() => {
+    let intervalId: NodeJS.Timer
+
+    if (startIndicator) {
+      let counter = 0
+      intervalId = setInterval(() => {
+        setIndicatorLevel(counter)
+        counter += 3
+        if (counter >= indicatorPercentsMax) {
+          clearInterval(intervalId)
+        }
+      }, timer)
+    } else {
+      let counter = 0
       setIndicatorLevel(counter)
-      counter += 3
-      if (counter >= indicatorPercentsMax) {
-        clearInterval(intervalId)
-      }
-    }, 6)
+    }
+
     return () => {
       clearInterval(intervalId)
     }
-  }, [indicatorPercentsMax])
+  }, [startIndicator])
 
   useEffect(() => {
-    if (!indicatorMaxLevel.current) return
-
     const [mySkill, percentage] = skillDetail.split('-')
     setSkillName(mySkill)
 

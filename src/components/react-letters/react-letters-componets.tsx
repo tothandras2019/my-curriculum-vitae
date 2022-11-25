@@ -8,7 +8,6 @@ export const Letters = ({ isColor = false, splitedWord }: { isColor?: boolean; s
 
   useEffect(() => {
     let wordsId: WordElementType = {}
-    console.log(startAnim)
     splitedWord.forEach((_, i) => (wordsId[`wo-${i}`] = false))
     setStartAnim(wordsId)
 

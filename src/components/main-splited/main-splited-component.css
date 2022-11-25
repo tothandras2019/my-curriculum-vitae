@@ -3,15 +3,15 @@ body {
   color: rgb(107, 107, 72);
 }
 body .App {
-  height: 100vh;
+  position: relative;
 }
 body main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
-  padding: 30px 0 30px 100px;
+  padding-left: 90px;
   margin-left: 15vw;
+  box-sizing: border-box;
 }
 body h1 {
   font-size: 50px;
@@ -31,8 +31,11 @@ body h5 {
 }
 
 .main-splited {
+  position: relative;
   display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  min-height: 100vh;
 }
 .main-splited.primary {
   background-color: #e5d8b3;

@@ -12,7 +12,7 @@ export const Article = ({ moveAxisValue }: { moveAxisValue: MoveAxisType }): JSX
         <div className='front'>
           <div className='rotate_child rotate-child_1'>
             <p>VS code</p>
-            <p>VS code</p>
+            <p>MUI</p>
           </div>
           <div className='rotate_child rotate-child_2'>
             <p>React js</p>

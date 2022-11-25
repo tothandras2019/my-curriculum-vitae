@@ -1,7 +1,9 @@
 @import './../../App.scss';
 
 .main-full {
+  position: relative;
   width: 85vw;
+  min-height: 100vh;
   .certification-container {
     display: flex;
     align-items: flex-start;

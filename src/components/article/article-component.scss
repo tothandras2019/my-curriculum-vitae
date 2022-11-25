@@ -84,14 +84,14 @@ $animation-duration-time: 15s;
     }
     @keyframes rotate-child {
       to {
-        transform: rotate3d(1, 2, 2, -$rotation-degrees);
+        transform: rotate3d(0, 0, 2, -$rotation-degrees);
       }
     }
   }
 
   @keyframes rotateObject {
     to {
-      transform: rotate3d(1, 2, 2, $rotation-degrees);
+      transform: rotate3d(0, 0, 2, $rotation-degrees);
     }
   }
 }

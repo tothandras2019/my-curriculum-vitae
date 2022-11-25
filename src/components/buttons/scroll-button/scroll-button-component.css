@@ -1,0 +1,14 @@
+.scroll {
+  position: fixed;
+  top: 90vh;
+  right: -25px;
+  transform: translateX(-50%);
+  max-width: 75px;
+  max-height: 75px;
+  min-width: 75px;
+  min-height: 75px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=scroll-button-component.css.map */

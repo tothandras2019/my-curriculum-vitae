@@ -1,8 +1,11 @@
 @import './../../App.scss';
 
 .main-splited {
+  position: relative;
   display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  min-height: 100vh;
 
   &.primary {
     background-color: $primary-color;
