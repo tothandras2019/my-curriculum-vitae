@@ -4,7 +4,7 @@ type MoveAxisType = { x: number; y: number }
 type RefObjectType = HTMLDivElement | Element
 export const Article = ({ moveAxisValue }: { moveAxisValue: MoveAxisType }): JSX.Element => {
   const { x, y } = moveAxisValue
-  const rotationElement = useRef<HTMLDivElement>(null!)
+  const rotationElement = useRef<HTMLDivElement | null>(null)
 
   return (
     <div className='article-container'>

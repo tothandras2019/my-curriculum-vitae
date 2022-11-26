@@ -19,7 +19,7 @@ input[type='button'] {
     transition: 0.5s;
   }
   &:active {
-    color: $additional-color;
-    background-color: $primary-color;
+    color: $primary-color;
+    background-color: $primary-dark-color;
   }
 }

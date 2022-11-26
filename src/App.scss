@@ -1,11 +1,13 @@
-$primary-color: #e5d8b3;
+$primary-color: #c0cbcb;
+$primary-dark-color: rgb(17, 39, 69);
 $secondary-color: rgb(107, 107, 72);
+$secondary-dark-color: rgb(6, 21, 42);
 $third-color: #eea243;
 $additional-color: rgb(4, 63, 119);
 
 body {
-  background-color: $primary-color;
-  color: $secondary-color;
+  background-color: $primary-dark-color;
+  color: $primary-color;
 
   .App {
     position: relative;

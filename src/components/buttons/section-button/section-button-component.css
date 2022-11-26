@@ -1,6 +1,6 @@
 body {
-  background-color: #e5d8b3;
-  color: rgb(107, 107, 72);
+  background-color: rgb(17, 39, 69);
+  color: #c0cbcb;
 }
 body .App {
   position: relative;
@@ -42,13 +42,13 @@ input[type=button] {
   z-index: 2000;
 }
 input[type=button]:hover {
-  color: #e5d8b3;
+  color: #c0cbcb;
   background-color: rgb(4, 63, 119);
   border: 2px solid transparent;
   letter-spacing: 1.1px;
   transition: 0.5s;
 }
 input[type=button]:active {
-  color: rgb(4, 63, 119);
-  background-color: #e5d8b3;
+  color: #c0cbcb;
+  background-color: rgb(17, 39, 69);
 }/*# sourceMappingURL=section-button-component.css.map */

@@ -1,22 +1,36 @@
 @import './../../App.scss';
 
 .descreption-container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  width: 50%;
+  width: 60%;
   gap: 20px;
+  transition: 0.8s;
+
   .descreption {
+    position: absolute;
     width: 100%;
     text-align: left;
     word-break: keep-all;
     word-spacing: 5px;
     line-height: 150%;
     transform: scale(0);
-    transition: all 0.5s;
+    transition: 0.8s;
+
     &.show {
-      transform: scale(1);
+      top: 30%;
+      animation-name: appear;
+      animation-duration: 0.8s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes appear {
+      to {
+        transform: scale(1);
+      }
     }
   }
 }

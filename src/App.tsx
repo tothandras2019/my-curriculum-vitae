@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import logo from './logo.svg'
 import './App.css'
@@ -23,6 +23,12 @@ Contact me*/
 function App(): JSX.Element {
   const location: string[] = ['certification', 'works', 'skills']
 
+  type CvObjectType = {
+    certification: CerfiticationsArrType[]
+    works: cvWorkingHistoryArrType[]
+    skills: cvSkillsArrType[]
+  }
+
   const locationObjectElements = {
     certification: 'certification',
     works: 'works',
@@ -35,38 +41,48 @@ function App(): JSX.Element {
   const cv_skills: cvSkillsArrType = CV_DATA.skills
 
   const [descreption, setDescreption] = useState('')
-  const [certifications, setCertifications] = useState<CerfiticationsArrType | null>([])
   const [allDetails, setAllDetails] = useState<string[]>([])
+
+  const [certifications, setCertifications] = useState<CerfiticationsArrType | null>([])
   const [workingdetail, setWorkingDetail] = useState<cvWorkingHistoryArrType | null>([])
   const [skills, setSkills] = useState<cvSkillsArrType>([])
-  const [locationObjectElementsState, setLocationObjectElementsState] = useState({})
-  const LocObje = {
-    certification: {},
-    works: {},
-    skills: {},
-  }
+  type updateState = Dispatch<SetStateAction<CvObjectType>>
+  const [locationObjectElementsState, setLocationObjectElementsState] = useState<updateState>((locationObjectElementsState) => ({
+    certification: [],
+    works: [],
+    skills: [],
+  }))
+
   useEffect(() => {
     setDescreption(cv_descreption)
     return () => {}
   }, [descreption])
   useEffect(() => {
     setCertifications(cv_certifications)
-    setLocationObjectElementsState((state) => ({ ...state, certification: cv_certifications }))
-
     return () => {}
   }, [cv_certifications])
+
   useEffect(() => {
     setWorkingDetail(cv_workings)
-    setLocationObjectElementsState((state) => ({ ...state, works: cv_workings }))
 
     return () => {}
   }, [cv_workings])
   useEffect(() => {
     setSkills(cv_skills)
-    setLocationObjectElementsState((state) => ({ ...state, skills: cv_skills }))
 
     return () => {}
   }, [cv_skills])
+
+  useEffect(() => {
+    if (certifications !== null) setLocationObjectElementsState(() => ({ ...locationObjectElementsState, certification: certifications }))
+    setLocationObjectElementsState(() => ({ ...locationObjectElementsState, works: workingdetail }))
+    setLocationObjectElementsState(() => ({ ...locationObjectElementsState, skills: skills }))
+    return () => {}
+  }, [certifications, workingdetail, skills])
+
+  useEffect(() => {
+    console.log(locationObjectElementsState)
+  }, [locationObjectElementsState])
 
   return (
     <div className='App'>
@@ -79,9 +95,9 @@ function App(): JSX.Element {
               <SinglePageAllComponent skills={skills} workingdetail={workingdetail} descreption={descreption} certifications={certifications} />
             }
           />
-          <Route path='/certification' element={<MainFullPage certifications={certifications} backgroundColor={null} />} />
-          <Route path='/works' element={<MainFullPage workingdetail={workingdetail} backgroundColor={null} />} />
-          <Route path='/skills' element={<MainFullPage skills={skills} backgroundColor={null} />} />
+          <Route path='/certification' element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} />} />
+          <Route path='/works' element={<MainFullPage workingdetail={workingdetail} backgroundColor={'primary'} />} />
+          <Route path='/skills' element={<MainFullPage skills={skills} backgroundColor={'secondary'} />} />
           {/* {locationObjectElementsState &&
             Object.entries(locationObjectElementsState).map(([key, value]) => (
               <Route path={`/${key}`} element={<MainFullPage elementObject={value} backgroundColor={null} />} />

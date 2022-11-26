@@ -3,12 +3,13 @@ import { MouseEvent, MouseEventHandler, useState, useEffect } from 'react'
 import './react-letters-components.css'
 
 type WordElementType = { [key: string]: boolean }
-export const Letters = ({ isColor = false, splitedWord }: { isColor?: boolean; splitedWord: string[] }): JSX.Element => {
-  const [startAnim, setStartAnim] = useState<WordElementType>({})
+export const Letters = ({ isColor = false, sentence, smaller }: { isColor?: boolean; sentence: string[][]; smaller: boolean }): JSX.Element => {
+  const [startAnim, setStartAnim] = useState<WordElementType>({} as WordElementType)
+  const [isSmallTitle, setIsSmallTitle] = useState(true)
 
   useEffect(() => {
     let wordsId: WordElementType = {}
-    splitedWord.forEach((_, i) => (wordsId[`wo-${i}`] = false))
+    sentence.forEach((_, i) => (wordsId[`wo-${i}`] = false))
     setStartAnim(wordsId)
 
     return () => {
@@ -19,22 +20,26 @@ export const Letters = ({ isColor = false, splitedWord }: { isColor?: boolean; s
   const handleOnMouseEnter = (event: MouseEvent<HTMLElement>) => {
     const newTarget = event.target as HTMLElement
     const woId = newTarget.id
-
     setStartAnim((prev) => ({ ...prev, [woId]: true }))
     setTimeout(() => {
       setStartAnim((prev) => ({ ...prev, [woId]: false }))
     }, 700)
   }
-
   return (
-    <span className='title'>
-      {splitedWord.map((letter, i) => (
-        <span key={`letter-${i}`} className={`parent-span`} onMouseEnter={handleOnMouseEnter}>
-          <p id={`wo-${i}`} className={`${startAnim[`wo-${i}`] ? 'letter-bounces' : ''}`}>
-            {letter}
-          </p>
-        </span>
-      ))}
+    <span className={`title ${smaller ? 'smaller' : ''}`}>
+      {sentence.map((words, i) => {
+        return (
+          <div key={`words-${i}`} className='word-container'>
+            {words.map((word, j) => (
+              <span key={`word-${i}${j}`} className={`parent-span`} onMouseEnter={handleOnMouseEnter}>
+                <p id={`wo-${i}${j}`} className={`${startAnim[`wo-${i}${j}`] ? 'letter-bounces' : ''}`}>
+                  {word}
+                </p>
+              </span>
+            ))}
+          </div>
+        )
+      })}
     </span>
   )
 }

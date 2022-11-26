@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body {
-  background-color: #e5d8b3;
-  color: rgb(107, 107, 72);
+  background-color: rgb(17, 39, 69);
+  color: #c0cbcb;
 }
 body .App {
   position: relative;
@@ -73,10 +73,10 @@ body h5 {
   transition: 0.4s;
 }
 .main-full.primary {
-  background-color: #e5d8b3;
+  background-color: rgb(17, 39, 69);
   color: rgb(107, 107, 72);
 }
 .main-full.secondary {
-  background-color: rgb(107, 107, 72);
-  color: #e5d8b3;
+  background-color: rgb(6, 21, 42);
+  color: #c0cbcb;
 }/*# sourceMappingURL=main-full-component.css.map */

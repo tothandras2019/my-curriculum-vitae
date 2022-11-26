@@ -3,10 +3,8 @@ import { cvSkillsArrType, cvSkillsType } from '../../DATA/data-types'
 import { CSSProperties, MutableRefObject, RefObject, useCallback, useEffect, useRef, useState } from 'react'
 
 export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
-  const skillComponentRef = useRef<HTMLDivElement>(null!)
-
+  const skillComponentRef = useRef<HTMLDivElement | null>(null)
   const [startIndicator, setStartIndicator] = useState(false)
-  const indicatorMaxLevel = useRef<HTMLSpanElement>(null)
 
   const tresholds = {
     observeEntryTreshold: 0.4,
@@ -80,7 +78,7 @@ const Skill = ({ skillDetail, startIndicator }: { skillDetail: string; startIndi
   const [indicatorPercentsMax, setIndicatorPercentsMax] = useState<number>(0)
   const [indicatorLevel, setIndicatorLevel] = useState<number>(0)
   const [skillName, setSkillName] = useState<string>('')
-  const indicatorMaxLevel = useRef<HTMLSpanElement>(null!)
+  const indicatorMaxLevel = useRef<HTMLSpanElement | null>(null)
   const timer: number = 6
 
   useEffect(() => {
@@ -109,9 +107,11 @@ const Skill = ({ skillDetail, startIndicator }: { skillDetail: string; startIndi
     const [mySkill, percentage] = skillDetail.split('-')
     setSkillName(mySkill)
 
-    const clientWidthElement = indicatorMaxLevel.current.clientWidth
-    const percentInPicxels = clientWidthElement * (parseInt(percentage) / 100)
-    setIndicatorPercentsMax(percentInPicxels)
+    if (indicatorMaxLevel.current) {
+      const clientWidthElement = indicatorMaxLevel.current.clientWidth
+      const percentInPicxels = clientWidthElement * (parseInt(percentage) / 100)
+      setIndicatorPercentsMax(percentInPicxels)
+    }
 
     return () => {}
   }, [])

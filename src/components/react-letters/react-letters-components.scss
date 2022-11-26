@@ -3,40 +3,57 @@
 
 .title {
   font-family: 'Russo One', sans-serif;
-  font-size: 70px;
   min-width: 600px;
   display: flex;
+  flex-direction: column;
+  font-size: 170px;
+  // transition: 0.5s;
+  z-index: 1;
 
-  .parent-span {
-    transition: 0.5s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: 0.5s;
-
-    p {
-      transition: 0.5s;
-      min-width: 20px;
-
-      &.letter-bounces {
-        text-shadow: 10px 10px 7px $additional-color;
-        animation-name: pinting;
-        animation-duration: 0.7s;
-      }
+  //have to add to title!
+  &.smaller {
+    flex-direction: row;
+    font-size: 70px;
+    // transition: 0.5s;
+    .word-container {
+      gap: 5px;
     }
+  }
 
-    @keyframes pinting {
-      50% {
-        transform: rotateX(60deg);
+  .word-container {
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+    .parent-span {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // transition: 0.5s;
+
+      p {
+        transition: 0.5s;
+        min-width: 30px;
+
+        &.letter-bounces {
+          text-shadow: 10px 10px 7px $additional-color;
+          animation-name: pinting;
+          animation-duration: 0.7s;
+        }
       }
-      70% {
-        transform: rotateX(10deg);
-      }
-      80% {
-        transform: rotateX(40deg);
-      }
-      100% {
-        transform: rotateX(0deg);
+
+      @keyframes pinting {
+        50% {
+          transform: rotateX(60deg);
+        }
+        70% {
+          transform: rotateX(10deg);
+        }
+        80% {
+          transform: rotateX(40deg);
+        }
+        100% {
+          transform: rotateX(0deg);
+        }
       }
     }
   }
