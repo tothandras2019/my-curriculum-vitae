@@ -21,7 +21,7 @@ export const Descreption = ({ welcome = 'Hi. I`am András!', descreption }: { we
     <div className='descreption-container'>
       <SectionButton onHandleShowDescription={onHandleShowDescription} />
       <Letters sentence={welcomeState} smaller={hideDescreption} />
-      <p className={`descreption ${hideDescreption ? 'show' : ''}`}>{descreption}</p>
+      <p className={`descreption ${hideDescreption ? 'show' : 'hide'}`}>{descreption}</p>
       <a href=''>lets talk!</a>
     </div>
   )

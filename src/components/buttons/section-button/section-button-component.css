@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(17, 39, 69);
+  background-color: rgb(7, 27, 54);
   color: #c0cbcb;
 }
 body .App {
@@ -10,7 +10,7 @@ body main {
   flex-direction: column;
   justify-content: center;
   padding-left: 90px;
-  margin-left: 15vw;
+  margin-left: 12vw;
   box-sizing: border-box;
 }
 body h1 {
@@ -28,6 +28,16 @@ body h4 {
 }
 body h5 {
   font-size: 20px;
+}
+
+.primary {
+  background-color: rgb(7, 27, 54);
+  color: rgb(107, 107, 72);
+}
+
+.secondary {
+  background-color: rgb(7, 27, 54);
+  color: #c0cbcb;
 }
 
 input[type=button] {
@@ -50,5 +60,5 @@ input[type=button]:hover {
 }
 input[type=button]:active {
   color: #c0cbcb;
-  background-color: rgb(17, 39, 69);
+  background-color: rgb(7, 27, 54);
 }/*# sourceMappingURL=section-button-component.css.map */

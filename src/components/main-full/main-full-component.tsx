@@ -20,7 +20,7 @@ type MainPropsType = {
   backgroundColor: string | null
 }
 
-export const MainFullPage = ({ elementObject, workingdetail, certifications, skills, backgroundColor = 'primary' }: MainPropsType): JSX.Element => {
+export const MainFullPage = ({ elementObject, workingdetail, certifications, skills, backgroundColor = 'secondary' }: MainPropsType): JSX.Element => {
   // console.log(elementObject)
 
   const { backgroundItem } = useContext(BackgroundContext)

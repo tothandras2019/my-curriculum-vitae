@@ -2,17 +2,17 @@ import { createContext, useState, Dispatch, SetStateAction } from 'react'
 
 //type
 type NavitemsType = {
-  [key: string]: string
+  [key: string]: string[]
 }
 
 //initial value
 export const NavigationItems: NavitemsType[] = [
-  { about: 'About me' },
-  { certification: 'Certifications' },
-  { works: 'Works' },
-  { skills: 'My skills' },
-  { knowme: 'Good to know' },
-  { contact: 'Contact me' },
+  { about: ['About me', 'account_circle'] },
+  { certification: ['Certifications', 'history_edu'] },
+  { works: ['Works', 'engineering'] },
+  { skills: ['My skills', 'wb_sunny'] },
+  { knowme: ['Good to know', 'info'] },
+  { contact: ['Contact me', 'contact_page'] },
 ]
 
 //update-Dispatch-defaultUpdate-SetStateAction

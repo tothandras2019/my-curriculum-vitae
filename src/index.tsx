@@ -5,6 +5,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { NavigationContextProvider } from './components/contexts/navigation-context'
 import { BackgroundContextProvider } from './components/contexts/theme-context'
+import { HideMenuContextProvider } from './components/contexts/navigation-hide-context'
 import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
@@ -12,9 +13,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <BackgroundContextProvider>
-        <NavigationContextProvider>
-          <App />
-        </NavigationContextProvider>
+        <HideMenuContextProvider>
+          <NavigationContextProvider>
+            <App />
+          </NavigationContextProvider>
+        </HideMenuContextProvider>
       </BackgroundContextProvider>
     </BrowserRouter>
   </React.StrictMode>,

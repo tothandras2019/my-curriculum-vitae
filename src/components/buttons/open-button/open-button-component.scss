@@ -1,0 +1,10 @@
+@import './../../../App.scss';
+
+.open-button {
+  min-width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  color: $third-color;
+  font-size: 40px;
+}

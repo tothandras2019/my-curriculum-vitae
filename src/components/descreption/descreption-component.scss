@@ -17,19 +17,39 @@
     word-break: keep-all;
     word-spacing: 5px;
     line-height: 150%;
-    transform: scale(0);
+    animation-duration: 1.6s;
+    animation-fill-mode: both;
+
+    top: 100%;
+    color: transparent;
     transition: 0.8s;
 
     &.show {
-      top: 30%;
       animation-name: appear;
-      animation-duration: 0.8s;
-      animation-fill-mode: forwards;
+    }
+
+    &.hide {
+      animation-name: hideElement;
     }
 
     @keyframes appear {
+      from {
+        top: 100%;
+        color: transparent;
+      }
       to {
-        transform: scale(1);
+        top: 30%;
+        color: $primary-color;
+      }
+    }
+    @keyframes hideElement {
+      // from {
+      //   top: 30%;
+      //   color: $primary-color;
+      // }
+      to {
+        top: 100%;
+        color: transparent;
       }
     }
   }

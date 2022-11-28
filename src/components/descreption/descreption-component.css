@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(17, 39, 69);
+  background-color: rgb(7, 27, 54);
   color: #c0cbcb;
 }
 body .App {
@@ -10,7 +10,7 @@ body main {
   flex-direction: column;
   justify-content: center;
   padding-left: 90px;
-  margin-left: 15vw;
+  margin-left: 12vw;
   box-sizing: border-box;
 }
 body h1 {
@@ -30,6 +30,16 @@ body h5 {
   font-size: 20px;
 }
 
+.primary {
+  background-color: rgb(7, 27, 54);
+  color: rgb(107, 107, 72);
+}
+
+.secondary {
+  background-color: rgb(7, 27, 54);
+  color: #c0cbcb;
+}
+
 .descreption-container {
   position: relative;
   display: flex;
@@ -47,17 +57,31 @@ body h5 {
   word-break: keep-all;
   word-spacing: 5px;
   line-height: 150%;
-  transform: scale(0);
+  animation-duration: 1.6s;
+  animation-fill-mode: both;
+  top: 100%;
+  color: transparent;
   transition: 0.8s;
 }
 .descreption-container .descreption.show {
-  top: 30%;
   animation-name: appear;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
+}
+.descreption-container .descreption.hide {
+  animation-name: hideElement;
 }
 @keyframes appear {
+  from {
+    top: 100%;
+    color: transparent;
+  }
   to {
-    transform: scale(1);
+    top: 30%;
+    color: #c0cbcb;
+  }
+}
+@keyframes hideElement {
+  to {
+    top: 100%;
+    color: transparent;
   }
 }/*# sourceMappingURL=descreption-component.css.map */

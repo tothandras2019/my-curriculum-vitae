@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background-color: rgb(17, 39, 69);
+  background-color: rgb(7, 27, 54);
   color: #c0cbcb;
 }
 body .App {
@@ -11,7 +11,7 @@ body main {
   flex-direction: column;
   justify-content: center;
   padding-left: 90px;
-  margin-left: 15vw;
+  margin-left: 12vw;
   box-sizing: border-box;
 }
 body h1 {
@@ -29,6 +29,16 @@ body h4 {
 }
 body h5 {
   font-size: 20px;
+}
+
+.primary {
+  background-color: rgb(7, 27, 54);
+  color: rgb(107, 107, 72);
+}
+
+.secondary {
+  background-color: rgb(7, 27, 54);
+  color: #c0cbcb;
 }
 
 .main-full {
@@ -71,12 +81,4 @@ body h5 {
   height: 44px;
   line-height: 110%;
   transition: 0.4s;
-}
-.main-full.primary {
-  background-color: rgb(17, 39, 69);
-  color: rgb(107, 107, 72);
-}
-.main-full.secondary {
-  background-color: rgb(6, 21, 42);
-  color: #c0cbcb;
 }/*# sourceMappingURL=main-full-component.css.map */

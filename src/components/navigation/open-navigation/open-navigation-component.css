@@ -38,4 +38,22 @@ body h5 {
 .secondary {
   background-color: rgb(7, 27, 54);
   color: #c0cbcb;
-}/*# sourceMappingURL=App.css.map */
+}
+
+.side-open-menu {
+  min-height: 300px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+  border-right: 1px solid rgb(6, 21, 42);
+  background-color: rgb(6, 21, 42);
+}
+.side-open-menu:hover {
+  background-color: rgb(7, 27, 54);
+}
+.side-open-menu:hover .open-button {
+  color: #c0cbcb;
+}/*# sourceMappingURL=open-navigation-component.css.map */

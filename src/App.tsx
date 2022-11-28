@@ -11,6 +11,7 @@ import { MainFullPage } from './components/main-full/main-full-component'
 import { CerfiticationsArrType, cvSkillsArrType, cvWorkingHistoryArrType } from './DATA/data-types'
 import { Skills } from './components/skills/skills-component'
 import { ScrollButton } from './components/buttons/scroll-button/scroll-button-component'
+import { Article } from './components/article/article-component'
 
 /*components: 
 About me {Personal, Carrier-objectives}, 
@@ -86,6 +87,7 @@ function App(): JSX.Element {
 
   return (
     <div className='App'>
+      <Article />
       <Routes>
         <Route element={<Naviation />}>
           <Route
@@ -96,12 +98,8 @@ function App(): JSX.Element {
             }
           />
           <Route path='/certification' element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} />} />
-          <Route path='/works' element={<MainFullPage workingdetail={workingdetail} backgroundColor={'primary'} />} />
+          <Route path='/works' element={<MainFullPage workingdetail={workingdetail} backgroundColor={'secondary'} />} />
           <Route path='/skills' element={<MainFullPage skills={skills} backgroundColor={'secondary'} />} />
-          {/* {locationObjectElementsState &&
-            Object.entries(locationObjectElementsState).map(([key, value]) => (
-              <Route path={`/${key}`} element={<MainFullPage elementObject={value} backgroundColor={null} />} />
-            ))} */}
         </Route>
       </Routes>
       <ScrollButton />

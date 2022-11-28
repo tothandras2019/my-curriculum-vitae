@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(17, 39, 69);
+  background-color: rgb(7, 27, 54);
   color: #c0cbcb;
 }
 body .App {
@@ -10,7 +10,7 @@ body main {
   flex-direction: column;
   justify-content: center;
   padding-left: 90px;
-  margin-left: 15vw;
+  margin-left: 12vw;
   box-sizing: border-box;
 }
 body h1 {
@@ -30,20 +30,34 @@ body h5 {
   font-size: 20px;
 }
 
+.primary {
+  background-color: rgb(7, 27, 54);
+  color: rgb(107, 107, 72);
+}
+
+.secondary {
+  background-color: rgb(7, 27, 54);
+  color: #c0cbcb;
+}
+
 .article-container {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   transform-style: preserve-3d;
   filter: blur(0.8px);
   font-size: larger;
   font-weight: 800;
   color: rgb(4, 63, 119);
+  z-index: 1;
 }
 .article-container div {
-  animation-duration: 15s;
+  animation-duration: 40s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   perspective-origin: center;
@@ -54,7 +68,7 @@ body h5 {
 }
 .article-container .roation-container {
   position: absolute;
-  height: 300px;
+  height: 700px;
   transform-origin: center;
   animation-name: rotateObject;
   transform-style: preserve-3d;
@@ -68,7 +82,7 @@ body h5 {
 }
 @keyframes fontIncrease {
   to {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 .article-container .roation-container .rotate-child_1 {

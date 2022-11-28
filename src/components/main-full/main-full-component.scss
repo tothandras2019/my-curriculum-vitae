@@ -46,13 +46,4 @@
       }
     }
   }
-
-  &.primary {
-    background-color: $primary-dark-color;
-    color: $secondary-color;
-  }
-  &.secondary {
-    background-color: $secondary-dark-color;
-    color: $primary-color;
-  }
 }

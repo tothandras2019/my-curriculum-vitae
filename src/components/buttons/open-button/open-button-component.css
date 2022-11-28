@@ -38,4 +38,12 @@ body h5 {
 .secondary {
   background-color: rgb(7, 27, 54);
   color: #c0cbcb;
-}/*# sourceMappingURL=App.css.map */
+}
+
+.open-button {
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #eea243;
+  font-size: 40px;
+}/*# sourceMappingURL=open-button-component.css.map */

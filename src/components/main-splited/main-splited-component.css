@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(17, 39, 69);
+  background-color: rgb(7, 27, 54);
   color: #c0cbcb;
 }
 body .App {
@@ -10,7 +10,7 @@ body main {
   flex-direction: column;
   justify-content: center;
   padding-left: 90px;
-  margin-left: 15vw;
+  margin-left: 12vw;
   box-sizing: border-box;
 }
 body h1 {
@@ -30,18 +30,20 @@ body h5 {
   font-size: 20px;
 }
 
+.primary {
+  background-color: rgb(7, 27, 54);
+  color: rgb(107, 107, 72);
+}
+
+.secondary {
+  background-color: rgb(7, 27, 54);
+  color: #c0cbcb;
+}
+
 .main-splited {
   position: relative;
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
   min-height: 100vh;
-}
-.main-splited.primary {
-  background-color: rgb(17, 39, 69);
-  color: rgb(107, 107, 72);
-}
-.main-splited.secondary {
-  background-color: rgb(6, 21, 42);
-  color: #c0cbcb;
 }/*# sourceMappingURL=main-splited-component.css.map */

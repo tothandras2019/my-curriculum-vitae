@@ -2,8 +2,7 @@ import './article-component.css'
 import { useRef, useEffect, MutableRefObject } from 'react'
 type MoveAxisType = { x: number; y: number }
 type RefObjectType = HTMLDivElement | Element
-export const Article = ({ moveAxisValue }: { moveAxisValue: MoveAxisType }): JSX.Element => {
-  const { x, y } = moveAxisValue
+export const Article = ({ moveAxisValue }: { moveAxisValue?: MoveAxisType }): JSX.Element => {
   const rotationElement = useRef<HTMLDivElement | null>(null)
 
   return (

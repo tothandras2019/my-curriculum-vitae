@@ -3,9 +3,18 @@ import { MouseEvent, MouseEventHandler, useState, useEffect } from 'react'
 import './react-letters-components.css'
 
 type WordElementType = { [key: string]: boolean }
-export const Letters = ({ isColor = false, sentence, smaller }: { isColor?: boolean; sentence: string[][]; smaller: boolean }): JSX.Element => {
+export const Letters = ({
+  isColor = false,
+  sentence,
+  smaller = false,
+}: {
+  isColor?: boolean
+  sentence: string[][]
+  smaller: boolean
+}): JSX.Element => {
   const [startAnim, setStartAnim] = useState<WordElementType>({} as WordElementType)
   const [isSmallTitle, setIsSmallTitle] = useState(true)
+  const prevLength: number = 0
 
   useEffect(() => {
     let wordsId: WordElementType = {}
@@ -26,7 +35,7 @@ export const Letters = ({ isColor = false, sentence, smaller }: { isColor?: bool
     }, 700)
   }
   return (
-    <span className={`title ${smaller ? 'smaller' : ''}`}>
+    <span className={`title ${smaller ? 'smaller' : 'larger'}`}>
       {sentence.map((words, i) => {
         return (
           <div key={`words-${i}`} className='word-container'>
@@ -43,3 +52,4 @@ export const Letters = ({ isColor = false, sentence, smaller }: { isColor?: bool
     </span>
   )
 }
+// style={{ left: `${length * 100}px` }}

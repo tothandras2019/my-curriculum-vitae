@@ -6,13 +6,4 @@
   flex-direction: row;
   box-sizing: border-box;
   min-height: 100vh;
-
-  &.primary {
-    background-color: $primary-dark-color;
-    color: $secondary-color;
-  }
-  &.secondary {
-    background-color: $secondary-dark-color;
-    color: $primary-color;
-  }
 }
