@@ -22,6 +22,7 @@ export const SinglePageAllComponent = ({
       <MainFullPage certifications={certifications} backgroundColor={background.secondary} />
       <MainFullPage workingdetail={workingdetail} backgroundColor={background.secondary} />
       <MainFullPage skills={skills} backgroundColor={background.secondary} />
+      <MainFullPage contact={true} backgroundColor={background.secondary} />
     </Fragment>
   )
 }

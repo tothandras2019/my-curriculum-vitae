@@ -1,6 +1,7 @@
 import './skills-component.css'
 import { cvSkillsArrType, cvSkillsType } from '../../DATA/data-types'
 import { CSSProperties, MutableRefObject, RefObject, useCallback, useEffect, useRef, useState } from 'react'
+import { Letters } from '../react-letters/react-letters-componets'
 
 export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
   const skillComponentRef = useRef<HTMLDivElement | null>(null)
@@ -34,7 +35,10 @@ export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
   return (
     <div ref={skillComponentRef} className='main-skills-container'>
       {skills?.map((skill, i) => (
-        <SkillTypesContainer key={`skill-${i}`} startIndicator={startIndicator} skill={skill} />
+        <>
+          <Letters key={`skills-letter-${i}`} sentence='Skills' smaller={true} />
+          <SkillTypesContainer key={`skill-${i}`} startIndicator={startIndicator} skill={skill} />
+        </>
       ))}
     </div>
   )
@@ -42,6 +46,7 @@ export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
 
 const SkillTypesContainer = ({ skill, startIndicator }: { skill: cvSkillsType; startIndicator: boolean }) => {
   const { type, level, other } = skill
+
   const otherArray = other?.split(',')
 
   return (

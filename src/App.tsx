@@ -87,7 +87,7 @@ function App(): JSX.Element {
 
   return (
     <div className='App'>
-      <Article />
+      {/* <Article /> */}
       <Routes>
         <Route element={<Naviation />}>
           <Route
@@ -100,6 +100,7 @@ function App(): JSX.Element {
           <Route path='/certification' element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} />} />
           <Route path='/works' element={<MainFullPage workingdetail={workingdetail} backgroundColor={'secondary'} />} />
           <Route path='/skills' element={<MainFullPage skills={skills} backgroundColor={'secondary'} />} />
+          <Route path='/contact' element={<MainFullPage contact={true} backgroundColor={'secondary'} />} />
         </Route>
       </Routes>
       <ScrollButton />

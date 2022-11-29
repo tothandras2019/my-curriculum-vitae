@@ -107,7 +107,7 @@
     {
       "type": "Hard skills",
       "level": {
-        "higher level": "Javascript-80,HTML-85,CSS-80,SCSS-75,React.js-65,Typescript-40, Git-70,VS Code-100",
+        "higher level": "Javascript-80,HTML-85,CSS-80,SCSS-75,React.js-65,Typescript-40, GitHub-70,VS Code-100",
         "middle level": "Material UI-30,Tailwind-20,Express.js-40",
         "earlier learnt": "Java SE6/EE-10,Unity C Sharp-50"
       },

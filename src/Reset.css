@@ -162,10 +162,11 @@ h2 {
   font-size: 30px;
 }
 
-input[type='button'] {
+input {
   padding: 0;
   margin: 0;
   border: none;
+  background: transparent;
 }
 
 button {

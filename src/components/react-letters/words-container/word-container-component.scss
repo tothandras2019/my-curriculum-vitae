@@ -1,0 +1,51 @@
+@import './../../../App.scss';
+
+.word-container {
+  position: absolute;
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+
+  .parent-span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: scaleX(0);
+    animation-name: increaseToAppar;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+    @keyframes increaseToAppar {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    p {
+      transition: 0.5s;
+      min-width: 30px;
+
+      &.letter-bounces {
+        text-shadow: 10px 10px 7px $additional-color;
+        animation-name: pinting;
+        animation-duration: 0.7s;
+      }
+    }
+
+    @keyframes pinting {
+      50% {
+        transform: rotateX(60deg) scaleX(1.5);
+      }
+      70% {
+        transform: rotateX(10deg) scaleX(1.1);
+      }
+      80% {
+        transform: rotateX(40deg) scaleX(1.4);
+      }
+      100% {
+        transform: rotateX(0deg) scaleX(1);
+      }
+    }
+  }
+}

@@ -11,6 +11,8 @@ import { BackgroundContext } from './../contexts/theme-context'
 import { Skills } from '../skills/skills-component'
 import { SectionButton } from '../buttons/section-button/section-button-component'
 import { ScrollButton } from '../buttons/scroll-button/scroll-button-component'
+import { Contact } from '../contact/contact-component'
+import { Letters } from '../react-letters/react-letters-componets'
 
 type MainPropsType = {
   workingdetail?: cvWorkingHistoryArrType | null
@@ -18,9 +20,17 @@ type MainPropsType = {
   skills?: cvSkillsArrType | null
   elementObject?: any
   backgroundColor: string | null
+  contact?: boolean | null
 }
 
-export const MainFullPage = ({ elementObject, workingdetail, certifications, skills, backgroundColor = 'secondary' }: MainPropsType): JSX.Element => {
+export const MainFullPage = ({
+  contact,
+  elementObject,
+  workingdetail,
+  certifications,
+  skills,
+  backgroundColor = 'secondary',
+}: MainPropsType): JSX.Element => {
   // console.log(elementObject)
 
   const { backgroundItem } = useContext(BackgroundContext)
@@ -49,6 +59,7 @@ export const MainFullPage = ({ elementObject, workingdetail, certifications, ski
         />
       ))}
       {skills && <Skills skills={skills} />}
+      {contact && <Contact />}
     </main>
   )
 }
@@ -66,7 +77,7 @@ const WorkingDetails = ({ date, position, enterprice, role_descreption, index }:
       <div className='details-container'>
         <h2>{position}</h2>
         <h3>{enterprice}</h3>
-        <SectionButton onHandleShowDescription={onHandleShowDescription} />
+        <SectionButton onHandler={onHandleShowDescription} />
 
         <ul className={showDetails ? 'show' : ''}>
           {role_descreption?.split('.').map((sentence, i) => (
@@ -91,7 +102,7 @@ const CertificationDetails = ({ date, certification_title, place, document, deta
       <div className='details-container'>
         <h2>{certification_title}</h2>
         <h3>{place}</h3>
-        <SectionButton onHandleShowDescription={onHandleShowDescription} />
+        <SectionButton onHandler={onHandleShowDescription} />
 
         <ul className={showDetails ? 'show' : ''}>
           {details?.split('.').map((sentence, i) => (

@@ -88,7 +88,9 @@ aside .aside-container .navigation-container {
 aside .aside-container .social-container {
   flex-direction: row;
   justify-content: center;
+  align-items: flex-end;
   align-self: center;
+  height: 100px;
   gap: 10px;
   transition: 0.5s;
 }

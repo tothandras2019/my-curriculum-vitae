@@ -40,7 +40,8 @@ body h5 {
   color: #c0cbcb;
 }
 
-input[type=button] {
+input[type=button],
+input[type=submit] {
   background-color: transparent;
   width: fit-content;
   border-radius: 50px;
@@ -49,16 +50,19 @@ input[type=button] {
   padding: 0px 10px;
   margin-top: 10px;
   transition: 0.5s;
+  padding: 5px 10px;
   z-index: 2000;
 }
-input[type=button]:hover {
+input[type=button]:hover,
+input[type=submit]:hover {
   color: #c0cbcb;
   background-color: rgb(4, 63, 119);
   border: 2px solid transparent;
   letter-spacing: 1.1px;
   transition: 0.5s;
 }
-input[type=button]:active {
+input[type=button]:active,
+input[type=submit]:active {
   color: #c0cbcb;
   background-color: rgb(7, 27, 54);
 }/*# sourceMappingURL=section-button-component.css.map */

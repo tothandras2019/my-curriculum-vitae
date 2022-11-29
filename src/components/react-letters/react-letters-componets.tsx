@@ -1,24 +1,34 @@
 import { spawn } from 'child_process'
 import { MouseEvent, MouseEventHandler, useState, useEffect } from 'react'
 import './react-letters-components.css'
+import { Words } from './words-container/words-container-component'
 
 type WordElementType = { [key: string]: boolean }
 export const Letters = ({
   isColor = false,
-  sentence,
+  sentence = 'My name is András',
   smaller = false,
 }: {
   isColor?: boolean
-  sentence: string[][]
+  sentence?: string
   smaller: boolean
 }): JSX.Element => {
   const [startAnim, setStartAnim] = useState<WordElementType>({} as WordElementType)
   const [isSmallTitle, setIsSmallTitle] = useState(true)
-  const prevLength: number = 0
+  const [sentenceMod, setSentenceMod] = useState<string[][]>([])
+  const [wordDistance, setWordDistance] = useState<number>(0)
+  let prevLength = 0
+  const constansDistance = 278
 
   useEffect(() => {
     let wordsId: WordElementType = {}
-    sentence.forEach((_, i) => (wordsId[`wo-${i}`] = false))
+    const wordArr = sentence.split(' ')
+    setWordDistance(wordArr.length / sentence.length)
+    const splitedSentence = wordArr.map((word) => word.split(''))
+
+    setSentenceMod(splitedSentence)
+
+    sentenceMod.forEach((_, i) => (wordsId[`wo-${i}`] = false))
     setStartAnim(wordsId)
 
     return () => {
@@ -35,21 +45,12 @@ export const Letters = ({
     }, 700)
   }
   return (
-    <span className={`title ${smaller ? 'smaller' : 'larger'}`}>
-      {sentence.map((words, i) => {
-        return (
-          <div key={`words-${i}`} className='word-container'>
-            {words.map((word, j) => (
-              <span key={`word-${i}${j}`} className={`parent-span`} onMouseEnter={handleOnMouseEnter}>
-                <p id={`wo-${i}${j}`} className={`${startAnim[`wo-${i}${j}`] ? 'letter-bounces' : ''}`}>
-                  {word}
-                </p>
-              </span>
-            ))}
-          </div>
-        )
+    <span className={`title ${smaller ? 'smaller' : ''}`}>
+      {sentenceMod.map((words, i) => {
+        const transLeft = { left: `${prevLength * wordDistance * constansDistance}px` }
+        prevLength += words.length
+        return <Words key={`words-${i}-all`} words={words} index={i} translateObject={transLeft} startAnim={startAnim} handler={handleOnMouseEnter} />
       })}
     </span>
   )
 }
-// style={{ left: `${length * 100}px` }}

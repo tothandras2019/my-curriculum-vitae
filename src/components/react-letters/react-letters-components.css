@@ -45,22 +45,11 @@ body h5 {
   position: relative;
   font-family: "Russo One", sans-serif;
   min-width: 600px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
-  font-size: 190px;
+  font-size: 70px;
   z-index: 1;
-}
-.title .word-container:nth-child(1) {
-  top: 0;
-  left: 0px;
-}
-.title .word-container:nth-child(2) {
-  top: 200px;
-  left: 0px;
-}
-.title .word-container:nth-child(3) {
-  top: 400px;
-  left: 0px;
 }
 .title.larger .word-container:nth-child(1) {
   animation: 0.8s linear forwards titleLarger;
@@ -88,15 +77,6 @@ body h5 {
     left: 0px;
   }
 }
-.title .word-container:nth-child(1) {
-  animation: 0.6s linear forwards titleSmaller;
-}
-.title .word-container:nth-child(2) {
-  animation: 0.6s ease-in-out forwards titleSmaller, 1.1s linear forwards child_2;
-}
-.title .word-container:nth-child(3) {
-  animation: 0.6s ease-in-out forwards titleSmaller, 1.1s ease-in-out forwards child_3;
-}
 .title.smaller {
   position: relative;
 }
@@ -104,18 +84,10 @@ body h5 {
   animation: 0.6s ease-in-out forwards titleSmaller;
 }
 .title.smaller .word-container:nth-child(2) {
-  animation: 0.6s ease-in-out forwards titleSmaller, 1.1s ease-out forwards 0.2s child_2;
+  animation: 0.6s ease-in-out forwards titleSmaller;
 }
 .title.smaller .word-container:nth-child(3) {
-  animation: 0.6s ease-in-out forwards titleSmaller, 1.1s ease-in-out forwards 0.2s child_3;
-}
-@keyframes titleSmaller {
-  from {
-    font-size: 190px;
-  }
-  to {
-    font-size: 70px;
-  }
+  animation: 0.6s ease-in-out forwards titleSmaller;
 }
 @keyframes child_2 {
   from {
@@ -135,39 +107,5 @@ body h5 {
   to {
     top: 0;
     left: 350px;
-  }
-}
-.title .word-container {
-  position: absolute;
-  display: flex;
-  margin: 10px;
-  gap: 10px;
-}
-.title .word-container .parent-span {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.title .word-container .parent-span p {
-  transition: 0.5s;
-  min-width: 30px;
-}
-.title .word-container .parent-span p.letter-bounces {
-  text-shadow: 10px 10px 7px rgb(4, 63, 119);
-  animation-name: pinting;
-  animation-duration: 0.7s;
-}
-@keyframes pinting {
-  50% {
-    transform: rotateX(60deg);
-  }
-  70% {
-    transform: rotateX(10deg);
-  }
-  80% {
-    transform: rotateX(40deg);
-  }
-  100% {
-    transform: rotateX(0deg);
   }
 }/*# sourceMappingURL=react-letters-components.css.map */

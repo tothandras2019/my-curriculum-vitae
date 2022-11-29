@@ -1,4 +1,13 @@
+import { SyntheticEvent } from 'react'
 import './section-button-component.css'
-export const SectionButton = ({ onHandleShowDescription }: { onHandleShowDescription: () => void }): JSX.Element => {
-  return <input type='button' value='show more' onClick={onHandleShowDescription} />
+export const SectionButton = ({
+  type = 'button',
+  value = 'show more',
+  onHandler,
+}: {
+  type?: string
+  value?: string
+  onHandler: (T: SyntheticEvent) => void
+}): JSX.Element => {
+  return <input type={type} value={value} onClick={onHandler} />
 }
