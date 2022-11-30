@@ -40,6 +40,10 @@ body h5 {
   color: #c0cbcb;
 }
 
+path {
+  fill: #eea243;
+}
+
 aside {
   position: fixed;
   display: flex;
@@ -76,14 +80,13 @@ aside .aside-container .img-place img {
 aside .aside-container .navigation-container,
 aside .aside-container .social-container {
   display: flex;
-  align-items: flex-start;
 }
 aside .aside-container .navigation-container {
   height: 50%;
   width: 100%;
-  align-items: flex-start;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 aside .aside-container .social-container {
   flex-direction: row;

@@ -19,7 +19,8 @@ export const Words = ({
   return (
     <div key={`words-${index}`} className='word-container' style={translateObject}>
       {words.map((word, j) => {
-        const anim_AnimationDelay = { animationDelay: `0.${j + index}s` }
+        const animateTimeFrame = (j + index) / 10
+        const anim_AnimationDelay = { animationDelay: `${animateTimeFrame}s` }
 
         return (
           <span key={`word-${index}${j}`} className={`parent-span`} onMouseEnter={handler} style={anim_AnimationDelay}>

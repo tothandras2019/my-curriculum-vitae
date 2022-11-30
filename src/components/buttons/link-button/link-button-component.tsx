@@ -9,7 +9,7 @@ export const LinkButton = ({
   item,
 }: {
   isHidden: boolean
-  iconMaterial: string
+  iconMaterial: () => JSX.Element
   link: string
   item: string
 }): JSX.Element => {
@@ -18,8 +18,8 @@ export const LinkButton = ({
     navigationTo(`${link}`)
   }
   return (
-    <button className={isHidden ? 'hide' : ''} onClick={onHandleNavigateTo}>
-      <span className='material-icons'>{iconMaterial}</span>
+    <button className={isHidden ? 'hide' : '_'} onClick={onHandleNavigateTo}>
+      <span className='material-icons'>{iconMaterial()}</span>
       <span className={'letter'}>{item}</span>
     </button>
   )

@@ -38,4 +38,8 @@ body h5 {
 .secondary {
   background-color: rgb(7, 27, 54);
   color: #c0cbcb;
+}
+
+path {
+  fill: #eea243;
 }/*# sourceMappingURL=App.css.map */

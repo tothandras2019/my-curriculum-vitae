@@ -1,17 +1,18 @@
 import { createContext, useState, Dispatch, SetStateAction } from 'react'
+import { about, certificationIcon, skillIcon, contactMeIcon, workIcon } from './../../icons/account-icon'
 
 //type
 type NavitemsType = {
-  [key: string]: string[]
+  [key: string]: [string, () => JSX.Element]
 }
 
 //initial value
 export const NavigationItems: NavitemsType[] = [
-  { about: ['About me', 'account_circle'] },
-  { certifications: ['Certifications', 'history_edu'] },
-  { works: ['Works', 'engineering'] },
-  { skills: ['My skills', 'wb_sunny'] },
-  { contact: ['Contact me', 'contact_page'] },
+  { about: ['About me', about] },
+  { certifications: ['Certifications', certificationIcon] },
+  { works: ['Works', workIcon] },
+  { skills: ['My skills', skillIcon] },
+  { contact: ['Contact me', contactMeIcon] },
 ]
 
 export const NavigateTo: string = '/'

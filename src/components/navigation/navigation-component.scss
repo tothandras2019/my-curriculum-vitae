@@ -40,14 +40,13 @@ aside {
     .navigation-container,
     .social-container {
       display: flex;
-      align-items: flex-start;
     }
     .navigation-container {
       height: 50%;
       width: 100%;
-      align-items: flex-start;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
     }
 
     .social-container {
