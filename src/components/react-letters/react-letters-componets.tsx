@@ -6,7 +6,7 @@ import { Words } from './words-container/words-container-component'
 type WordElementType = { [key: string]: boolean }
 export const Letters = ({
   isColor = false,
-  sentence = 'My name is András',
+  sentence = 'Hello. My name is András',
   smaller = false,
 }: {
   isColor?: boolean
@@ -23,6 +23,7 @@ export const Letters = ({
   useEffect(() => {
     let wordsId: WordElementType = {}
     const wordArr = sentence.split(' ')
+
     setWordDistance(wordArr.length / sentence.length)
     const splitedSentence = wordArr.map((word) => word.split(''))
 
@@ -34,7 +35,7 @@ export const Letters = ({
     return () => {
       setStartAnim({})
     }
-  }, [])
+  }, [sentence])
 
   const handleOnMouseEnter = (event: MouseEvent<HTMLElement>) => {
     const newTarget = event.target as HTMLElement

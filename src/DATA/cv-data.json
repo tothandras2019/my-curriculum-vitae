@@ -5,7 +5,7 @@
     "role": "jonior frontend developer",
     "worldview": "lorem ipsum something special"
   },
-  "carrier_bjectives": {
+  "carrier_objectives": {
     "descreption": "After I successfully finished college, I carried on learning a programming language that was Java SE. I learned it in my spare time after I went home from my sales representative job. I was dealing with Unity development in C_Sharp language as a hobby. In the beginning of this year I decided that I would learn a programming language that is useful for spectacular results, innovative and new. So I started to learn javascript and I found a school that can support practical deep knowledge and professional mentors. This school was the Coodecool.By now, I successfully finished the Codecool Intensive Junior Frontend developer course, where I had to implement 20 individual and team projects using the javascript language and frameworks.  I implemented these projects with the VS_Code editor using Vanilla.Js, React.Js, Node_Express.Js language tools. We regularly use our own backend REST_Api and call public APIs, from which we process data for the representation style, we use CSS and its framework SASS. During the training, I used Swiper, Firebase and Docker tools in terms of external libraries. In addition to the training, I conducted/completed additional training related to the topic in the Udemy system, which relates to React.js, Firebase/Google authentication, and Netlify storage. I finished the course in October 2022 with a successful final exam and certification. As a front_end developer, my goal is to participate in the development of spectacular and useful applications as a member of a team. My plan is to become a full stack developer and deeply know the backend part of web development"
   },
   "cerfitications": [
@@ -45,7 +45,7 @@
       "details": "The training topic was fundamentals of Java development language.I used Netbeans for implementing our codes"
     }
   ],
-  "working_history": [
+  "works": [
     {
       "date": "2020.10-2022.03",
       "position": "Company manager",

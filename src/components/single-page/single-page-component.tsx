@@ -19,10 +19,10 @@ export const SinglePageAllComponent = ({
   return (
     <Fragment>
       <MainSplited descreption={descreption} backgroundColor={background.secondary} />
-      <MainFullPage certifications={certifications} backgroundColor={background.secondary} />
-      <MainFullPage workingdetail={workingdetail} backgroundColor={background.secondary} />
-      <MainFullPage skills={skills} backgroundColor={background.secondary} />
-      <MainFullPage contact={true} backgroundColor={background.secondary} />
+      <MainFullPage certifications={certifications} backgroundColor={background.secondary} section={1} />
+      <MainFullPage workingdetail={workingdetail} backgroundColor={background.secondary} section={2} />
+      <MainFullPage skills={skills} backgroundColor={background.secondary} section={3} />
+      <MainFullPage contact={true} backgroundColor={background.secondary} section={4} />
     </Fragment>
   )
 }

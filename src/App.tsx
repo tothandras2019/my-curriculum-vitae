@@ -31,14 +31,14 @@ function App(): JSX.Element {
   }
 
   const locationObjectElements = {
-    certification: 'certification',
+    certification: 'certifications',
     works: 'works',
     skills: 'skills',
   }
 
-  const cv_descreption: string = CV_DATA.carrier_bjectives.descreption
+  const cv_descreption: string = CV_DATA.carrier_objectives.descreption
   const cv_certifications: CerfiticationsArrType = CV_DATA.cerfitications
-  const cv_workings: cvWorkingHistoryArrType = CV_DATA.working_history
+  const cv_workings: cvWorkingHistoryArrType = CV_DATA.works
   const cv_skills: cvSkillsArrType = CV_DATA.skills
 
   const [descreption, setDescreption] = useState('')
@@ -81,9 +81,10 @@ function App(): JSX.Element {
     return () => {}
   }, [certifications, workingdetail, skills])
 
+  useEffect(() => {}, [locationObjectElementsState])
   useEffect(() => {
-    console.log(locationObjectElementsState)
-  }, [locationObjectElementsState])
+    console.log(window.location.pathname)
+  }, [])
 
   return (
     <div className='App'>
@@ -97,10 +98,10 @@ function App(): JSX.Element {
               <SinglePageAllComponent skills={skills} workingdetail={workingdetail} descreption={descreption} certifications={certifications} />
             }
           />
-          <Route path='/certification' element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} />} />
-          <Route path='/works' element={<MainFullPage workingdetail={workingdetail} backgroundColor={'secondary'} />} />
-          <Route path='/skills' element={<MainFullPage skills={skills} backgroundColor={'secondary'} />} />
-          <Route path='/contact' element={<MainFullPage contact={true} backgroundColor={'secondary'} />} />
+          <Route path='/certifications' element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} section={1} />} />
+          <Route path='/works' element={<MainFullPage workingdetail={workingdetail} backgroundColor={'secondary'} section={2} />} />
+          <Route path='/skills' element={<MainFullPage skills={skills} backgroundColor={'secondary'} section={3} />} />
+          <Route path='/contact' element={<MainFullPage contact={true} backgroundColor={'secondary'} section={4} />} />
         </Route>
       </Routes>
       <ScrollButton />

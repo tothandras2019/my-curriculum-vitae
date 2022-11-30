@@ -11,18 +11,18 @@ export type cvPersonal = {
 }
 export type CvCertificationDetailsType = {
   date: string
-  certification_title: string
-  place: string
-  document: string
-  details: string
+  certification_title?: string
+  place?: string
+  document?: string
+  details?: string
 }
 export type CerfiticationsArrType = CvCertificationDetailsType[]
 
 export type cvWorkingHistory = {
   date: string
-  position: string
-  enterprice: string
-  role_descreption: string
+  position?: string
+  enterprice?: string
+  role_descreption?: string
 }
 export type cvWorkingHistoryArrType = cvWorkingHistory[]
 

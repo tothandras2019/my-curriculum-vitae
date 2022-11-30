@@ -33,14 +33,12 @@ export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
   }
 
   return (
-    <div ref={skillComponentRef} className='main-skills-container'>
+    <section ref={skillComponentRef} className='main-skills-container'>
+      <Letters sentence={'Skills'} smaller={true} />
       {skills?.map((skill, i) => (
-        <>
-          <Letters key={`skills-letter-${i}`} sentence='Skills' smaller={true} />
-          <SkillTypesContainer key={`skill-${i}`} startIndicator={startIndicator} skill={skill} />
-        </>
+        <SkillTypesContainer key={`skill-${i}`} startIndicator={startIndicator} skill={skill} />
       ))}
-    </div>
+    </section>
   )
 }
 
@@ -59,8 +57,8 @@ const SkillTypesContainer = ({ skill, startIndicator }: { skill: cvSkillsType; s
             itemsArray[0] !== '' && (
               <div key={`items-${i}`} className='skill-type'>
                 <h3>{key}</h3>
-                {itemsArray.map((skillDetail, i) => (
-                  <Skill key={`items-${i}`} startIndicator={startIndicator} skillDetail={skillDetail} />
+                {itemsArray.map((skillDetail, j) => (
+                  <Skill key={`items-${i}${j}`} startIndicator={startIndicator} skillDetail={skillDetail} />
                 ))}
               </div>
             )
@@ -70,8 +68,8 @@ const SkillTypesContainer = ({ skill, startIndicator }: { skill: cvSkillsType; s
 
       {other !== '' && (
         <div>
-          {otherArray?.map((otherItem) => (
-            <h5 key={`other-${otherItem}`}>{otherItem}</h5>
+          {otherArray?.map((otherItem, i) => (
+            <h5 key={`other-${otherItem}${i} `}>{otherItem}</h5>
           ))}
         </div>
       )}
