@@ -32,7 +32,7 @@ body h5 {
 
 .primary {
   background-color: rgb(7, 27, 54);
-  color: rgb(107, 107, 72);
+  color: rgb(50, 157, 157);
 }
 
 .secondary {
@@ -41,7 +41,7 @@ body h5 {
 }
 
 path {
-  fill: #eea243;
+  fill: #bd1dcf;
 }
 
 aside {
@@ -55,7 +55,7 @@ aside {
   z-index: 100;
 }
 aside.narrow {
-  width: 40px;
+  width: 50px;
   transition: 0.5s;
 }
 aside .aside-container {

@@ -32,12 +32,16 @@ body h5 {
 
 .primary {
   background-color: rgb(7, 27, 54);
-  color: rgb(107, 107, 72);
+  color: rgb(50, 157, 157);
 }
 
 .secondary {
   background-color: rgb(7, 27, 54);
   color: #c0cbcb;
+}
+
+path {
+  fill: #bd1dcf;
 }
 
 .article-container {

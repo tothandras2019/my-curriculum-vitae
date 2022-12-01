@@ -1,10 +1,9 @@
 @import './../../../App.scss';
 .side-open-menu {
   min-height: 300px;
-  width: 25px;
+  width: 30px;
   display: flex;
   justify-content: center;
-  gap: 20px;
   align-items: center;
   flex-direction: column;
   border-right: 1px solid $secondary-dark-color;

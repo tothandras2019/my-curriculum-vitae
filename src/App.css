@@ -32,7 +32,7 @@ body h5 {
 
 .primary {
   background-color: rgb(7, 27, 54);
-  color: rgb(107, 107, 72);
+  color: rgb(50, 157, 157);
 }
 
 .secondary {
@@ -41,5 +41,5 @@ body h5 {
 }
 
 path {
-  fill: #eea243;
+  fill: #bd1dcf;
 }/*# sourceMappingURL=App.css.map */

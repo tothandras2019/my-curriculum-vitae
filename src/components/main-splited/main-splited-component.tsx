@@ -2,6 +2,7 @@ import { MouseEvent, useState } from 'react'
 import { Article } from '../article/article-component'
 import { ScrollButton } from '../buttons/scroll-button/scroll-button-component'
 import { Descreption } from '../descreption/descreption-component'
+import { Separator } from '../separator/separator-component'
 import './main-splited-component.css'
 
 export const MainSplited = ({ descreption, backgroundColor }: { descreption: string; backgroundColor: string }): JSX.Element => {

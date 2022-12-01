@@ -1,0 +1,168 @@
+@charset "UTF-8";
+body {
+  background-color: rgb(7, 27, 54);
+  color: #c0cbcb;
+}
+body .App {
+  position: relative;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 90px;
+  margin-left: 12vw;
+  box-sizing: border-box;
+}
+body h1 {
+  font-size: 50px;
+}
+body h2 {
+  font-size: 40px;
+}
+body h3 {
+  font-size: 30px;
+}
+body h4 {
+  font-size: 25px;
+  min-width: 210px;
+}
+body h5 {
+  font-size: 20px;
+}
+
+.primary {
+  background-color: rgb(7, 27, 54);
+  color: rgb(50, 157, 157);
+}
+
+.secondary {
+  background-color: rgb(7, 27, 54);
+  color: #c0cbcb;
+}
+
+path {
+  fill: #bd1dcf;
+}
+
+.certification-container {
+  display: flex;
+  align-items: flex-start;
+  background-color: rgb(6, 21, 42);
+  min-height: 100px;
+  width: 80%;
+  margin: 30px 0;
+  padding-top: 0px;
+}
+.certification-container p {
+  transform: rotate(-45deg);
+  margin: 30px;
+  font-size: larger;
+  max-width: 100px;
+  text-align: center;
+  font-weight: 500;
+  color: #c0cbcb;
+}
+.certification-container.even {
+  border-left: 4px solid #bd1dcf;
+  width: 0;
+  opacity: 0;
+  margin-left: 80%;
+  animation-name: fromLeftToRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fromLeftToRight {
+  to {
+    margin-left: 30%;
+    width: 70%;
+    opacity: 1;
+  }
+}
+.certification-container.odd {
+  border-left: 4px solid #bd1dcf;
+  width: 0;
+  opacity: 0;
+  margin-left: -100%;
+  animation-name: fromRighToRight;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+@keyframes fromRighToRight {
+  to {
+    margin-left: 0%;
+    width: 70%;
+    opacity: 1;
+  }
+}
+.certification-container:hover .details-container {
+  z-index: 1000;
+}
+.certification-container:hover .details-container ul {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  height: fit-content;
+  opacity: 1;
+  transition: 0.5s;
+  font-size: 20px;
+  transition: 0.5s;
+  z-index: 1000;
+}
+.certification-container:hover .details-container ul li {
+  padding: 5px;
+  margin-left: 13px;
+  max-width: 100%;
+  height: 44px;
+  opacity: 1;
+  z-index: 1000;
+  line-height: 110%;
+  transition: 1s;
+}
+.certification-container .details-container h2,
+.certification-container .details-container h3 {
+  font-size: 0;
+  opacity: 0;
+  margin-bottom: 10px;
+}
+.certification-container .details-container h2 {
+  animation-name: fontIncreaseH2;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+.certification-container .details-container h3 {
+  animation-name: fontIncreaseH3;
+  animation-duration: 2.1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fontIncreaseH2 {
+  to {
+    font-size: 40px;
+    opacity: 1;
+  }
+}
+@keyframes fontIncreaseH3 {
+  to {
+    font-size: 25px;
+    opacity: 1;
+  }
+}
+.certification-container .details-container ul {
+  position: absolute;
+  height: 0;
+  opacity: 0;
+  font-size: 0;
+  transition: 0.5s;
+  padding: 10px;
+  z-index: 100;
+}
+.certification-container .details-container ul li {
+  padding: 0;
+  margin-left: 0;
+  max-width: 800px;
+  opacity: 0;
+  height: 0px;
+  transition: 0.1s;
+}
+.certification-container .details-container ul li::marker {
+  content: "✔";
+}/*# sourceMappingURL=details-section-component.css.map */

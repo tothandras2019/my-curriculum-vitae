@@ -32,7 +32,7 @@ body h5 {
 
 .primary {
   background-color: rgb(7, 27, 54);
-  color: rgb(107, 107, 72);
+  color: rgb(50, 157, 157);
 }
 
 .secondary {
@@ -40,10 +40,14 @@ body h5 {
   color: #c0cbcb;
 }
 
+path {
+  fill: #bd1dcf;
+}
+
 .open-button {
   min-width: 20px;
   height: 20px;
   border-radius: 50%;
-  color: #eea243;
+  color: #bd1dcf;
   font-size: 40px;
 }/*# sourceMappingURL=open-button-component.css.map */

@@ -14,6 +14,7 @@ import { ScrollButton } from '../buttons/scroll-button/scroll-button-component'
 import { Contact } from '../contact/contact-component'
 import { Letters } from '../react-letters/react-letters-componets'
 import { DetailsSection } from '../details-section/details-section-component'
+import { Separator } from '../separator/separator-component'
 
 type MainPropsType = {
   workingdetail?: cvWorkingHistoryArrType | null
@@ -45,6 +46,7 @@ export const MainFullPage = ({
 
   return (
     <main className={`main-full ${backgroundColor}`} id={`section-${section}`}>
+      <Separator />
       {certifications && <DetailsSection dataArr={certifications} title={'Certifications'} />}
       {workingdetail && <DetailsSection dataArr={workingdetail} title={'Works'} />}
       {skills && <Skills skills={skills} />}

@@ -1,20 +1,16 @@
 @import './../../../App.scss';
 
 button {
+  position: relative;
   padding: 10px;
   width: 100%;
   display: flex;
   align-items: center;
   color: $third-color;
-  transition: 0.5s;
+  transition: 0.4s;
   gap: 10px;
   .letter {
-    transition: 0.8s;
-  }
-  svg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: 0.4s;
   }
 
   &.hide {
@@ -27,12 +23,15 @@ button {
     }
   }
   .material-icons {
-    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
-    margin-right: 5px;
+    margin-right: 3px;
   }
+
   &:hover {
     color: $primary-color;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.1px;
   }
 }

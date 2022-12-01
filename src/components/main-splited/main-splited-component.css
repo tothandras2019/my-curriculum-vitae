@@ -32,7 +32,7 @@ body h5 {
 
 .primary {
   background-color: rgb(7, 27, 54);
-  color: rgb(107, 107, 72);
+  color: rgb(50, 157, 157);
 }
 
 .secondary {
@@ -40,10 +40,15 @@ body h5 {
   color: #c0cbcb;
 }
 
+path {
+  fill: #bd1dcf;
+}
+
 .main-splited {
   position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   box-sizing: border-box;
   min-height: 100vh;
 }/*# sourceMappingURL=main-splited-component.css.map */
