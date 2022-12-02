@@ -21,7 +21,7 @@ export const Naviation = (): ReactElement => {
       <aside className={isHidden.hide ? `narrow` : ''}>
         <div className='aside-container'>
           <span className='img-place'>
-            <img src={logo} alt='not yet implemented' height={isHidden.hide ? `30` : '100'} />
+            <p>Ta</p> {/* <img src={logo} alt='not yet implemented' height={isHidden.hide ? `30` : '100'} /> */}
           </span>
           <div className='navigation-container'>
             <Separator />
@@ -46,7 +46,7 @@ export const Naviation = (): ReactElement => {
             </a>
           </div>
         </div>
-        <Open />
+        {/* <Open /> */}
       </aside>
       <Outlet />
     </Fragment>

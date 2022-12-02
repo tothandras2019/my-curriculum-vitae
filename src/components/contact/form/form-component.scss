@@ -19,7 +19,7 @@
     input[type='email'] {
       box-sizing: border-box;
       width: 100%;
-      background-color: $palette-stone-light-grey-color;
+      background-color: $palette-stone-dark-grey-color;
       padding: 10px;
       color: $palette-creamy-white-color;
     }
@@ -29,7 +29,7 @@
       resize: vertical;
       border: none;
       min-height: 180px;
-      background-color: $palette-stone-light-grey-color;
+      background-color: $palette-stone-dark-grey-color;
       color: $palette-creamy-white-color;
     }
   }

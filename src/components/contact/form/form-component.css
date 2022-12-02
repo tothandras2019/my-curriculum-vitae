@@ -63,7 +63,7 @@ path {
 .from-container form input[type=email] {
   box-sizing: border-box;
   width: 100%;
-  background-color: #464b55;
+  background-color: #3c4048;
   padding: 10px;
   color: #b9dbe4;
 }
@@ -72,6 +72,6 @@ path {
   resize: vertical;
   border: none;
   min-height: 180px;
-  background-color: #464b55;
+  background-color: #3c4048;
   color: #b9dbe4;
 }/*# sourceMappingURL=form-component.css.map */

@@ -1,15 +1,79 @@
+body {
+  background-color: #464b55;
+}
+body .App {
+  position: relative;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 90px;
+  margin-left: 12vw;
+  box-sizing: border-box;
+}
+body h1 {
+  font-size: 50px;
+}
+body h2 {
+  font-size: 40px;
+}
+body h3 {
+  font-size: 30px;
+}
+body h4 {
+  font-size: 25px;
+  min-width: 210px;
+}
+body h5 {
+  font-size: 20px;
+}
+
+.primary {
+  background: transparent;
+  color: #b9dbe4;
+}
+
+.secondary {
+  background: transparent;
+  color: #b9dbe4;
+}
+
+path {
+  fill: #464b55;
+}
+
 .main-skills-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.main-skills-container .skill-types-container {
+.main-skills-container .horizontal-aligned-skills {
+  display: flex;
+  gap: 30px;
+}
+.main-skills-container .horizontal-aligned-skills .skill-types-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 20px 0;
+  width: 60%;
 }
-.main-skills-container .skill-types-container .skills-container .skill-type {
+.main-skills-container .horizontal-aligned-skills .skill-types-container h2 {
+  text-align: center;
+}
+.main-skills-container .horizontal-aligned-skills .skill-types-container .other {
+  margin: 20px 0px;
+  padding: 5px 20px;
+}
+.main-skills-container .horizontal-aligned-skills .skill-types-container .other h5 {
+  padding: 15px 0;
+  text-align: center;
+}
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container {
+  padding-left: 20px;
+}
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type {
   display: flex;
   width: fit-content;
   flex-direction: column;
@@ -18,11 +82,12 @@
   margin-top: 30px;
   gap: 10px;
 }
-.main-skills-container .skill-types-container .skills-container .skill-type .skill {
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill {
   position: relative;
-  padding-left: 20px;
+  padding: 5px 20px;
+  transition: 0.5s;
 }
-.main-skills-container .skill-types-container .skills-container .skill-type .skill span {
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill span {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -30,11 +95,25 @@
   height: 8px;
   border-radius: 30px;
 }
-.main-skills-container .skill-types-container .skills-container .skill-type .skill .level-indicator {
-  background-color: rgb(18, 58, 168);
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill .level-indicator {
+  background-color: #b9dbe4;
   z-index: 1;
+  transition: 0.5s;
 }
-.main-skills-container .skill-types-container .skills-container .skill-type .skill .level-indicator-background {
-  background-color: grey;
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill .level-indicator:hover {
+  background-color: #029ba3;
+  transition: 0.5s;
+}
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill .level-indicator-background {
+  background: transparent;
   width: 400px;
+}
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill:hover {
+  color: #029ba3;
+  letter-spacing: 1.1px;
+  transition: 0.5s;
+}
+.main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill:hover .level-indicator {
+  background-color: #029ba3;
+  transition: 0.5s;
 }/*# sourceMappingURL=skills-component.css.map */

@@ -1,43 +1,82 @@
+@import './../../App.scss';
+
 .main-skills-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  .skill-types-container {
+
+  .horizontal-aligned-skills {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 20px 0;
-    .skills-container {
-      .skill-type {
-        display: flex;
-        width: fit-content;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-top: 30px;
-        gap: 10px;
+    gap: 30px;
+    .skill-types-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 20px 0;
+      width: 60%;
 
-        .skill {
-          position: relative;
-          padding-left: 20px;
+      h2 {
+        text-align: center;
+      }
+      .other {
+        margin: 20px 0px;
+        padding: 5px 20px;
+        h5 {
+          padding: 15px 0;
+          text-align: center;
+        }
+      }
 
-          span {
-            position: absolute;
-            top: 50%;
-            transform: translate(0, -50%);
-            left: 200px;
-            height: 8px;
-            border-radius: 30px;
-          }
+      .skills-container {
+        padding-left: 20px;
 
-          .level-indicator {
-            background-color: rgb(18, 58, 168);
-            //width: 200px; //this is set in dynamic way on inline-style on skill component
-            z-index: 1;
-          }
-          .level-indicator-background {
-            background-color: grey;
-            width: 400px;
+        .skill-type {
+          display: flex;
+          width: fit-content;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin-top: 30px;
+          gap: 10px;
+
+          .skill {
+            position: relative;
+            padding: 5px 20px;
+            transition: 0.5s;
+
+            span {
+              position: absolute;
+              top: 50%;
+              transform: translate(0, -50%);
+              left: 200px;
+              height: 8px;
+              border-radius: 30px;
+            }
+
+            .level-indicator {
+              background-color: $palette-creamy-white-color;
+              //width: 200px; //this is set in dynamic way on inline-style on skill component
+              z-index: 1;
+              transition: 0.5s;
+              &:hover {
+                background-color: $palette-ocean-color;
+                transition: 0.5s;
+              }
+            }
+            .level-indicator-background {
+              background: transparent;
+              width: 400px;
+            }
+
+            &:hover {
+              color: $palette-ocean-color;
+              letter-spacing: 1.1px;
+              transition: 0.5s;
+              .level-indicator {
+                background-color: $palette-ocean-color;
+                transition: 0.5s;
+              }
+            }
           }
         }
       }

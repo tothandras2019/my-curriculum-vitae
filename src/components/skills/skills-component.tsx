@@ -33,9 +33,11 @@ export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
   return (
     <section ref={skillComponentRef} className='main-skills-container'>
       <Letters sentence={'Skills'} smaller={true} />
-      {skills?.map((skill, i) => (
-        <SkillTypesContainer key={`skill-${i}`} startIndicator={startIndicator} skill={skill} />
-      ))}
+      <div className='horizontal-aligned-skills'>
+        {skills?.map((skill, i) => (
+          <SkillTypesContainer key={`skill-${i}`} startIndicator={startIndicator} skill={skill} />
+        ))}
+      </div>
     </section>
   )
 }
@@ -65,7 +67,7 @@ const SkillTypesContainer = ({ skill, startIndicator }: { skill: cvSkillsType; s
       </div>
 
       {other !== '' && (
-        <div>
+        <div className='other'>
           {otherArray?.map((otherItem, i) => (
             <h5 key={`other-${otherItem}${i} `}>{otherItem}</h5>
           ))}
