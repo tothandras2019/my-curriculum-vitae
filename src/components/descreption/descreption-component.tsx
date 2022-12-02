@@ -12,10 +12,12 @@ export const Descreption = ({ descreption }: { descreption: string }): JSX.Eleme
 
   return (
     <div className='descreption-container'>
-      <SectionButton onHandler={onHandleShowDescription} />
       <Letters smaller={hideDescreption} />
-      <p className={`descreption ${hideDescreption ? 'show' : 'hide'}`}>{descreption}</p>
-      <a href=''>lets talk!</a>
+      {/* <SectionButton value={hideDescreption ? 'show details' : 'hide details'} onHandler={onHandleShowDescription} /> */}
+      <div className={`descreption ${hideDescreption ? 'hide' : 'show'}`}>
+        <p>{descreption}.</p>
+        <a href='/contact'>contact me</a>
+      </div>
     </div>
   )
 }

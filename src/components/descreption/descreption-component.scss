@@ -6,12 +6,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 50%;
+  min-width: 600px;
+  width: 90%;
   gap: 20px;
   transition: 0.8s;
 
   .descreption {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     text-align: left;
     word-break: keep-all;
@@ -19,11 +22,17 @@
     line-height: 160%;
     animation-duration: 1.6s;
     animation-fill-mode: both;
-
     top: 100%;
     color: transparent;
     transition: 0.8s;
 
+    a {
+      color: $palette-ocean-color;
+      text-decoration: none;
+      align-self: flex-end;
+      margin-top: 20px;
+      font-weight: 500;
+    }
     &.show {
       animation-name: appear;
     }
@@ -38,15 +47,11 @@
         color: transparent;
       }
       to {
-        top: 30%;
-        color: $primary-color;
+        top: 22%;
+        color: $palette-stone-dark-grey-color;
       }
     }
     @keyframes hideElement {
-      // from {
-      //   top: 30%;
-      //   color: $primary-color;
-      // }
       to {
         top: 100%;
         color: transparent;

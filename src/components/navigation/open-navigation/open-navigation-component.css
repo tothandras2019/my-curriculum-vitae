@@ -1,6 +1,5 @@
 body {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background-color: #b2b2b2;
 }
 body .App {
   position: relative;
@@ -31,17 +30,17 @@ body h5 {
 }
 
 .primary {
-  background-color: rgb(7, 27, 54);
-  color: rgb(50, 157, 157);
+  background: transparent;
+  color: #3c4048;
 }
 
 .secondary {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background: transparent;
+  color: #3c4048;
 }
 
 path {
-  fill: #bd1dcf;
+  fill: #b2b2b2;
 }
 
 .side-open-menu {
@@ -51,12 +50,9 @@ path {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-right: 1px solid rgb(6, 21, 42);
-  background-color: rgb(6, 21, 42);
+  border-right: 1px solid #b2b2b2;
+  background-color: #3c4048;
 }
-.side-open-menu:hover {
-  background-color: rgb(7, 27, 54);
-}
-.side-open-menu:hover .open-button {
-  color: #c0cbcb;
+.side-open-menu:hover path {
+  fill: #029ba3;
 }/*# sourceMappingURL=open-navigation-component.css.map */

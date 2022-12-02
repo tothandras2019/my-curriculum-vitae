@@ -4,170 +4,24 @@ $rotation-degrees: 360deg;
 $animation-duration-time: 5s;
 
 .article-container {
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100vh;
-  filter: blur(0.8px);
-  font-size: larger;
-  font-weight: 800;
-  color: $additional-color;
-  z-index: 1;
+  filter: blur(0.7px);
+  color: $palette-ocean-color;
+  font-size: x-large;
   transform-style: preserve-3d;
+  z-index: -1;
 
-  div {
-    animation-duration: $animation-duration-time;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    //perspective-origin: center;
-    width: 300px;
+  .cloud-items {
+    width: 50%;
+    height: 50%;
     display: flex;
-    justify-content: space-between;
-    transform-style: preserve-3d;
-  }
-
-  .roation-container {
-    position: absolute;
-
-    height: 400px;
-    width: 400px;
-    transform-origin: center;
-    // animation-name: rotateObject;
-    transform-style: preserve-3d;
-    .front {
-      transform-style: preserve-3d;
-      transform: perspective(800px);
-      .skill-element {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: fit-content;
-        // min-width: 100px;
-        width: 10px;
-        height: 10px;
-        background-color: red;
-        transform-style: preserve-3d;
-        transform-origin: center;
-        transform: translate(0, 0, -30);
-
-        animation-name: rotateShere;
-        animation-duration: $animation-duration-time;
-        animation-fill-mode: backwards;
-        animation-direction: reverse;
-      }
-
-      @keyframes rotateShere {
-        to {
-          transform: rotate3d(0, 1, 0, -$rotation-degrees);
-        }
-      }
-    }
-
-    p {
-      // animation: fontIncrease;
-      animation-duration: 5s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-      animation-direction: alternate-reverse;
-    }
-    @keyframes fontIncrease {
-      to {
-        font-size: 25px;
-      }
-    }
-
-    .rotate-child_1 {
-      position: absolute;
-      top: -10px;
-      left: -40px;
-      z-index: 1;
-      animation-name: rotate-child;
-    }
-
-    .rotate-child_2 {
-      position: absolute;
-      bottom: -30px;
-      left: -40px;
-      animation-name: rotate-child;
-    }
-    .rotate-child_3 {
-      position: absolute;
-      top: -10px;
-      right: -50px;
-      animation-name: rotate-child;
-    }
-    .rotate-child_4 {
-      position: absolute;
-      bottom: -10px;
-      right: -40px;
-      animation-name: rotate-child;
-    }
-    .rotate-child_5 {
-      position: absolute;
-      display: flex;
-      justify-content: space-between;
-      top: 20%;
-      width: 300px;
-      height: 10px;
-      animation-name: rotate-child;
-    }
-    // @keyframes rotate-child {
-    //   to {
-    //     transform: rotate3d(0, 0, 2, -$rotation-degrees);
-    //   }
-    // }
-  }
-
-  @keyframes rotateObject {
-    to {
-      transform: rotate3d(0, 1, 0, $rotation-degrees);
-      // transform: translate(0, 0, 10);
-    }
+    justify-content: center;
+    align-items: center;
   }
 }
-
-// @import "compass";
-// .daddy{
-//   border:1px solid black;
-//   width: 400px;
-//   height: 400px;
-//   position: relative;
-//   perspective: 600px;
-//   transform-style: preserve-3d;
-// }
-
-// .mommy{
-//   width: 400px;
-//   height: 400px;
-//   transform-style: preserve-3d;
-//   animation: rotation 10s linear infinite;
-// }
-// .mommy div{
-//   display: block;
-//   width: 4px;
-//   height: 4px;
-//   background:red;
-//   position: absolute;
-//   top: -2px;
-//   left: -2px;
-// }
-
-// $amount : 200;
-// @for $i from 1 through $amount {
-//   $theta : ($i / $amount) * 120;
-//   $delta : ($i / $amount - 0.5) * pi();
-//   $x : 200px * cos($delta) * cos($theta) + 200;
-//   $y : 200px * cos($delta) * sin($theta) + 200;
-//   $z : 200px * sin($delta);
-//   .mommy div:nth-child(#{$i}){
-//     transform: translate3d($x, $y,$z);
-//   }
-// }
-
-// @keyframes rotation{
-//   to{transform:rotateY(360deg);}
-// }

@@ -3,11 +3,13 @@
 .certification-container {
   display: flex;
   align-items: flex-start;
-  background-color: $secondary-dark-color;
+  // background-color: $palette-stone-light-grey-color;
   min-height: 100px;
-  width: 80%;
+  // width: 80%;
   margin: 30px 0;
   padding-top: 0px;
+  width: 0;
+  opacity: 0;
 
   p {
     transform: rotate(-45deg);
@@ -16,14 +18,13 @@
     max-width: 100px;
     text-align: center;
     font-weight: 500;
-    color: $primary-color;
   }
 
   &.even {
-    border-left: 4px solid $third-color;
+    border-left: 4px solid $palette-ocean-color;
     width: 0;
     opacity: 0;
-    margin-left: 80%;
+    margin-left: 90%;
     animation-name: fromLeftToRight;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -37,18 +38,18 @@
     }
   }
   &.odd {
-    border-left: 4px solid $third-color;
+    border-left: 4px solid $palette-ocean-color;
     width: 0;
     opacity: 0;
     margin-left: -100%;
-    animation-name: fromRighToRight;
+    animation-name: fromRightToLeft;
     animation-duration: 0.7s;
     animation-fill-mode: forwards;
   }
 
-  @keyframes fromRighToRight {
+  @keyframes fromRightToLeft {
     to {
-      margin-left: 0%;
+      margin-left: 10%;
       width: 70%;
       opacity: 1;
     }
@@ -96,6 +97,7 @@
       animation-fill-mode: forwards;
     }
     h3 {
+      color: $palette-ocean-color;
       animation-name: fontIncreaseH3;
       animation-duration: 2.1s;
 

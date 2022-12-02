@@ -1,6 +1,5 @@
 body {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background-color: #b2b2b2;
 }
 body .App {
   position: relative;
@@ -31,17 +30,17 @@ body h5 {
 }
 
 .primary {
-  background-color: rgb(7, 27, 54);
-  color: rgb(50, 157, 157);
+  background: transparent;
+  color: #3c4048;
 }
 
 .secondary {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background: transparent;
+  color: #3c4048;
 }
 
 path {
-  fill: #bd1dcf;
+  fill: #b2b2b2;
 }
 
 input[type=button],
@@ -49,8 +48,8 @@ input[type=submit] {
   background-color: transparent;
   width: fit-content;
   border-radius: 50px;
-  border: 2px solid #bd1dcf;
-  color: #bd1dcf;
+  border: 2px solid #029ba3;
+  color: #029ba3;
   padding: 0px 10px;
   margin-top: 10px;
   transition: 0.5s;
@@ -59,7 +58,7 @@ input[type=submit] {
 }
 input[type=button]:hover,
 input[type=submit]:hover {
-  color: #c0cbcb;
+  color: #029ba3;
   background-color: rgb(4, 63, 119);
   border: 2px solid transparent;
   letter-spacing: 1.1px;
@@ -67,6 +66,6 @@ input[type=submit]:hover {
 }
 input[type=button]:active,
 input[type=submit]:active {
-  color: #c0cbcb;
-  background-color: rgb(7, 27, 54);
+  color: #eaeaea;
+  background-color: #3c4048;
 }/*# sourceMappingURL=section-button-component.css.map */

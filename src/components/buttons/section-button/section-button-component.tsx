@@ -2,7 +2,7 @@ import { SyntheticEvent } from 'react'
 import './section-button-component.css'
 export const SectionButton = ({
   type = 'button',
-  value = 'show more',
+  value = 'hide',
   onHandler,
 }: {
   type?: string

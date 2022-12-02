@@ -1,6 +1,5 @@
 body {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background-color: #b2b2b2;
 }
 body .App {
   position: relative;
@@ -31,17 +30,17 @@ body h5 {
 }
 
 .primary {
-  background-color: rgb(7, 27, 54);
-  color: rgb(50, 157, 157);
+  background: transparent;
+  color: #3c4048;
 }
 
 .secondary {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background: transparent;
+  color: #3c4048;
 }
 
 path {
-  fill: #bd1dcf;
+  fill: #b2b2b2;
 }
 
 button {
@@ -50,12 +49,12 @@ button {
   width: 100%;
   display: flex;
   align-items: center;
-  color: #bd1dcf;
-  transition: 0.4s;
+  color: #029ba3;
+  transition: 0.3s;
   gap: 10px;
 }
 button .letter {
-  transition: 0.4s;
+  transition: 0.3s;
 }
 button.hide {
   padding-left: 5px;
@@ -74,6 +73,11 @@ button .material-icons {
   margin-right: 3px;
 }
 button:hover {
-  color: #c0cbcb;
-  letter-spacing: 1.1px;
+  color: #eaeaea;
+  letter-spacing: 1.05px;
+  transition: 0.5s;
+}
+button:hover path {
+  transition: 0.5s;
+  fill: #029ba3;
 }/*# sourceMappingURL=link-button-component.css.map */

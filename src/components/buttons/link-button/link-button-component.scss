@@ -6,11 +6,11 @@ button {
   width: 100%;
   display: flex;
   align-items: center;
-  color: $third-color;
-  transition: 0.4s;
+  color: $palette-ocean-color;
+  transition: 0.3s;
   gap: 10px;
   .letter {
-    transition: 0.4s;
+    transition: 0.3s;
   }
 
   &.hide {
@@ -31,7 +31,12 @@ button {
   }
 
   &:hover {
-    color: $primary-color;
-    letter-spacing: 1.1px;
+    color: $palette-creamy-white-color;
+    letter-spacing: 1.05px;
+    transition: 0.5s;
+    path {
+      transition: 0.5s;
+      fill: $palette-ocean-color;
+    }
   }
 }

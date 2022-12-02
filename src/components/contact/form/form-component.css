@@ -1,6 +1,5 @@
 body {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background-color: #b2b2b2;
 }
 body .App {
   position: relative;
@@ -31,17 +30,17 @@ body h5 {
 }
 
 .primary {
-  background-color: rgb(7, 27, 54);
-  color: rgb(50, 157, 157);
+  background: transparent;
+  color: #3c4048;
 }
 
 .secondary {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background: transparent;
+  color: #3c4048;
 }
 
 path {
-  fill: #bd1dcf;
+  fill: #b2b2b2;
 }
 
 .from-container {
@@ -64,15 +63,15 @@ path {
 .from-container form input[type=email] {
   box-sizing: border-box;
   width: 100%;
-  background-color: rgb(6, 21, 42);
+  background-color: #b2b2b2;
   padding: 10px;
-  color: #c0cbcb;
+  color: #eaeaea;
 }
 .from-container form textarea {
   padding: 10px;
   resize: vertical;
   border: none;
   min-height: 180px;
-  background-color: rgb(6, 21, 42);
-  color: #c0cbcb;
+  background-color: #b2b2b2;
+  color: #eaeaea;
 }/*# sourceMappingURL=form-component.css.map */

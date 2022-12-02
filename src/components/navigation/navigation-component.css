@@ -1,6 +1,5 @@
 body {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background-color: #b2b2b2;
 }
 body .App {
   position: relative;
@@ -31,24 +30,24 @@ body h5 {
 }
 
 .primary {
-  background-color: rgb(7, 27, 54);
-  color: rgb(50, 157, 157);
+  background: transparent;
+  color: #3c4048;
 }
 
 .secondary {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background: transparent;
+  color: #3c4048;
 }
 
 path {
-  fill: #bd1dcf;
+  fill: #b2b2b2;
 }
 
 aside {
   position: fixed;
   display: flex;
   justify-content: flex-start;
-  background-color: rgb(6, 21, 42);
+  background-color: #3c4048;
   width: 12%;
   height: 100%;
   transition: 0.5s;

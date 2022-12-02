@@ -1,6 +1,5 @@
 body {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background-color: #b2b2b2;
 }
 body .App {
   position: relative;
@@ -31,123 +30,37 @@ body h5 {
 }
 
 .primary {
-  background-color: rgb(7, 27, 54);
-  color: rgb(50, 157, 157);
+  background: transparent;
+  color: #3c4048;
 }
 
 .secondary {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background: transparent;
+  color: #3c4048;
 }
 
 path {
-  fill: #bd1dcf;
+  fill: #b2b2b2;
 }
 
 .article-container {
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100vh;
-  filter: blur(0.8px);
-  font-size: larger;
-  font-weight: 800;
-  color: rgb(4, 63, 119);
-  z-index: 1;
+  filter: blur(0.7px);
+  color: #029ba3;
+  font-size: x-large;
   transform-style: preserve-3d;
+  z-index: -1;
 }
-.article-container div {
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  width: 300px;
-  display: flex;
-  justify-content: space-between;
-  transform-style: preserve-3d;
-}
-.article-container .roation-container {
-  position: absolute;
-  height: 400px;
-  width: 400px;
-  transform-origin: center;
-  transform-style: preserve-3d;
-}
-.article-container .roation-container .front {
-  transform-style: preserve-3d;
-  transform: perspective(800px);
-}
-.article-container .roation-container .front .skill-element {
+.article-container .cloud-items {
+  width: 50%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: fit-content;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  transform-style: preserve-3d;
-  transform-origin: center;
-  transform: translate(0, 0, -30);
-  animation-name: rotateShere;
-  animation-duration: 5s;
-  animation-fill-mode: backwards;
-  animation-direction: reverse;
-}
-@keyframes rotateShere {
-  to {
-    transform: rotate3d(0, 1, 0, -360deg);
-  }
-}
-.article-container .roation-container p {
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate-reverse;
-}
-@keyframes fontIncrease {
-  to {
-    font-size: 25px;
-  }
-}
-.article-container .roation-container .rotate-child_1 {
-  position: absolute;
-  top: -10px;
-  left: -40px;
-  z-index: 1;
-  animation-name: rotate-child;
-}
-.article-container .roation-container .rotate-child_2 {
-  position: absolute;
-  bottom: -30px;
-  left: -40px;
-  animation-name: rotate-child;
-}
-.article-container .roation-container .rotate-child_3 {
-  position: absolute;
-  top: -10px;
-  right: -50px;
-  animation-name: rotate-child;
-}
-.article-container .roation-container .rotate-child_4 {
-  position: absolute;
-  bottom: -10px;
-  right: -40px;
-  animation-name: rotate-child;
-}
-.article-container .roation-container .rotate-child_5 {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  top: 20%;
-  width: 300px;
-  height: 10px;
-  animation-name: rotate-child;
-}
-@keyframes rotateObject {
-  to {
-    transform: rotate3d(0, 1, 0, 360deg);
-  }
 }/*# sourceMappingURL=article-component.css.map */

@@ -1,7 +1,6 @@
 @charset "UTF-8";
 body {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background-color: #b2b2b2;
 }
 body .App {
   position: relative;
@@ -32,27 +31,27 @@ body h5 {
 }
 
 .primary {
-  background-color: rgb(7, 27, 54);
-  color: rgb(50, 157, 157);
+  background: transparent;
+  color: #3c4048;
 }
 
 .secondary {
-  background-color: rgb(7, 27, 54);
-  color: #c0cbcb;
+  background: transparent;
+  color: #3c4048;
 }
 
 path {
-  fill: #bd1dcf;
+  fill: #b2b2b2;
 }
 
 .certification-container {
   display: flex;
   align-items: flex-start;
-  background-color: rgb(6, 21, 42);
   min-height: 100px;
-  width: 80%;
   margin: 30px 0;
   padding-top: 0px;
+  width: 0;
+  opacity: 0;
 }
 .certification-container p {
   transform: rotate(-45deg);
@@ -61,13 +60,12 @@ path {
   max-width: 100px;
   text-align: center;
   font-weight: 500;
-  color: #c0cbcb;
 }
 .certification-container.even {
-  border-left: 4px solid #bd1dcf;
+  border-left: 4px solid #029ba3;
   width: 0;
   opacity: 0;
-  margin-left: 80%;
+  margin-left: 90%;
   animation-name: fromLeftToRight;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -80,17 +78,17 @@ path {
   }
 }
 .certification-container.odd {
-  border-left: 4px solid #bd1dcf;
+  border-left: 4px solid #029ba3;
   width: 0;
   opacity: 0;
   margin-left: -100%;
-  animation-name: fromRighToRight;
+  animation-name: fromRightToLeft;
   animation-duration: 0.7s;
   animation-fill-mode: forwards;
 }
-@keyframes fromRighToRight {
+@keyframes fromRightToLeft {
   to {
-    margin-left: 0%;
+    margin-left: 10%;
     width: 70%;
     opacity: 1;
   }
@@ -130,6 +128,7 @@ path {
   animation-fill-mode: forwards;
 }
 .certification-container .details-container h3 {
+  color: #029ba3;
   animation-name: fontIncreaseH3;
   animation-duration: 2.1s;
   animation-fill-mode: forwards;

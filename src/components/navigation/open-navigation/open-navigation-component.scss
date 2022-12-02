@@ -6,12 +6,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-right: 1px solid $secondary-dark-color;
-  background-color: $secondary-dark-color;
+  border-right: 1px solid $palette-stone-light-grey-color;
+  background-color: $palette-stone-dark-grey-color;
   &:hover {
-    background-color: $primary-dark-color;
-    .open-button {
-      color: $primary-color;
+    path {
+      fill: $palette-ocean-color;
     }
   }
 }
