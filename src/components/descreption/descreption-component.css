@@ -1,5 +1,5 @@
 body {
-  background-color: #b2b2b2;
+  background-color: #464b55;
 }
 body .App {
   position: relative;
@@ -31,16 +31,16 @@ body h5 {
 
 .primary {
   background: transparent;
-  color: #3c4048;
+  color: #b9dbe4;
 }
 
 .secondary {
   background: transparent;
-  color: #3c4048;
+  color: #b9dbe4;
 }
 
 path {
-  fill: #b2b2b2;
+  fill: #464b55;
 }
 
 .descreption-container {
@@ -62,7 +62,7 @@ path {
   text-align: left;
   word-break: keep-all;
   word-spacing: 5px;
-  line-height: 160%;
+  line-height: 180%;
   animation-duration: 1.6s;
   animation-fill-mode: both;
   top: 100%;
@@ -75,6 +75,12 @@ path {
   align-self: flex-end;
   margin-top: 20px;
   font-weight: 500;
+  font-size: larger;
+  text-shadow: 2px 2px 1px #3c4048;
+  transition: 0.5s;
+}
+.descreption-container .descreption a:hover {
+  letter-spacing: 1.3px;
 }
 .descreption-container .descreption.show {
   animation-name: appear;
@@ -89,7 +95,7 @@ path {
   }
   to {
     top: 22%;
-    color: #3c4048;
+    color: #b9dbe4;
   }
 }
 @keyframes hideElement {

@@ -19,7 +19,6 @@ export const DetailsSection = ({ dataArr, title }: { dataArr: DetailsType | null
   }
 
   useEffect(() => {
-    console.log('[setObserverState]')
     setObserverState({ element: certificationContainer.current, callback: intersectionCallback })
     dataArr?.forEach((_, i) => {
       setDetailsArray((prev) => [...prev, true])
@@ -28,7 +27,6 @@ export const DetailsSection = ({ dataArr, title }: { dataArr: DetailsType | null
 
   const intersectionCallback = (entries: any, observer: any) => {
     const [entriesPoperties] = entries
-    console.log(entriesPoperties.intersectionRatio)
     if (entriesPoperties.intersectionRatio >= tresholds.observeEntryTreshold) return setShowDetails(true)
 
     setShowDetails(false)
@@ -47,6 +45,7 @@ export const DetailsSection = ({ dataArr, title }: { dataArr: DetailsType | null
                 <h2>{position || certification_title}</h2>
                 <h3>{enterprice || place}</h3>
                 <ul id={`details-list-${i}`} className={detailsArray[i] ? 'show' : ''}>
+                  <h4>{position || certification_title}</h4>
                   {role_descreption?.split('.').map((sentence, i) => (
                     <li key={`details-${i}`}>{sentence}</li>
                   ))}

@@ -19,7 +19,6 @@ export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
   }, [])
 
   useEffect(() => {
-    console.log('[DetailsSection]', skillComponentRef.current)
     if (!skillComponentRef.current) return
     setObserverState({ element: skillComponentRef.current, callback: observerCallBack })
     return () => {}

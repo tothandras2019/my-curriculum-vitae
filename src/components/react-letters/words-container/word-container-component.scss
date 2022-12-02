@@ -23,11 +23,12 @@
     }
 
     p {
-      transition: 0.5s;
+      transition: 0.3s;
       min-width: 30px;
 
       &.letter-bounces {
-        text-shadow: 10px 10px 7px $additional-color;
+        color: $palette-additional-color;
+        text-shadow: 10px 10px 7px $palette-stone-dark-grey-color;
         animation-name: pinting;
         animation-duration: 0.7s;
       }

@@ -15,9 +15,9 @@ input[type='submit'] {
 
   &:hover {
     color: $palette-ocean-color;
-    background-color: $additional-color;
     border: 2px solid transparent;
-    letter-spacing: 1.1px;
+    background-color: $palette-stone-dark-grey-color;
+    letter-spacing: 1.2px;
     transition: 0.5s;
   }
   &:active {

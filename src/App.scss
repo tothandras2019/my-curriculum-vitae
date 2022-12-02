@@ -1,13 +1,12 @@
-$palette-creamy-white-color: #eaeaea;
-$palette-stone-light-grey-color: #b2b2b2;
+$palette-creamy-white-color: #b9dbe4;
+$palette-stone-light-grey-color: #464b55;
 $palette-ocean-color: #029ba3;
 $palette-stone-dark-grey-color: #3c4048;
 
-$additional-color: rgb(4, 63, 119);
+$palette-additional-color: rgb(168, 152, 51);
 
 body {
   background-color: $palette-stone-light-grey-color;
-  // color: $palette-creamy-white-color;
 
   .App {
     position: relative;
@@ -43,11 +42,11 @@ body {
 
 .primary {
   background: transparent;
-  color: $palette-stone-dark-grey-color;
+  color: $palette-creamy-white-color;
 }
 .secondary {
   background: transparent;
-  color: $palette-stone-dark-grey-color;
+  color: $palette-creamy-white-color;
 }
 
 path {

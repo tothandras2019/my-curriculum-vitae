@@ -1,5 +1,5 @@
 body {
-  background-color: #b2b2b2;
+  background-color: #464b55;
 }
 body .App {
   position: relative;
@@ -31,16 +31,16 @@ body h5 {
 
 .primary {
   background: transparent;
-  color: #3c4048;
+  color: #b9dbe4;
 }
 
 .secondary {
   background: transparent;
-  color: #3c4048;
+  color: #b9dbe4;
 }
 
 path {
-  fill: #b2b2b2;
+  fill: #464b55;
 }
 
 .word-container {
@@ -65,11 +65,12 @@ path {
   }
 }
 .word-container .parent-span p {
-  transition: 0.5s;
+  transition: 0.3s;
   min-width: 30px;
 }
 .word-container .parent-span p.letter-bounces {
-  text-shadow: 10px 10px 7px rgb(4, 63, 119);
+  color: rgb(168, 152, 51);
+  text-shadow: 10px 10px 7px #3c4048;
   animation-name: pinting;
   animation-duration: 0.7s;
 }

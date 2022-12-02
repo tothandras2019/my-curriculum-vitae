@@ -82,9 +82,6 @@ function App(): JSX.Element {
   }, [certifications, workingdetail, skills])
 
   useEffect(() => {}, [locationObjectElementsState])
-  useEffect(() => {
-    console.log(window.location.pathname)
-  }, [])
 
   return (
     <div className='App'>

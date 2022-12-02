@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 body {
-  background-color: #b2b2b2;
+  background-color: #464b55;
 }
 body .App {
   position: relative;
@@ -32,16 +32,16 @@ body h5 {
 
 .primary {
   background: transparent;
-  color: #3c4048;
+  color: #b9dbe4;
 }
 
 .secondary {
   background: transparent;
-  color: #3c4048;
+  color: #b9dbe4;
 }
 
 path {
-  fill: #b2b2b2;
+  fill: #464b55;
 }
 
 .title {
