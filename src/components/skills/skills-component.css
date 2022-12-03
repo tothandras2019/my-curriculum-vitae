@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap");
 body {
   background-color: #464b55;
+  font-family: "Montserrat", sans-serif;
 }
 body .App {
   position: relative;
@@ -13,6 +15,7 @@ body main {
   box-sizing: border-box;
 }
 body h1 {
+  font-family: "Russo One", sans-serif;
   font-size: 50px;
 }
 body h2 {

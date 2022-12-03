@@ -1,0 +1,61 @@
+@import './../../App.scss';
+
+.background {
+  position: fixed;
+  bottom: 20px;
+  right: 200px;
+  width: 100px;
+  height: 100px;
+  border: 3px solid $palette-stone-dark-grey-color;
+  z-index: -1000;
+  filter: blur(3px);
+
+  &.horizontal,
+  &.vertical {
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+
+  &.horizontal {
+    animation-name: moveHorizontal;
+    animation-duration: 25s;
+  }
+
+  &.vertical {
+    animation-name: moveVertical;
+    animation-duration: 35s;
+    animation-delay: 5s;
+    animation-direction: reverse;
+  }
+
+  @keyframes moveHorizontal {
+    30% {
+      bottom: 20px;
+      right: 350px;
+    }
+
+    60% {
+      bottom: 220px;
+      right: 350px;
+    }
+    90% {
+      bottom: 220px;
+      right: 200px;
+    }
+  }
+  @keyframes moveVertical {
+    30% {
+      bottom: 20px;
+      right: 350px;
+    }
+
+    60% {
+      bottom: 220px;
+      right: 350px;
+    }
+    90% {
+      bottom: 220px;
+      right: 200px;
+    }
+  }
+}

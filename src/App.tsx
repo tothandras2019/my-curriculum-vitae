@@ -12,6 +12,7 @@ import { CerfiticationsArrType, cvSkillsArrType, cvWorkingHistoryArrType } from 
 import { Skills } from './components/skills/skills-component'
 import { ScrollButton } from './components/buttons/scroll-button/scroll-button-component'
 import { Article } from './components/article/article-component'
+import { Background } from './components/background/background-component'
 
 /*components: 
 About me {Personal, Carrier-objectives}, 
@@ -81,11 +82,10 @@ function App(): JSX.Element {
     return () => {}
   }, [certifications, workingdetail, skills])
 
-  useEffect(() => {}, [locationObjectElementsState])
+  useEffect(() => {}, [])
 
   return (
     <div className='App'>
-      {/* <Article /> */}
       <Routes>
         <Route element={<Naviation />}>
           <Route
@@ -102,6 +102,8 @@ function App(): JSX.Element {
         </Route>
       </Routes>
       <ScrollButton />
+      <Background clsName='horizontal' />
+      <Background clsName='vertical' />
     </div>
   )
 }

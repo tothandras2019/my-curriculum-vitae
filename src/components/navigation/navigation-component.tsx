@@ -4,7 +4,7 @@ import logo from './../../img/my_logo.png'
 import linkedIn from './../../img/linkedin-logo.png'
 import gitHub from './../../img/github-logo.png'
 
-import { Fragment, ReactElement, useContext } from 'react'
+import { Fragment, ReactElement, useContext, useEffect } from 'react'
 import { NavigationContext } from '../contexts/navigation-context'
 import { HideMenuContext } from '../contexts/navigation-hide-context'
 import { LinkButton } from '../buttons/link-button/link-button-component'
@@ -15,6 +15,10 @@ import { Open } from './open-navigation/open-navigation-component'
 export const Naviation = (): ReactElement => {
   const { navItems } = useContext(NavigationContext)
   const { isHidden } = useContext(HideMenuContext)
+
+  useEffect(() => {
+    console.log(window.location.pathname)
+  }, [])
 
   return (
     <Fragment>
@@ -46,7 +50,6 @@ export const Naviation = (): ReactElement => {
             </a>
           </div>
         </div>
-        {/* <Open /> */}
       </aside>
       <Outlet />
     </Fragment>

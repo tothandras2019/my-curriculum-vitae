@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import './../../App.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap');
 
 $letter-size-speed: 0.6s;
 $element-size-speed: 1.1s;
 
 .title {
   position: relative;
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Russo One';
+  font-size: 70px;
   min-width: 600px;
   min-height: 100px;
   display: flex;
   flex-direction: column;
-  // font-size: 190px;
-  font-size: 70px;
   z-index: 1;
 
   // .word-container:nth-child(1) {

@@ -14,8 +14,10 @@ export const LinkButton = ({
   item: string
 }): JSX.Element => {
   const navigationTo = useNavigate()
+
   const onHandleNavigateTo = () => {
     navigationTo(`${link}`)
+    console.log(link)
   }
   return (
     <button className={isHidden ? 'hide' : '_'} onClick={onHandleNavigateTo}>

@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap");
+body {
+  background-color: #464b55;
+  font-family: "Montserrat", sans-serif;
+}
+body .App {
+  position: relative;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 90px;
+  margin-left: 12vw;
+  box-sizing: border-box;
+}
+body h1 {
+  font-family: "Russo One", sans-serif;
+  font-size: 50px;
+}
+body h2 {
+  font-size: 40px;
+}
+body h3 {
+  font-size: 30px;
+}
+body h4 {
+  font-size: 25px;
+  min-width: 210px;
+}
+body h5 {
+  font-size: 20px;
+}
+
+.primary {
+  background: transparent;
+  color: #b9dbe4;
+}
+
+.secondary {
+  background: transparent;
+  color: #b9dbe4;
+}
+
+path {
+  fill: #464b55;
+}
+
+.background {
+  position: fixed;
+  bottom: 20px;
+  right: 200px;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #3c4048;
+  z-index: -1000;
+  filter: blur(3px);
+}
+.background.horizontal, .background.vertical {
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.background.horizontal {
+  animation-name: moveHorizontal;
+  animation-duration: 25s;
+}
+.background.vertical {
+  animation-name: moveVertical;
+  animation-duration: 35s;
+  animation-delay: 5s;
+  animation-direction: reverse;
+}
+@keyframes moveHorizontal {
+  30% {
+    bottom: 20px;
+    right: 350px;
+  }
+  60% {
+    bottom: 220px;
+    right: 350px;
+  }
+  90% {
+    bottom: 220px;
+    right: 200px;
+  }
+}
+@keyframes moveVertical {
+  30% {
+    bottom: 20px;
+    right: 350px;
+  }
+  60% {
+    bottom: 220px;
+    right: 350px;
+  }
+  90% {
+    bottom: 220px;
+    right: 200px;
+  }
+}/*# sourceMappingURL=background-component.css.map */
