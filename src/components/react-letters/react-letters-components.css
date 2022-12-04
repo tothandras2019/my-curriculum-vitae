@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
 body {
   background-color: #464b55;
-  font-family: "Montserrat", sans-serif;
 }
 body .App {
   position: relative;
@@ -54,64 +58,5 @@ path {
   min-width: 600px;
   min-height: 100px;
   display: flex;
-  flex-direction: column;
   z-index: 1;
-}
-.title.larger .word-container:nth-child(1) {
-  animation: 0.8s linear forwards titleLarger;
-}
-.title.larger .word-container:nth-child(2) {
-  animation: 0.6s ease-out forwards titleLarger, 1.1s linear forwards large_child_2;
-}
-.title.larger .word-container:nth-child(3) {
-  animation: 0.6s ease-in-out forwards titleLarger, 1.1s ease-out forwards large_child_3;
-}
-@keyframes titleLarger {
-  to {
-    font-size: 190px;
-  }
-}
-@keyframes large_child_2 {
-  to {
-    top: 200px;
-    left: 0px;
-  }
-}
-@keyframes large_child_3 {
-  to {
-    top: 400px;
-    left: 0px;
-  }
-}
-.title.smaller {
-  position: relative;
-}
-.title.smaller .word-container:nth-child(1) {
-  animation: 0.6s ease-in-out forwards titleSmaller;
-}
-.title.smaller .word-container:nth-child(2) {
-  animation: 0.6s ease-in-out forwards titleSmaller;
-}
-.title.smaller .word-container:nth-child(3) {
-  animation: 0.6s ease-in-out forwards titleSmaller;
-}
-@keyframes child_2 {
-  from {
-    top: 200px;
-    left: 0px;
-  }
-  to {
-    top: 0;
-    left: 135px;
-  }
-}
-@keyframes child_3 {
-  from {
-    top: 400px;
-    left: 0px;
-  }
-  to {
-    top: 0;
-    left: 350px;
-  }
 }/*# sourceMappingURL=react-letters-components.css.map */

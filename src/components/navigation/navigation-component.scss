@@ -12,6 +12,12 @@ aside {
   transition: 0.5s;
   z-index: 100;
 
+  .version {
+    width: 100%;
+    text-align: center;
+    color: $palette-creamy-white-color;
+  }
+
   &.narrow {
     width: 50px;
     transition: 0.5s;

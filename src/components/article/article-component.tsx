@@ -21,6 +21,8 @@ export const Article = ({ moveAxisValue }: { moveAxisValue?: MoveAxisType }): JS
     'Express',
     'Firebase',
     'Netfly',
+    'Swiper',
+    'REST-API',
   ]
 
   const tagOptions = {

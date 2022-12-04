@@ -1,5 +1,6 @@
 import { spawn } from 'child_process'
-import { MouseEvent, MouseEventHandler, useState, useEffect } from 'react'
+import { MouseEvent, MouseEventHandler, useState, useEffect, useContext } from 'react'
+import { AppearContext } from './../contexts/appear-section-context'
 import './react-letters-components.css'
 import { Words } from './words-container/words-container-component'
 
@@ -16,26 +17,25 @@ export const Letters = ({
   const [startAnim, setStartAnim] = useState<WordElementType>({} as WordElementType)
   const [isSmallTitle, setIsSmallTitle] = useState(true)
   const [sentenceMod, setSentenceMod] = useState<string[][]>([])
-  const [wordDistance, setWordDistance] = useState<number>(0)
-  let prevLength = 0
-  const constansDistance = 278
+  const { willAppear } = useContext(AppearContext)
 
   useEffect(() => {
     let wordsId: WordElementType = {}
-    const wordArr = sentence.split(' ')
+    const wordArr = sentence.split('')
 
-    setWordDistance(wordArr.length / sentence.length)
     const splitedSentence = wordArr.map((word) => word.split(''))
-
     setSentenceMod(splitedSentence)
-
-    sentenceMod.forEach((_, i) => (wordsId[`wo-${i}`] = false))
     setStartAnim(wordsId)
 
     return () => {
       setStartAnim({})
     }
   }, [sentence])
+
+  useEffect(() => {
+    let wordsId: WordElementType = {}
+    sentenceMod.forEach((_, i) => (wordsId[`wo-${i}`] = false))
+  }, [sentenceMod])
 
   const handleOnMouseEnter = (event: MouseEvent<HTMLElement>) => {
     const newTarget = event.target as HTMLElement
@@ -48,9 +48,7 @@ export const Letters = ({
   return (
     <span className={`title ${smaller ? 'smaller' : ''}`}>
       {sentenceMod.map((words, i) => {
-        const transLeft = { left: `${prevLength * wordDistance * constansDistance}px` }
-        prevLength += words.length
-        return <Words key={`words-${i}-all`} words={words} index={i} translateObject={transLeft} startAnim={startAnim} handler={handleOnMouseEnter} />
+        return <Words key={`words-${i}-all`} words={words} index={i} startAnim={startAnim} handler={handleOnMouseEnter} />
       })}
     </span>
   )

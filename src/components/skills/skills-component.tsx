@@ -7,6 +7,7 @@ import { useIntersectionObserver } from '../contexts/custom-hooks/observer-hook'
 export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
   const skillComponentRef = useRef<HTMLDivElement | null>(null)
   const [startIndicator, setStartIndicator] = useState(false)
+
   const setObserverState = useIntersectionObserver()
 
   const tresholds = {
@@ -32,7 +33,7 @@ export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
 
   return (
     <section ref={skillComponentRef} className='main-skills-container'>
-      <Letters sentence={'Skills'} smaller={true} />
+      {startIndicator && <Letters sentence={'Skills'} smaller={true} />}
       <div className='horizontal-aligned-skills'>
         {skills?.map((skill, i) => (
           <SkillTypesContainer key={`skill-${i}`} startIndicator={startIndicator} skill={skill} />

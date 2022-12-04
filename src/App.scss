@@ -20,13 +20,12 @@ $palette-stone-dark-grey-color: #3c4048;
 $palette-additional-color: rgb(168, 152, 51);
 
 * {
-  // font-family: 'Montserrat', sans-serif;
-  // font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
 }
 
 body {
   background-color: $palette-stone-light-grey-color;
-  font-family: 'Montserrat', sans-serif;
 
   .App {
     position: relative;

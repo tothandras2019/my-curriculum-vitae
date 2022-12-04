@@ -12,7 +12,7 @@ export const Words = ({
 }: {
   words: string[]
   index: number
-  translateObject: { left: string }
+  translateObject?: { left: string }
   startAnim: WordElementType
   handler: (event: MouseEvent<HTMLElement>) => void
 }) => {

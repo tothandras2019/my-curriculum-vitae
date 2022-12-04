@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
 body {
   background-color: #464b55;
-  font-family: "Montserrat", sans-serif;
 }
 body .App {
   position: relative;
@@ -56,6 +60,11 @@ aside {
   height: 100%;
   transition: 0.5s;
   z-index: 100;
+}
+aside .version {
+  width: 100%;
+  text-align: center;
+  color: #b9dbe4;
 }
 aside.narrow {
   width: 50px;

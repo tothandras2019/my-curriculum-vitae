@@ -15,10 +15,7 @@ import { Open } from './open-navigation/open-navigation-component'
 export const Naviation = (): ReactElement => {
   const { navItems } = useContext(NavigationContext)
   const { isHidden } = useContext(HideMenuContext)
-
-  useEffect(() => {
-    console.log(window.location.pathname)
-  }, [])
+  const version = '1.0'
 
   return (
     <Fragment>
@@ -49,6 +46,7 @@ export const Naviation = (): ReactElement => {
               <img src={gitHub} height='30'></img>
             </a>
           </div>
+          <p className='version'>{`v.${version}`} </p>
         </div>
       </aside>
       <Outlet />

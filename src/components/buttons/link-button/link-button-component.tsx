@@ -1,6 +1,7 @@
 import './link-button-component.css'
-import { ReactNode } from 'react'
+import { ReactNode, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { NavigationLinkContext } from '../../contexts/navigation-context'
 
 export const LinkButton = ({
   isHidden,
@@ -14,10 +15,11 @@ export const LinkButton = ({
   item: string
 }): JSX.Element => {
   const navigationTo = useNavigate()
+  const { setNavLinkItems } = useContext(NavigationLinkContext)
 
   const onHandleNavigateTo = () => {
     navigationTo(`${link}`)
-    console.log(link)
+    setNavLinkItems(link)
   }
   return (
     <button className={isHidden ? 'hide' : '_'} onClick={onHandleNavigateTo}>

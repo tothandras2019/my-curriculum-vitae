@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { NavigationContextProvider } from './components/contexts/navigation-context'
+import { NavigationContextProvider, NavigationLinkContextProvider } from './components/contexts/navigation-context'
 import { BackgroundContextProvider } from './components/contexts/theme-context'
 import { HideMenuContextProvider } from './components/contexts/navigation-hide-context'
+import { AppearContextProvider } from './components/contexts/appear-section-context'
+
 import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
@@ -14,9 +16,13 @@ root.render(
     <BrowserRouter>
       <BackgroundContextProvider>
         <HideMenuContextProvider>
-          <NavigationContextProvider>
-            <App />
-          </NavigationContextProvider>
+          <NavigationLinkContextProvider>
+            <NavigationContextProvider>
+              <AppearContextProvider>
+                <App />
+              </AppearContextProvider>
+            </NavigationContextProvider>
+          </NavigationLinkContextProvider>
         </HideMenuContextProvider>
       </BackgroundContextProvider>
     </BrowserRouter>

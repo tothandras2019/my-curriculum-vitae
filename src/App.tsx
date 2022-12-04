@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useState, useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import logo from './logo.svg'
 import './App.css'
@@ -13,6 +13,7 @@ import { Skills } from './components/skills/skills-component'
 import { ScrollButton } from './components/buttons/scroll-button/scroll-button-component'
 import { Article } from './components/article/article-component'
 import { Background } from './components/background/background-component'
+import { NavigationLinkContext } from './components/contexts/navigation-context'
 
 /*components: 
 About me {Personal, Carrier-objectives}, 
@@ -23,7 +24,10 @@ Good to know{studies,other}
 Contact me*/
 
 function App(): JSX.Element {
-  const location: string[] = ['certification', 'works', 'skills']
+  const location: string[] = ['certifications', 'works', 'skills', 'contact']
+  const [certificationsStr, worksStr, skillsStr, contactStr] = location
+
+  const { navLinkItems } = useContext(NavigationLinkContext)
 
   type CvObjectType = {
     certification: CerfiticationsArrType[]
@@ -95,13 +99,16 @@ function App(): JSX.Element {
               <SinglePageAllComponent skills={skills} workingdetail={workingdetail} descreption={descreption} certifications={certifications} />
             }
           />
-          <Route path='/certifications' element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} section={1} />} />
-          <Route path='/works' element={<MainFullPage workingdetail={workingdetail} backgroundColor={'secondary'} section={2} />} />
-          <Route path='/skills' element={<MainFullPage skills={skills} backgroundColor={'secondary'} section={3} />} />
-          <Route path='/contact' element={<MainFullPage contact={true} backgroundColor={'secondary'} section={4} />} />
+          <Route
+            path={`/${certificationsStr}`}
+            element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} section={1} />}
+          />
+          <Route path={`/${worksStr}`} element={<MainFullPage workingdetail={workingdetail} backgroundColor={'secondary'} section={2} />} />
+          <Route path={`/${skillsStr}`} element={<MainFullPage skills={skills} backgroundColor={'secondary'} section={3} />} />
+          <Route path={`/${contactStr}`} element={<MainFullPage contact={true} backgroundColor={'secondary'} section={4} />} />
         </Route>
       </Routes>
-      <ScrollButton />
+      {!location.includes(navLinkItems) && <ScrollButton />}
       <Background clsName='horizontal' />
       <Background clsName='vertical' />
     </div>
