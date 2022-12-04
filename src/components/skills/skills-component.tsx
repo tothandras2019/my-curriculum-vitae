@@ -1,6 +1,6 @@
 import './skills-component.css'
 import { cvSkillsArrType, cvSkillsType } from '../../DATA/data-types'
-import { CSSProperties, MutableRefObject, RefObject, useCallback, useEffect, useRef, useState } from 'react'
+import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Letters } from '../react-letters/react-letters-componets'
 import { useIntersectionObserver } from '../contexts/custom-hooks/observer-hook'
 
@@ -118,7 +118,7 @@ const Skill = ({ skillDetail, startIndicator }: { skillDetail: string; startIndi
     }
 
     return () => {}
-  }, [])
+  })
 
   const IndicatorStyle: CSSProperties = {
     width: `${indicatorLevel}px`,
