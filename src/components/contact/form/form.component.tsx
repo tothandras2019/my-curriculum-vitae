@@ -1,4 +1,4 @@
-import { ChangeEvent, SyntheticEvent, useEffect, useState } from 'react'
+import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { SectionButton } from '../../buttons/section-button/section-button-component'
 import './form-component.css'
@@ -19,8 +19,6 @@ export const Form = (): JSX.Element => {
   const [email, setEmail] = useState<string>('')
   const [subject, setSubject] = useState<string>('')
   const [message, setMessage] = useState<string>('')
-
-  const [data, setData] = useState({} as DataType)
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     const fieldValue = event.target.value

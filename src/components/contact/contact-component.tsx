@@ -27,7 +27,7 @@ export const Contact = (): JSX.Element => {
     if (!skillComponentRef.current) return
     setObserverState({ element: skillComponentRef.current, callback: observerCallBack })
     return () => {}
-  }, [])
+  }, [skillComponentRef])
 
   return (
     <section ref={skillComponentRef} className='contact-container'>

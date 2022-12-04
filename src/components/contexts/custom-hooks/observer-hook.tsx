@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type InitStateType = { element: HTMLDivElement | null; callback: (entries: any, observer: any) => void }
 
@@ -22,7 +22,7 @@ export const useIntersectionObserver = () => {
     return () => {
       observer.unobserve(element)
     }
-  }, [state])
+  }, [state, options])
 
   return setState
 }
