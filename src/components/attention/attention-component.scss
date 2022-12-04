@@ -1,0 +1,22 @@
+@import './../../App.scss';
+
+.attention-message {
+  animation-name: highlighting;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes highlighting {
+  0% {
+    color: $palette-creamy-white-color;
+  }
+  50% {
+    color: $palette-ocean-color;
+  }
+
+  100% {
+    color: $palette-creamy-white-color;
+  }
+}

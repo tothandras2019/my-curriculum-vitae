@@ -46,7 +46,6 @@ export const MainFullPage = ({
 
   return (
     <main className={`main-full ${backgroundColor}`} id={`section-${section}`}>
-      <Separator />
       {certifications && <DetailsSection dataArr={certifications} title={'Certifications'} />}
       {workingdetail && <DetailsSection dataArr={workingdetail} title={'Works'} />}
       {skills && <Skills skills={skills} />}

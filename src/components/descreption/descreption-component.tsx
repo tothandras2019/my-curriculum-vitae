@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Attention } from '../attention/attention-component'
 import { SectionButton } from '../buttons/section-button/section-button-component'
 import { Letters } from '../react-letters/react-letters-componets'
 import './descreption-component.css'
@@ -13,6 +14,7 @@ export const Descreption = ({ descreption }: { descreption: string }): JSX.Eleme
   return (
     <div className='descreption-container'>
       <Letters smaller={hideDescreption} />
+      <Attention message='*Hover on title letters' />
       {/* <SectionButton value={hideDescreption ? 'show details' : 'hide details'} onHandler={onHandleShowDescription} /> */}
       <div className={`descreption ${hideDescreption ? 'hide' : 'show'}`}>
         <p>{descreption}.</p>

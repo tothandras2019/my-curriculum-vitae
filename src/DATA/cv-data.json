@@ -6,7 +6,7 @@
     "worldview": "lorem ipsum something special"
   },
   "carrier_objectives": {
-    "descreption": "I become a front-end developer  "
+    "descreption": "Hello! I'am Andras! I have a great news for you!  I become a passionate front-end developer this year and behind me there are a lot of learning time in smaller individual and team projects. I managed to learn how to find solution for any challenge in web development, even if I don't know something in the first glance. I like to learn it!"
   },
   "cerfitications": [
     {
@@ -14,28 +14,28 @@
       "certification_title": "Junior Frontend Developer",
       "place": "Codecool Hungary",
       "document": "Certification",
-      "details": "The fundamental scope of learning were HTML, CSS and Javascript in the first half of the education. In the second half on the learning path I learnt and mastered the usage of React js, Node_Express js, SASS, Firebase authentication and Cloud Storage.During this period there were individual and team projects that had to be managed as live projects. I acquire deep knowledge of Git and Github tools that were used in daily Meanwhile, I had to keep a clean coding policy. I received continuous mentoring support from professionals.The editor was VS Code and many other extensions and libraries"
+      "details": "The fundamental scope of learning were HTML, CSS and Javascript in the first half of the education. In the second half on the learning path I learnt and mastered the usage of React js, Node_Express js, SASS, Firebase authentication and Cloud Storage. During this period there were individual and team projects that had to be managed as live project. I acquired deep knowledge of GitHub tools that were used daily Meanwhile, I had apply clean coding policy. I received continuous mentoring support from professionals.The editor was VS Code and many other extensions and libraries"
     },
     {
       "date": "2022.01-07",
       "certification_title": "JavaScript Course 2022",
       "place": "Udemy Learning Platform",
       "document": "Certification",
-      "details": "The motivation to take this online course was to gain deep knowledge of Javascript programming language, working of web browsers, HTML and CSS.During the training I managed to understand and use Vanilla Javascript for building dynamic ebsites. I used VS Code as editor for developing"
+      "details": "The motivation to take this online course was to gain deep knowledge of Javascript programming language, working of web browsers, HTML and CSS.During the training I managed to understand and use Vanilla Javascript for building dynamic websites. I used VS Code as editor for developing"
     },
     {
       "date": "2020.11-2021.04",
       "certification_title": "Junior Programer",
       "place": "Unity Game Developer Pathway",
       "document": "Certification",
-      "details": "In the pathway I managed to learn the key concepts and techniques of game development that are applied in large projects.I learned how to do profile optimization for managing performance issues.I used  Unity Visual Studio and C_Sharp language for developing"
+      "details": "In the pathway I managed to learn the key concepts and techniques of game development that are applied in large projects.I learned how to do profile optimization for managing performance issues.I used  Unity Visual Studio and C-Sharp language for developing"
     },
     {
       "date": "2020.01-04",
-      "certification_title": "Mathematics For Computer Games",
+      "certification_title": "Mathematics for Computer Games",
       "place": "Holistic3D Learning Platform",
       "document": "Certification",
-      "details": "The scope was to understand and apply the mathematical calculations and techniques in game development.The main topics were transformation, translations, 3d vector calculations, matrix calculations  and quaternions.I used  Unity_Visual Studio and C_Sharp language for developing"
+      "details": "The scope was to understand and apply the mathematical calculations and techniques in game development.The main topics were transformation, translations, 3d vector calculations, matrix calculations  and quaternions.I used  Unity Visual Studio and C-Sharp language for developing"
     },
     {
       "date": "2011.06",

@@ -7,7 +7,7 @@ import { Words } from './words-container/words-container-component'
 type WordElementType = { [key: string]: boolean }
 export const Letters = ({
   isColor = false,
-  sentence = 'Hello. My name is András',
+  sentence = 'Welcome visitor!',
   smaller = false,
 }: {
   isColor?: boolean

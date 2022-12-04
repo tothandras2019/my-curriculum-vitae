@@ -5,6 +5,7 @@ import { SectionButton } from '../buttons/section-button/section-button-componen
 import { Letters } from '../react-letters/react-letters-componets'
 import { useIntersectionObserver } from '../contexts/custom-hooks/observer-hook'
 import { AppearContext } from './../contexts/appear-section-context'
+import { Attention } from '../attention/attention-component'
 
 type DetailsType = cvWorkingHistoryArrType | CerfiticationsArrType
 
@@ -44,6 +45,8 @@ export const DetailsSection = ({ dataArr, title }: { dataArr: DetailsType | null
       {showDetails && (
         <>
           <Letters sentence={title} smaller={true} />
+          <Attention message='*Hover on paragraphs for more details' />
+
           {dataArr?.map((data: cvWorkingHistory & CvCertificationDetailsType, i: number) => {
             const { date, certification_title, place, document, details, position, enterprice, role_descreption } = data
             return (
