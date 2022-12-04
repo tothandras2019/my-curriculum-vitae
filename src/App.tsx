@@ -1,45 +1,21 @@
-import React, { Dispatch, SetStateAction, useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import logo from './logo.svg'
 import './App.css'
 import './Reset.css'
 import { Naviation } from './components/navigation/navigation-component'
-import { MainSplited } from './components/main-splited/main-splited-component'
 import CV_DATA from './DATA/cv-data.json'
 import { SinglePageAllComponent } from './components/single-page/single-page-component'
 import { MainFullPage } from './components/main-full/main-full-component'
 import { CerfiticationsArrType, cvSkillsArrType, cvWorkingHistoryArrType } from './DATA/data-types'
-import { Skills } from './components/skills/skills-component'
 import { ScrollButton } from './components/buttons/scroll-button/scroll-button-component'
-import { Article } from './components/article/article-component'
 import { Background } from './components/background/background-component'
 import { NavigationLinkContext } from './components/contexts/navigation-context'
-
-/*components: 
-About me {Personal, Carrier-objectives}, 
-Certified {cerfitications}, 
-Previous woerking life { working-history},
-My Skills {skills} 
-Good to know{studies,other}
-Contact me*/
 
 function App(): JSX.Element {
   const location: string[] = ['certifications', 'works', 'skills', 'contact']
   const [certificationsStr, worksStr, skillsStr, contactStr] = location
-
+  //
   const { navLinkItems } = useContext(NavigationLinkContext)
-
-  type CvObjectType = {
-    certification: CerfiticationsArrType[]
-    works: cvWorkingHistoryArrType[]
-    skills: cvSkillsArrType[]
-  }
-
-  const locationObjectElements = {
-    certification: 'certifications',
-    works: 'works',
-    skills: 'skills',
-  }
 
   const cv_descreption: string = CV_DATA.carrier_objectives.descreption
   const cv_certifications: CerfiticationsArrType = CV_DATA.cerfitications
@@ -47,22 +23,15 @@ function App(): JSX.Element {
   const cv_skills: cvSkillsArrType = CV_DATA.skills
 
   const [descreption, setDescreption] = useState('')
-  const [allDetails, setAllDetails] = useState<string[]>([])
 
   const [certifications, setCertifications] = useState<CerfiticationsArrType | null>([])
   const [workingdetail, setWorkingDetail] = useState<cvWorkingHistoryArrType | null>([])
   const [skills, setSkills] = useState<cvSkillsArrType>([])
-  type updateState = Dispatch<SetStateAction<CvObjectType>>
-  const [locationObjectElementsState, setLocationObjectElementsState] = useState<updateState>((locationObjectElementsState) => ({
-    certification: [],
-    works: [],
-    skills: [],
-  }))
 
   useEffect(() => {
     setDescreption(cv_descreption)
     return () => {}
-  }, [descreption])
+  }, [cv_descreption])
   useEffect(() => {
     setCertifications(cv_certifications)
     return () => {}
@@ -79,14 +48,12 @@ function App(): JSX.Element {
     return () => {}
   }, [cv_skills])
 
-  useEffect(() => {
-    if (certifications !== null) setLocationObjectElementsState(() => ({ ...locationObjectElementsState, certification: certifications }))
-    setLocationObjectElementsState(() => ({ ...locationObjectElementsState, works: workingdetail }))
-    setLocationObjectElementsState(() => ({ ...locationObjectElementsState, skills: skills }))
-    return () => {}
-  }, [certifications, workingdetail, skills])
-
-  useEffect(() => {}, [])
+  // useEffect(() => {
+  //   if (certifications !== null) setLocationObjectElementsState(() => ({ ...locationObjectElementsState, certification: certifications }))
+  //   setLocationObjectElementsState(() => ({ ...locationObjectElementsState, works: workingdetail }))
+  //   setLocationObjectElementsState(() => ({ ...locationObjectElementsState, skills: skills }))
+  //   return () => {}
+  // }, [certifications, workingdetail, skills])
 
   return (
     <div className='App'>
