@@ -4,7 +4,16 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   box-sizing: border-box;
   min-height: 100vh;
+  max-width: 80vw;
+}
+
+@media screen and (max-width: 1375px) {
+  .main-splited {
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 2vw;
+  }
 }

@@ -19,7 +19,7 @@ export const Naviation = (): ReactElement => {
 
   return (
     <Fragment>
-      <aside className={isHidden.hide ? `narrow` : ''}>
+      <aside className={`aside-top-container ${isHidden.hide ? `narrow` : ''}`}>
         <div className='aside-container'>
           <span className='img-place'>
             <p>Ta</p> {/* <img src={logo} alt='not yet implemented' height={isHidden.hide ? `30` : '100'} /> */}

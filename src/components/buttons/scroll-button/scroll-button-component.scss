@@ -1,9 +1,8 @@
 $button-height: 75px;
 .scroll {
   position: fixed;
-  top: 90vh;
-  right: -25px;
-  transform: translateX(-50%);
+  bottom: 25px;
+  right: 25px;
   max-width: $button-height;
   max-height: $button-height;
   min-width: $button-height;

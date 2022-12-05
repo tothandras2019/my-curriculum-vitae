@@ -2,12 +2,19 @@
 
 .main-full {
   position: relative;
-  width: 85vw;
+  width: 80vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   section {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1375px) {
+  .main-full {
+    width: 80vw;
+    margin-left: 2vw;
   }
 }

@@ -1,6 +1,6 @@
 .contact-container {
   position: relative;
-  width: 50%;
+  width: 60%;
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -10,5 +10,11 @@
   .comitment-message {
     line-height: 1.8;
     padding: 10px;
+  }
+}
+
+@media screen and (max-width: 1375px) {
+  .contact-container {
+    width: 100%;
   }
 }
