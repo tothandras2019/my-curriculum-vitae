@@ -57,7 +57,7 @@ path {
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 600px;
-  width: 90%;
+  width: 80%;
   gap: 20px;
   transition: 0.8s;
 }
@@ -68,6 +68,8 @@ path {
   justify-content: center;
   width: 100%;
   height: 60%;
+  box-sizing: border-box;
+  padding-right: 20px;
   text-align: left;
   font-size: x-large;
   word-break: keep-all;
@@ -112,5 +114,16 @@ path {
   to {
     top: 100%;
     color: transparent;
+  }
+}
+
+@media screen and (max-width: 1375px) {
+  .descreption-container {
+    justify-content: flex-start;
+    height: 100vh;
+    width: 90%;
+  }
+  .descreption-container .descreption {
+    width: 100%;
   }
 }/*# sourceMappingURL=descreption-component.css.map */

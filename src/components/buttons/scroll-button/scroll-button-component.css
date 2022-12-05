@@ -1,8 +1,7 @@
 .scroll {
   position: fixed;
-  top: 90vh;
-  right: -25px;
-  transform: translateX(-50%);
+  bottom: 25px;
+  right: 25px;
   max-width: 75px;
   max-height: 75px;
   min-width: 75px;
