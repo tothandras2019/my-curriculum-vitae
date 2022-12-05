@@ -1,6 +1,4 @@
-import { spawn } from 'child_process'
-import { MouseEvent, MouseEventHandler, useState, useEffect, useContext } from 'react'
-import { AppearContext } from './../contexts/appear-section-context'
+import { MouseEvent, useState, useEffect } from 'react'
 import './react-letters-components.css'
 import { Words } from './words-container/words-container-component'
 
@@ -15,9 +13,7 @@ export const Letters = ({
   smaller: boolean
 }): JSX.Element => {
   const [startAnim, setStartAnim] = useState<WordElementType>({} as WordElementType)
-  const [isSmallTitle, setIsSmallTitle] = useState(true)
   const [sentenceMod, setSentenceMod] = useState<string[][]>([])
-  const { willAppear } = useContext(AppearContext)
 
   useEffect(() => {
     let wordsId: WordElementType = {}

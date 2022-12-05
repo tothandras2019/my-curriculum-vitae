@@ -1,4 +1,4 @@
-import { useContext, useState, createContext, Dispatch, SetStateAction } from 'react'
+import { useState, createContext, Dispatch, SetStateAction } from 'react'
 
 type AppearType = { [key: string]: boolean }
 const AppearValue: AppearType = { isAppear: false }

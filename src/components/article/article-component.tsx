@@ -1,12 +1,8 @@
+import { useEffect } from 'react'
 import './article-component.css'
-import { useRef, useEffect, MutableRefObject, useState } from 'react'
 const TagCloud = require('TagCloud')
 
-type MoveAxisType = { x: number; y: number }
-type RefObjectType = HTMLDivElement | Element
-export const Article = ({ moveAxisValue }: { moveAxisValue?: MoveAxisType }): JSX.Element => {
-  const rotationElement = useRef<HTMLDivElement | null>(null)
-  const [shereHtmlElements, setShereHtmlElements] = useState<JSX.Element[] | null>([])
+export const Article = (): JSX.Element => {
   const skillsContainerArray = [
     'VS Code',
     'Javascript',
@@ -28,7 +24,6 @@ export const Article = ({ moveAxisValue }: { moveAxisValue?: MoveAxisType }): JS
   const tagOptions = {
     radius: 270,
     initSpeed: 'slow',
-    // maxSpeed: 'fast',
   }
 
   useEffect(() => {
@@ -38,7 +33,7 @@ export const Article = ({ moveAxisValue }: { moveAxisValue?: MoveAxisType }): JS
     return () => {
       tagcloundInstance.destroy()
     }
-  }, [])
+  })
 
   return (
     <div className='article-container'>

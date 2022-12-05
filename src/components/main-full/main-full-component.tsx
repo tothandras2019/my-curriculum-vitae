@@ -1,20 +1,8 @@
 import './main-full-component.css'
-import { Fragment, useState, useContext, useEffect } from 'react'
-import {
-  CerfiticationsArrType,
-  CvCertificationDetailsType,
-  cvWorkingHistoryArrType,
-  cvWorkingHistory,
-  cvSkillsArrType,
-} from './../../DATA/data-types'
-import { BackgroundContext } from './../contexts/theme-context'
+import { CerfiticationsArrType, cvWorkingHistoryArrType, cvSkillsArrType } from './../../DATA/data-types'
 import { Skills } from '../skills/skills-component'
-import { SectionButton } from '../buttons/section-button/section-button-component'
-import { ScrollButton } from '../buttons/scroll-button/scroll-button-component'
 import { Contact } from '../contact/contact-component'
-import { Letters } from '../react-letters/react-letters-componets'
 import { DetailsSection } from '../details-section/details-section-component'
-import { Separator } from '../separator/separator-component'
 
 type MainPropsType = {
   workingdetail?: cvWorkingHistoryArrType | null
@@ -26,12 +14,6 @@ type MainPropsType = {
   section: number
 }
 
-enum Title {
-  'Certification',
-  'Skills',
-  'Works',
-}
-
 export const MainFullPage = ({
   contact,
   elementObject,
@@ -41,9 +23,6 @@ export const MainFullPage = ({
   backgroundColor = 'secondary',
   section,
 }: MainPropsType): JSX.Element => {
-  const { backgroundItem } = useContext(BackgroundContext)
-  const [title, setTitle] = useState<string>('')
-
   return (
     <main className={`main-full ${backgroundColor}`} id={`section-${section}`}>
       {certifications && <DetailsSection dataArr={certifications} title={'Certifications'} />}

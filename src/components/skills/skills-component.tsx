@@ -1,6 +1,6 @@
 import './skills-component.css'
 import { cvSkillsArrType, cvSkillsType } from '../../DATA/data-types'
-import { CSSProperties, MutableRefObject, RefObject, useCallback, useEffect, useRef, useState } from 'react'
+import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Letters } from '../react-letters/react-letters-componets'
 import { useIntersectionObserver } from '../contexts/custom-hooks/observer-hook'
 
@@ -8,28 +8,31 @@ export const Skills = ({ skills }: { skills: cvSkillsArrType | null }) => {
   const skillComponentRef = useRef<HTMLDivElement | null>(null)
   const [startIndicator, setStartIndicator] = useState(false)
 
-  const setObserverState = useIntersectionObserver()
+  const [ObserverState, setObserverState] = useIntersectionObserver()
 
-  const tresholds = {
+  const [tresholds] = useState({
     observeEntryTreshold: 0.2,
     observeLeaveTreshold: 0.2,
-  }
+  })
 
-  const intersectionCallback = useCallback((val: boolean) => {
-    setStartIndicator(val)
-  }, [])
+  const intersectionCallback = useCallback(
+    (entries: any, observer: any) => {
+      const observerCallBack = (entries: any, observer: any) => {
+        const [entriesPoperties] = entries
+        if (entriesPoperties.intersectionRatio >= tresholds.observeEntryTreshold) return setStartIndicator(true)
+        setStartIndicator(false)
+      }
+
+      observerCallBack(entries, observer)
+    },
+    [tresholds],
+  )
 
   useEffect(() => {
     if (!skillComponentRef.current) return
-    setObserverState({ element: skillComponentRef.current, callback: observerCallBack })
+    setObserverState({ element: skillComponentRef.current, callback: intersectionCallback })
     return () => {}
-  }, [])
-
-  const observerCallBack = (entries: any, observer: any) => {
-    const [entriesPoperties] = entries
-    if (entriesPoperties.intersectionRatio >= tresholds.observeEntryTreshold) return intersectionCallback(true)
-    intersectionCallback(false)
-  }
+  }, [skillComponentRef, intersectionCallback])
 
   return (
     <section ref={skillComponentRef} className='main-skills-container'>
@@ -118,7 +121,7 @@ const Skill = ({ skillDetail, startIndicator }: { skillDetail: string; startIndi
     }
 
     return () => {}
-  }, [])
+  })
 
   const IndicatorStyle: CSSProperties = {
     width: `${indicatorLevel}px`,
