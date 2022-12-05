@@ -7,27 +7,30 @@ import { Form } from './form/form.component'
 export const Contact = (): JSX.Element => {
   const [startIndicator, setStartIndicator] = useState(false)
   const skillComponentRef = useRef<HTMLDivElement | null>(null)
+  const [observerState, setObserverState] = useIntersectionObserver()
 
-  const setObserverState = useIntersectionObserver()
-  const tresholds = {
+  const [tresholds] = useState({
     observeEntryTreshold: 0.2,
     observeLeaveTreshold: 0.2,
-  }
-  const intersectionCallback = useCallback((val: boolean) => {
-    setStartIndicator(val)
-  }, [])
+  })
 
-  const observerCallBack = (entries: any, observer: any) => {
-    const [entriesPoperties] = entries
-    if (entriesPoperties.intersectionRatio >= tresholds.observeEntryTreshold) return intersectionCallback(true)
-    intersectionCallback(false)
-  }
+  const intersectingCallback = useCallback(
+    (entries: any, observer: any) => {
+      const observerCallBack = (entries: any, observer: any) => {
+        const [entriesPoperties] = entries
+        if (entriesPoperties.intersectionRatio >= tresholds.observeEntryTreshold) return setStartIndicator(true)
+        setStartIndicator(false)
+      }
+      observerCallBack(entries, observer)
+    },
+    [tresholds],
+  )
 
   useEffect(() => {
     if (!skillComponentRef.current) return
-    setObserverState({ element: skillComponentRef.current, callback: observerCallBack })
+    setObserverState({ element: skillComponentRef.current, callback: intersectingCallback })
     return () => {}
-  }, [skillComponentRef])
+  }, [skillComponentRef, intersectingCallback, setObserverState])
 
   return (
     <section ref={skillComponentRef} className='contact-container'>

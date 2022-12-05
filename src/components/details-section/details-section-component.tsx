@@ -1,10 +1,8 @@
 import './details-section-component.css'
-import { ReactElement, useEffect, useRef, useState, useContext } from 'react'
+import { ReactElement, useEffect, useRef, useState } from 'react'
 import { CerfiticationsArrType, CvCertificationDetailsType, cvWorkingHistory, cvWorkingHistoryArrType } from '../../DATA/data-types'
-import { SectionButton } from '../buttons/section-button/section-button-component'
 import { Letters } from '../react-letters/react-letters-componets'
 import { useIntersectionObserver } from '../contexts/custom-hooks/observer-hook'
-import { AppearContext } from './../contexts/appear-section-context'
 import { Attention } from '../attention/attention-component'
 
 type DetailsType = cvWorkingHistoryArrType | CerfiticationsArrType
@@ -13,7 +11,7 @@ export const DetailsSection = ({ dataArr, title }: { dataArr: DetailsType | null
   const [showDetails, setShowDetails] = useState(false)
   const [detailsArray, setDetailsArray] = useState<boolean[]>([])
 
-  const setObserverState = useIntersectionObserver()
+  const [observerState, setObserverState] = useIntersectionObserver()
   const certificationContainer = useRef<HTMLDivElement>(null)
 
   const tresholds = {
@@ -26,17 +24,15 @@ export const DetailsSection = ({ dataArr, title }: { dataArr: DetailsType | null
     dataArr?.forEach((_, i) => {
       setDetailsArray((prev) => [...prev, true])
     })
-  }, [])
+  }, [dataArr])
 
   const intersectionCallback = (entries: any, observer: any) => {
     const [entriesPoperties] = entries
     if (entriesPoperties.intersectionRatio >= tresholds.observeEntryTreshold) {
       setShowDetails(true)
-      // setWillIsAppear(() => ({ isAppear: true }))
       return
     }
     setShowDetails(false)
-    //setWillIsAppear(() => ({ isAppear: false }))
   }
 
   return (
