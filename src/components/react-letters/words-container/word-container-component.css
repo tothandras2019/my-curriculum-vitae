@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #464b55;
+  background-color: #11305f;
 }
 body .App {
   position: relative;
@@ -47,7 +47,7 @@ body h5 {
 }
 
 path {
-  fill: #464b55;
+  fill: #11305f;
 }
 
 .word-container {
@@ -75,8 +75,8 @@ path {
   min-width: 30px;
 }
 .word-container .parent-span p.letter-bounces {
-  color: rgb(168, 152, 51);
-  text-shadow: 10px 10px 7px #3c4048;
+  color: rgb(201, 184, 73);
+  text-shadow: 10px 10px 7px #0d2345;
   animation-name: pinting;
   animation-duration: 0.7s;
 }

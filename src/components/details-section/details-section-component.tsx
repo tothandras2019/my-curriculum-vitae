@@ -1,5 +1,5 @@
 import './details-section-component.css'
-import { ReactElement, useEffect, useRef, useState } from 'react'
+import { Fragment, MouseEventHandler, ReactElement, SyntheticEvent, useEffect, useRef, useState } from 'react'
 import { CerfiticationsArrType, CvCertificationDetailsType, cvWorkingHistory, cvWorkingHistoryArrType } from '../../DATA/data-types'
 import { Letters } from '../react-letters/react-letters-componets'
 import { useIntersectionObserver } from '../contexts/custom-hooks/observer-hook'
@@ -35,36 +35,91 @@ export const DetailsSection = ({ dataArr, title }: { dataArr: DetailsType | null
     setShowDetails(false)
   }
 
+  const handleMouseEnter = (event: SyntheticEvent<HTMLDivElement>) => {
+    const index = (event.target as HTMLDivElement).dataset.certId
+    if (index) setDetailsArray((prev) => [...prev.map((el, i) => (i === parseInt(index) ? (el = false) : el))])
+  }
+
+  const handleMouseLeave = () => setDetailsArray((prev) => [...prev.map((el, i) => (el = true))])
+
   return (
     <section ref={certificationContainer}>
       {showDetails && (
-        <>
+        <Fragment>
           <Letters sentence={title} smaller={true} />
           <Attention message='*Hover on paragraphs for more details' />
-
-          {dataArr?.map((data: cvWorkingHistory & CvCertificationDetailsType, i: number) => {
-            const { date, certification_title, place, details, position, enterprice, role_descreption } = data
-            return (
-              <div key={`cert-${i}`} className={`certification-container ${i % 2 === 0 ? 'even' : 'odd'}`}>
-                <p>{date}</p>
-                <div className='details-container'>
-                  <h2>{position || certification_title}</h2>
-                  <h3>{enterprice || place}</h3>
-                  <ul id={`details-list-${i}`} className={detailsArray[i] ? 'show' : ''}>
+          <div className='descreptions-section'>
+            <div className='certification-section'>
+              {dataArr?.map((data: cvWorkingHistory & CvCertificationDetailsType, i: number) => {
+                const { date, certification_title, place, details, position, enterprice, role_descreption } = data
+                return (
+                  <div
+                    key={`cert-${i}`}
+                    className={`certification-container ${i % 2 === 0 ? 'even' : 'odd'}`}
+                    data-cert-id={i}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    style={{ animationDelay: `${i / 10}s` }}
+                  >
+                    <p data-cert-id={i}>{date}</p>
+                    <div data-cert-id={i} className='details-container'>
+                      <h2 data-cert-id={i}>{position || certification_title}</h2>
+                      <h3 data-cert-id={i}>{enterprice || place}</h3>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+            <div className='details-list-section'>
+              {dataArr?.map((data: cvWorkingHistory & CvCertificationDetailsType, i: number) => {
+                const { certification_title, details, position, role_descreption } = data
+                return (
+                  <div key={`details-list-${i}`} id={`details-list-${i}`} className={`cert-list ${detailsArray[i] ? '' : 'highlights'}`}>
                     <h4>{position || certification_title}</h4>
                     {role_descreption?.split('.').map((sentence, i) => (
-                      <li key={`details-${i}`}>{sentence}</li>
+                      <p key={`details-${i}`}>{sentence}</p>
                     ))}
                     {details?.split('.').map((sentence, i) => (
-                      <li key={`details-${i}`}>{sentence}</li>
+                      <p key={`details-${i}`}>{sentence}</p>
                     ))}
-                  </ul>
-                </div>
-              </div>
-            )
-          })}
-        </>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </Fragment>
       )}
     </section>
   )
 }
+
+// ;<section ref={certificationContainer}>
+//   {showDetails && (
+//     <>
+//       <Letters sentence={title} smaller={true} />
+//       <Attention message='*Hover on paragraphs for more details' />
+
+//       {dataArr?.map((data: cvWorkingHistory & CvCertificationDetailsType, i: number) => {
+//         const { date, certification_title, place, details, position, enterprice, role_descreption } = data
+//         return (
+//           <div key={`cert-${i}`} className={`certification-container ${i % 2 === 0 ? 'even' : 'odd'}`}>
+//             <p>{date}</p>
+//             <div className='details-container'>
+//               <h2>{position || certification_title}</h2>
+//               <h3>{enterprice || place}</h3>
+//             </div>
+//             <ul id={`details-list-${i}`} className={`cert-list ${detailsArray[i] ? 'show' : ''}`}>
+//               <h4>{position || certification_title}</h4>
+//               {role_descreption?.split('.').map((sentence, i) => (
+//                 <li key={`details-${i}`}>{sentence}</li>
+//               ))}
+//               {details?.split('.').map((sentence, i) => (
+//                 <li key={`details-${i}`}>{sentence}</li>
+//               ))}
+//             </ul>
+//           </div>
+//         )
+//       })}
+//     </>
+//   )}
+// </section>

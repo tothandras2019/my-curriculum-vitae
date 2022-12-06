@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext, Fragment } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import './Reset.css'
@@ -10,10 +10,12 @@ import { CerfiticationsArrType, cvSkillsArrType, cvWorkingHistoryArrType } from 
 import { ScrollButton } from './components/buttons/scroll-button/scroll-button-component'
 import { Background } from './components/background/background-component'
 import { NavigationLinkContext } from './components/contexts/navigation-context'
+import { LoadingMask } from './components/loading-mask/loading-mask-component'
 
 function App(): JSX.Element {
   const location: string[] = ['certifications', 'works', 'skills', 'contact']
   const [certificationsStr, worksStr, skillsStr, contactStr] = location
+  const [isLoading, setIsLoading] = useState(true)
   //
   const { navLinkItems } = useContext(NavigationLinkContext)
 
@@ -29,55 +31,50 @@ function App(): JSX.Element {
   const [skills, setSkills] = useState<cvSkillsArrType>([])
 
   useEffect(() => {
+    const timeoutID: NodeJS.Timeout = setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
+    return () => {
+      clearTimeout(timeoutID)
+    }
+  }, [])
+
+  useEffect(() => {
     setDescreption(cv_descreption)
-    return () => {}
-  }, [cv_descreption])
-  useEffect(() => {
     setCertifications(cv_certifications)
-    return () => {}
-  }, [cv_certifications])
-
-  useEffect(() => {
     setWorkingDetail(cv_workings)
-
-    return () => {}
-  }, [cv_workings])
-  useEffect(() => {
     setSkills(cv_skills)
-
-    return () => {}
-  }, [cv_skills])
-
-  // useEffect(() => {
-  //   if (certifications !== null) setLocationObjectElementsState(() => ({ ...locationObjectElementsState, certification: certifications }))
-  //   setLocationObjectElementsState(() => ({ ...locationObjectElementsState, works: workingdetail }))
-  //   setLocationObjectElementsState(() => ({ ...locationObjectElementsState, skills: skills }))
-  //   return () => {}
-  // }, [certifications, workingdetail, skills])
+  }, [cv_descreption, cv_certifications, cv_workings, cv_skills])
 
   return (
     <div className='App'>
-      <Routes>
-        <Route element={<Naviation />}>
-          <Route
-            index
-            path='/'
-            element={
-              <SinglePageAllComponent skills={skills} workingdetail={workingdetail} descreption={descreption} certifications={certifications} />
-            }
-          />
-          <Route
-            path={`/${certificationsStr}`}
-            element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} section={1} />}
-          />
-          <Route path={`/${worksStr}`} element={<MainFullPage workingdetail={workingdetail} backgroundColor={'secondary'} section={2} />} />
-          <Route path={`/${skillsStr}`} element={<MainFullPage skills={skills} backgroundColor={'secondary'} section={3} />} />
-          <Route path={`/${contactStr}`} element={<MainFullPage contact={true} backgroundColor={'secondary'} section={4} />} />
-        </Route>
-      </Routes>
-      {!location.includes(navLinkItems) && <ScrollButton />}
-      <Background clsName='horizontal' />
-      <Background clsName='vertical' />
+      {isLoading ? (
+        <LoadingMask />
+      ) : (
+        <Fragment>
+          <Routes>
+            <Route element={<Naviation />}>
+              <Route
+                index
+                path='/'
+                element={
+                  <SinglePageAllComponent skills={skills} workingdetail={workingdetail} descreption={descreption} certifications={certifications} />
+                }
+              />
+              <Route
+                path={`/${certificationsStr}`}
+                element={<MainFullPage certifications={certifications} backgroundColor={'secondary'} section={1} />}
+              />
+              <Route path={`/${worksStr}`} element={<MainFullPage workingdetail={workingdetail} backgroundColor={'secondary'} section={2} />} />
+              <Route path={`/${skillsStr}`} element={<MainFullPage skills={skills} backgroundColor={'secondary'} section={3} />} />
+              <Route path={`/${contactStr}`} element={<MainFullPage contact={true} backgroundColor={'secondary'} section={4} />} />
+            </Route>
+          </Routes>
+          {!location.includes(navLinkItems) && <ScrollButton />}
+          <Background clsName='horizontal' />
+          <Background clsName='vertical' />
+        </Fragment>
+      )}
     </div>
   )
 }

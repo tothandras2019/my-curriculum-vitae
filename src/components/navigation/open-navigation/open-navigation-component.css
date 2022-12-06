@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap");
-body {
-  background-color: #464b55;
+* {
   font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background-color: #11305f;
 }
 body .App {
   position: relative;
@@ -43,7 +47,7 @@ body h5 {
 }
 
 path {
-  fill: #464b55;
+  fill: #11305f;
 }
 
 .side-open-menu {
@@ -53,8 +57,8 @@ path {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-right: 1px solid #464b55;
-  background-color: #3c4048;
+  border-right: 1px solid #11305f;
+  background-color: #0d2345;
 }
 .side-open-menu:hover path {
   fill: #029ba3;
