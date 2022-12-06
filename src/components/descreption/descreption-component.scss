@@ -27,9 +27,11 @@
     line-height: 180%;
     animation-duration: 1.6s;
     animation-fill-mode: both;
-    top: 100%;
-    color: transparent;
-    transition: 0.8s;
+    top: 50%;
+    color: $palette-creamy-white-color;
+    // transition: 0.8s;
+    opacity: 0;
+    animation-name: appearDescreption;
 
     a {
       color: $palette-ocean-color;
@@ -44,22 +46,15 @@
         letter-spacing: 1.3px;
       }
     }
-    &.show {
-      animation-name: appear;
-    }
 
-    &.hide {
-      animation-name: hideElement;
-    }
+    // &.hide {
+    //   animation-name: hideElement;
+    // }
 
-    @keyframes appear {
-      from {
-        top: 100%;
-        color: transparent;
-      }
+    @keyframes appearDescreption {
       to {
         top: 22%;
-        color: $palette-creamy-white-color;
+        opacity: 1;
       }
     }
     @keyframes hideElement {

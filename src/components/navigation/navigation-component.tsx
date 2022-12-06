@@ -15,7 +15,7 @@ import { Open } from './open-navigation/open-navigation-component'
 export const Naviation = (): ReactElement => {
   const { navItems } = useContext(NavigationContext)
   const { isHidden } = useContext(HideMenuContext)
-  const version = '1.0'
+  const version = '1.1'
 
   return (
     <Fragment>

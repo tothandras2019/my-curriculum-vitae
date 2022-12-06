@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap");
-body {
-  background-color: #464b55;
+* {
   font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background-color: #11305f;
 }
 body .App {
   position: relative;
@@ -43,7 +47,7 @@ body h5 {
 }
 
 path {
-  fill: #464b55;
+  fill: #11305f;
 }
 
 input[type=button],
@@ -63,12 +67,12 @@ input[type=button]:hover,
 input[type=submit]:hover {
   color: #029ba3;
   border: 2px solid transparent;
-  background-color: #3c4048;
+  background-color: #0d2345;
   letter-spacing: 1.2px;
   transition: 0.5s;
 }
 input[type=button]:active,
 input[type=submit]:active {
   color: #b9dbe4;
-  background-color: #3c4048;
+  background-color: #0d2345;
 }/*# sourceMappingURL=section-button-component.css.map */

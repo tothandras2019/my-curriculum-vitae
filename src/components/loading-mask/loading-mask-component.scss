@@ -1,0 +1,32 @@
+@import './../../App.scss';
+
+.loading-maks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: $palette-creamy-white-color;
+  .loading-text {
+    font-size: 40px;
+    position: relative;
+    &:before {
+      position: absolute;
+      content: '';
+      width: 1%;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background-color: $palette-ocean-color;
+      animation-name: loadingBar;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes loadingBar {
+      to {
+        width: 110%;
+      }
+    }
+  }
+}

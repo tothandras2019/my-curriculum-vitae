@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Russo+One&display=swap");
-body {
-  background-color: #464b55;
+* {
   font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background-color: #11305f;
 }
 body .App {
   position: relative;
@@ -43,7 +47,7 @@ body h5 {
 }
 
 path {
-  fill: #464b55;
+  fill: #11305f;
 }
 
 .main-skills-container {
@@ -109,7 +113,7 @@ path {
 }
 .main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill .level-indicator-background {
   background: transparent;
-  width: 400px;
+  min-width: 250px;
 }
 .main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill:hover {
   color: #029ba3;
@@ -119,4 +123,14 @@ path {
 .main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill:hover .level-indicator {
   background-color: #029ba3;
   transition: 0.5s;
+}
+@media screen and (max-width: 1300px) {
+  .main-skills-container .horizontal-aligned-skills {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .main-skills-container .horizontal-aligned-skills .skill-types-container {
+    width: 80%;
+  }
 }/*# sourceMappingURL=skills-component.css.map */
