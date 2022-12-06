@@ -16,7 +16,7 @@ export const Article = (): JSX.Element => {
     'Tailwind',
     'Express',
     'Firebase',
-    'Netfly',
+    'Netlify',
     'Swiper',
     'REST-API',
   ]
