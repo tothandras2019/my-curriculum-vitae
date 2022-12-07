@@ -92,34 +92,3 @@ export const DetailsSection = ({ dataArr, title }: { dataArr: DetailsType | null
     </section>
   )
 }
-
-// ;<section ref={certificationContainer}>
-//   {showDetails && (
-//     <>
-//       <Letters sentence={title} smaller={true} />
-//       <Attention message='*Hover on paragraphs for more details' />
-
-//       {dataArr?.map((data: cvWorkingHistory & CvCertificationDetailsType, i: number) => {
-//         const { date, certification_title, place, details, position, enterprice, role_descreption } = data
-//         return (
-//           <div key={`cert-${i}`} className={`certification-container ${i % 2 === 0 ? 'even' : 'odd'}`}>
-//             <p>{date}</p>
-//             <div className='details-container'>
-//               <h2>{position || certification_title}</h2>
-//               <h3>{enterprice || place}</h3>
-//             </div>
-//             <ul id={`details-list-${i}`} className={`cert-list ${detailsArray[i] ? 'show' : ''}`}>
-//               <h4>{position || certification_title}</h4>
-//               {role_descreption?.split('.').map((sentence, i) => (
-//                 <li key={`details-${i}`}>{sentence}</li>
-//               ))}
-//               {details?.split('.').map((sentence, i) => (
-//                 <li key={`details-${i}`}>{sentence}</li>
-//               ))}
-//             </ul>
-//           </div>
-//         )
-//       })}
-//     </>
-//   )}
-// </section>

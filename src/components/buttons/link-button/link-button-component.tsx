@@ -15,14 +15,14 @@ export const LinkButton = ({
   item: string
 }): JSX.Element => {
   const navigationTo = useNavigate()
-  const { setNavLinkItems } = useContext(NavigationLinkContext)
+  const { navLinkItems, setNavLinkItems } = useContext(NavigationLinkContext)
 
   const onHandleNavigateTo = () => {
     navigationTo(`${link}`)
     setNavLinkItems(link)
   }
   return (
-    <button className={isHidden ? 'hide' : '_'} onClick={onHandleNavigateTo}>
+    <button className={`${navLinkItems === link ? 'highlight' : ''} ${isHidden ? 'hide' : '_'}`} onClick={onHandleNavigateTo}>
       <span className='material-icons'>{iconMaterial()}</span>
       <span className={'letter'}>{item}</span>
     </button>

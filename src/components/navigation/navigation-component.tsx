@@ -30,6 +30,7 @@ export const Naviation = (): ReactElement => {
               const [item] = Object.entries(obj)
               const [key, value] = item
               const [title, icon] = value
+
               return (
                 <Fragment key={`button-${key}`}>
                   <LinkButton isHidden={isHidden.hide} iconMaterial={icon} link={key === 'about' ? '/' : key} item={title} />
