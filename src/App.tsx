@@ -6,29 +6,35 @@ import { Naviation } from './components/navigation/navigation-component'
 import CV_DATA from './DATA/cv-data.json'
 import { SinglePageAllComponent } from './components/single-page/single-page-component'
 import { MainFullPage } from './components/main-full/main-full-component'
-import { CerfiticationsArrType, cvSkillsArrType, cvWorkingHistoryArrType } from './DATA/data-types'
+import { CerfiticationsArrType, cvSkillsArrType, cvWorkingHistoryArrType, GeneralObjectType } from './DATA/data-types'
 import { ScrollButton } from './components/buttons/scroll-button/scroll-button-component'
 import { Background } from './components/background/background-component'
 import { NavigationLinkContext } from './components/contexts/navigation-context'
+import { DataContext, Location } from './components/contexts/data-context'
 import { LoadingMask } from './components/loading-mask/loading-mask-component'
 
 function App(): JSX.Element {
-  const location: string[] = ['certifications', 'works', 'skills', 'contact']
-  const [certificationsStr, worksStr, skillsStr, contactStr] = location
+  // const location: string[] = ['certifications', 'works', 'skills', 'contact']
+  // const locationFromData: typeof location = []
+  const [certificationsStr, worksStr, skillsStr, contactStr] = Location
   const [isLoading, setIsLoading] = useState(true)
   //
   const { navLinkItems } = useContext(NavigationLinkContext)
+  const { data } = useContext(DataContext)
 
-  const cv_descreption: string = CV_DATA.carrier_objectives.descreption
-  const cv_certifications: CerfiticationsArrType = CV_DATA.cerfitications
-  const cv_workings: cvWorkingHistoryArrType = CV_DATA.works
-  const cv_skills: cvSkillsArrType = CV_DATA.skills
-
-  const [descreption, setDescreption] = useState('')
+  const [descreption, setDescreption] = useState<GeneralObjectType>({})
 
   const [certifications, setCertifications] = useState<CerfiticationsArrType | null>([])
   const [workingdetail, setWorkingDetail] = useState<cvWorkingHistoryArrType | null>([])
   const [skills, setSkills] = useState<cvSkillsArrType>([])
+
+  useEffect(() => {
+    const { cv_descreption, cv_certifications, cv_workings, cv_skills } = data
+    setDescreption(cv_descreption)
+    setCertifications(cv_certifications)
+    setWorkingDetail(cv_workings)
+    setSkills(cv_skills)
+  }, [data])
 
   useEffect(() => {
     const timeoutID: NodeJS.Timeout = setTimeout(() => {
@@ -38,13 +44,6 @@ function App(): JSX.Element {
       clearTimeout(timeoutID)
     }
   }, [])
-
-  useEffect(() => {
-    setDescreption(cv_descreption)
-    setCertifications(cv_certifications)
-    setWorkingDetail(cv_workings)
-    setSkills(cv_skills)
-  }, [cv_descreption, cv_certifications, cv_workings, cv_skills])
 
   return (
     <div className='App'>
@@ -58,7 +57,12 @@ function App(): JSX.Element {
                 index
                 path='/'
                 element={
-                  <SinglePageAllComponent skills={skills} workingdetail={workingdetail} descreption={descreption} certifications={certifications} />
+                  <SinglePageAllComponent
+                    skills={skills}
+                    workingdetail={workingdetail}
+                    descreption={descreption.descreption}
+                    certifications={certifications}
+                  />
                 }
               />
               <Route
@@ -70,7 +74,7 @@ function App(): JSX.Element {
               <Route path={`/${contactStr}`} element={<MainFullPage contact={true} backgroundColor={'secondary'} section={4} />} />
             </Route>
           </Routes>
-          {!location.includes(navLinkItems) && <ScrollButton />}
+          {!Location.includes(navLinkItems) && <ScrollButton />}
           <Background clsName='horizontal' />
           <Background clsName='vertical' />
         </Fragment>

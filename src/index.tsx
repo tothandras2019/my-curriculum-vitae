@@ -9,6 +9,7 @@ import { HideMenuContextProvider } from './components/contexts/navigation-hide-c
 import { AppearContextProvider } from './components/contexts/appear-section-context'
 
 import { BrowserRouter } from 'react-router-dom'
+import { DataContextProvider } from './components/contexts/data-context'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -16,13 +17,15 @@ root.render(
   <BrowserRouter>
     <BackgroundContextProvider>
       <HideMenuContextProvider>
-        <NavigationLinkContextProvider>
-          <NavigationContextProvider>
-            <AppearContextProvider>
-              <App />
-            </AppearContextProvider>
-          </NavigationContextProvider>
-        </NavigationLinkContextProvider>
+        <DataContextProvider>
+          <NavigationLinkContextProvider>
+            <NavigationContextProvider>
+              <AppearContextProvider>
+                <App />
+              </AppearContextProvider>
+            </NavigationContextProvider>
+          </NavigationLinkContextProvider>
+        </DataContextProvider>
       </HideMenuContextProvider>
     </BackgroundContextProvider>
   </BrowserRouter>,

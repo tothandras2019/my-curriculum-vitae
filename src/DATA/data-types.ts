@@ -1,3 +1,5 @@
+export type GeneralObjectType = { [key: string]: string }
+
 export type cvPersonal = {
   personal: {
     name: string
@@ -5,10 +7,9 @@ export type cvPersonal = {
     role: string
     worldview: string
   }
-  carrier_objectives: {
-    descreption: string
-  }
 }
+
+export type CarrierObjectivesType = GeneralObjectType
 export type CvCertificationDetailsType = {
   date: string
   certification_title?: string
