@@ -24,4 +24,14 @@ input[type='submit'] {
     color: $palette-creamy-white-color;
     background-color: $palette-stone-dark-grey-color;
   }
+  &.disabled {
+    color: grey;
+    border: 2px solid grey;
+    background-color: $palette-stone-dark-grey-color;
+    letter-spacing: 0px;
+
+    &:active {
+      background-color: $palette-stone-dark-grey-color;
+    }
+  }
 }

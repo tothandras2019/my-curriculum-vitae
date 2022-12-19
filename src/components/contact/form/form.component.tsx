@@ -1,7 +1,10 @@
-import { ChangeEvent, SyntheticEvent, useState } from 'react'
+import { ChangeEvent, LegacyRef, SyntheticEvent, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { SectionButton } from '../../buttons/section-button/section-button-component'
 import './form-component.css'
+
+import googleservice from './../../../google-service/re-chapcha.json'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 type DataType = {
   name: string
@@ -19,6 +22,8 @@ export const Form = (): JSX.Element => {
   const [email, setEmail] = useState<string>('')
   const [subject, setSubject] = useState<string>('')
   const [message, setMessage] = useState<string>('')
+  const [isDisabled, setIsDisabled] = useState<boolean>(true)
+  const [language, setLanguage] = useState<{ hungarian: string; english: string }>({ hungarian: 'hu-HU', english: 'en-GB' })
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     const fieldValue = event.target.value
@@ -53,16 +58,29 @@ export const Form = (): JSX.Element => {
     )
   }
 
+  const handleReCaptcha = (token: string | null): void => {
+    if (!token) console.log('token expired')
+    setIsDisabled(false)
+  }
+
+  const handleReCaptchaExpired = (): void => setIsDisabled(true)
+
   return (
     <div className='from-container'>
       <form action=''>
         <div className='contact-email'>
-          <input type='text' placeholder='Name' onChange={handleNameChange} />
-          <input type='email' placeholder='Email' onChange={handleEmailChange} />
+          <input type='text' placeholder='Name' onChange={handleNameChange} required />
+          <input type='email' placeholder='Email' onChange={handleEmailChange} required />
         </div>
-        <input type='text' placeholder='Subject' onChange={handleSubjectChange} />
+        <input type='text' placeholder='Subject' onChange={handleSubjectChange} required />
         <textarea placeholder='Message' onChange={handleMessageChange} />
-        <SectionButton type='submit' value={'Send'} onHandler={handleSubmit} />
+        <ReCAPTCHA
+          sitekey={googleservice.SITE_KEY}
+          theme='dark'
+          onChange={(token: string | null) => handleReCaptcha(token)}
+          onExpired={handleReCaptchaExpired}
+        />
+        <SectionButton isDisabled={isDisabled} type='submit' value={'Send'} onHandler={handleSubmit} />
       </form>
     </div>
   )

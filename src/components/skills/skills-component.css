@@ -115,6 +115,11 @@ path {
   background: transparent;
   min-width: 250px;
 }
+@media (max-width: 500px) {
+  .main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill .level-indicator-background {
+    min-width: 150px;
+  }
+}
 .main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container .skill-type .skill:hover {
   color: #029ba3;
   letter-spacing: 1.1px;
@@ -132,5 +137,18 @@ path {
   }
   .main-skills-container .horizontal-aligned-skills .skill-types-container {
     width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-skills-container .horizontal-aligned-skills {
+    align-items: flex-start;
+  }
+  .main-skills-container .horizontal-aligned-skills .skill-types-container {
+    width: 95vw;
+    box-sizing: border-box;
+  }
+  .main-skills-container .horizontal-aligned-skills .skill-types-container .skills-container {
+    margin: 0;
+    padding: 0;
   }
 }/*# sourceMappingURL=skills-component.css.map */

@@ -154,9 +154,39 @@ aside .aside-container .social-container.set-column {
 }
 
 @media screen and (max-width: 1375px) {
-  aside {
+  .aside-top-container {
     min-width: 50px;
     max-width: 60px;
     transition: 0.5s;
+  }
+}
+@media screen and (max-width: 500px) {
+  .aside-top-container {
+    position: sticky;
+    display: flex;
+    min-width: 100vw;
+    height: 50px;
+    transition: 0.5s;
+  }
+  .aside-top-container .aside-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 50px;
+  }
+  .aside-top-container .aside-container .navigation-container {
+    flex-direction: row;
+  }
+  .aside-top-container .aside-container p {
+    display: none;
+  }
+  .aside-top-container .aside-container .img-place {
+    display: none;
+  }
+  .aside-top-container .aside-container .social-container {
+    display: none;
   }
 }/*# sourceMappingURL=navigation-component.css.map */

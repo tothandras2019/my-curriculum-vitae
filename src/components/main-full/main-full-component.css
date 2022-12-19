@@ -67,4 +67,13 @@ path {
     width: 90vw;
     margin-left: 2vw;
   }
+}
+@media screen and (max-width: 500px) {
+  .main-full {
+    margin: 0;
+    padding-left: 15px;
+  }
+  .main-full .descreptions-section .details-list-section {
+    display: none;
+  }
 }/*# sourceMappingURL=main-full-component.css.map */

@@ -75,4 +75,15 @@ input[type=button]:active,
 input[type=submit]:active {
   color: #b9dbe4;
   background-color: #0d2345;
+}
+input[type=button].disabled,
+input[type=submit].disabled {
+  color: grey;
+  border: 2px solid grey;
+  background-color: #0d2345;
+  letter-spacing: 0px;
+}
+input[type=button].disabled:active,
+input[type=submit].disabled:active {
+  background-color: #0d2345;
 }/*# sourceMappingURL=section-button-component.css.map */

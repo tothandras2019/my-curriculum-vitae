@@ -33,6 +33,12 @@
       }
     }
 
+    @media (max-width: 500px) {
+      p {
+        min-width: 23px;
+      }
+    }
+
     @keyframes pinting {
       50% {
         transform: rotateX(60deg) scaleX(1.5);

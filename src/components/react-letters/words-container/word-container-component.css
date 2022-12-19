@@ -80,6 +80,11 @@ path {
   animation-name: pinting;
   animation-duration: 0.7s;
 }
+@media (max-width: 500px) {
+  .word-container .parent-span p {
+    min-width: 23px;
+  }
+}
 @keyframes pinting {
   50% {
     transform: rotateX(60deg) scaleX(1.5);

@@ -123,4 +123,28 @@ path {
   .descreption-container .descreption {
     width: 100%;
   }
+}
+@media screen and (max-width: 500px) {
+  .descreption-container {
+    font-size: smaller;
+    height: 800px;
+    min-width: 390px;
+  }
+  .descreption-container .descreption {
+    max-width: 95vw;
+    font-size: larger;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .descreption-container .descreption p {
+    height: 80%;
+    max-width: 400px;
+    margin: 0;
+    text-align: justify;
+  }
+  .descreption-container .descreption button {
+    align-self: flex-end;
+    width: fit-content;
+  }
 }/*# sourceMappingURL=descreption-component.css.map */

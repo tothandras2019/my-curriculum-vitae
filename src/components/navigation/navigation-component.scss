@@ -117,9 +117,41 @@ aside {
 }
 
 @media screen and (max-width: 1375px) {
-  aside {
+  .aside-top-container {
     min-width: 50px;
     max-width: 60px;
     transition: 0.5s;
+  }
+}
+@media screen and (max-width: 500px) {
+  .aside-top-container {
+    position: sticky;
+    display: flex;
+
+    min-width: 100vw;
+    height: 50px;
+    transition: 0.5s;
+
+    .aside-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      min-width: 100%;
+      min-height: 50px;
+      .navigation-container {
+        flex-direction: row;
+      }
+      p {
+        display: none;
+      }
+      .img-place {
+        display: none;
+      }
+      .social-container {
+        display: none;
+      }
+    }
   }
 }

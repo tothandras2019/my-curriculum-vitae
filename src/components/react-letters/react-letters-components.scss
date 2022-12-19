@@ -20,3 +20,18 @@ $element-size-speed: 1.1s;
     font-size: 40px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .title {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+
+    min-width: 350px;
+    max-width: 400px;
+    .word-container {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

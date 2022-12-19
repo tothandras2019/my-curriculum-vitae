@@ -18,3 +18,15 @@
     margin-left: 2vw;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .main-full {
+    margin: 0;
+    padding-left: 15px;
+    .descreptions-section {
+      .details-list-section {
+        display: none;
+      }
+    }
+  }
+}

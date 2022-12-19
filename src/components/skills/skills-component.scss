@@ -8,6 +8,7 @@
   .horizontal-aligned-skills {
     display: flex;
     gap: 30px;
+
     .skill-types-container {
       display: flex;
       flex-direction: column;
@@ -68,6 +69,12 @@
               min-width: 250px;
             }
 
+            @media (max-width: 500px) {
+              .level-indicator-background {
+                min-width: 150px;
+              }
+            }
+
             &:hover {
               color: $palette-ocean-color;
               letter-spacing: 1.1px;
@@ -88,6 +95,20 @@
 
       .skill-types-container {
         width: 80%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .horizontal-aligned-skills {
+      align-items: flex-start;
+      .skill-types-container {
+        width: 95vw;
+        box-sizing: border-box;
+        .skills-container {
+          margin: 0;
+          padding: 0;
+        }
       }
     }
   }

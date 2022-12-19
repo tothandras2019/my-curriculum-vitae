@@ -17,3 +17,13 @@
     margin-left: 2vw;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .main-splited {
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 70vh;
+    margin: 0;
+    padding: 15px;
+  }
+}

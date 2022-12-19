@@ -79,3 +79,28 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .descreption-container {
+    font-size: smaller;
+    height: 800px;
+    min-width: 390px;
+    .descreption {
+      max-width: 95vw;
+      font-size: larger;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      p {
+        height: 80%;
+        max-width: 400px;
+        margin: 0;
+        text-align: justify;
+      }
+      button {
+        align-self: flex-end;
+        width: fit-content;
+      }
+    }
+  }
+}
